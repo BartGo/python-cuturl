@@ -7,8 +7,8 @@
 
 # --- installing additional python components
 
-pip install --upgrade pip
-pip install --upgrade vex
+pip install --user --upgrade pip
+pip install --user --upgrade vex
 
 rm --recursive --force env
 rm --recursive --force build
@@ -44,16 +44,3 @@ mv --verbose Skeleton-2.0.4       app/static/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/static/assets/jquery/js/jquery-1.11.3.min.js
 
 exit
-
-# --- some notes from requirements*.txt preparation
-
-# vex --path env pip install --upgrade bottle
-# vex --path env pip freeze  > requirements.txt
-# echo "-r requirements.txt" > requirements-dev.txt
-# echo ""                   >> requirements-dev.txt 
-# vex --path env pip install --upgrade cookiecutter
-# vex --path env cookiecutter https://github.com/avelino/cookiecutter-bottle.git
-# ...
-# vex --path env pip freeze >> requirements-dev.txt
-# vex --path env pip install --download downloads -r requirements-dev.txt
-# vex --path env pip install --no-index --find-links=/x/bottle-cuturl.git/downloads -r requirements-dev.txt
