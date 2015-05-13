@@ -19,7 +19,12 @@ mkdir build
 mkdir downloads
 
 virtualenv env --no-site-packages
-vex --path env pip install --upgrade -r requirements-dev.txt
+
+# vex --path env pip install --upgrade -r requirements-dev.txt
+
+vex --path env pip install --download downloads -r requirements-dev.txt
+vex --path env pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+
 
 # --- installing external components (non-Python)
 
@@ -35,7 +40,7 @@ mv Skeleton-2.0.4.zip downloads
 unzip -q downloads/Skeleton-2.0.4.zip
 rm downloads/Skeleton-2.0.4.zip
 
-mv --verbose Skeleton-2.0.4.zip   app/static/assets/skeletoncss
+mv --verbose Skeleton-2.0.4       app/static/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/static/assets/jquery/js/jquery-1.11.3.min.js
 
 exit
