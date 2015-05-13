@@ -2,13 +2,14 @@
 Bottle-cuturl
 ===============================
 
-A simple URL shortening app.
-
+A simple URL shortening app. Based on cookiecutter-bottle template.
 
 Quickstart
 ----------
 
 .. code-block:: bash
 
-    python manage.py runserver
+    init.sh
+    vex --path env python manage.py runserver
+
 
