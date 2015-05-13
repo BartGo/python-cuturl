@@ -22,5 +22,3 @@ mv --verbose Skeleton-2.0.4       app/static/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/static/assets/jquery/js/jquery-1.11.3.min.js
 
 vex --path env pip install -r requirements.txt
-
-vex --path env python manage.py runserver
