@@ -1,2 +1,11 @@
 bottle==0.12.8
 peewee==2.6.0
+
+# below from cookiecutter
+bottle
+click
+beaker
+jinja2
+bottle-sqlalchemy
+sqlalchemy
+fake-factory

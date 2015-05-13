@@ -1,3 +1,5 @@
+exit
+
 # git clone https://github.com/bartgo/bottle-cuturl bottle-cuturl.git
 # cd bottle-cuturl.git
 
