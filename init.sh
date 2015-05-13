@@ -15,7 +15,7 @@ mkdir downloads
 
 virtualenv env --no-site-packages --verbose
 
-vex --path env pip install --verbose --upgrade -r requirements-dev.txt
+vex --path env pip install --upgrade -r requirements-dev.txt
 
 exit
 

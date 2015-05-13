@@ -6,8 +6,8 @@ import click
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware
 
-from bottlecuturl import settings
-from bottlecuturl.routes import Routes
+from app import settings
+from app.routes import Routes
 
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
