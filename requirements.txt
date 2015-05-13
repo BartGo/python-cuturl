@@ -1,11 +1,8 @@
+Beaker==1.7.0
 bottle==0.12.8
+bottle-sqlalchemy==0.4.2
+click==3.3
+fake-factory==0.5.0
+Jinja2==2.7.3
 peewee==2.6.0
-
-# below from cookiecutter
-bottle
-click
-beaker
-jinja2
-bottle-sqlalchemy
-sqlalchemy
-fake-factory
+SQLAlchemy==1.0.4

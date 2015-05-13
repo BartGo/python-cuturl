@@ -1,4 +1,3 @@
-exit
 
 # git clone https://github.com/bartgo/bottle-cuturl bottle-cuturl.git
 # cd bottle-cuturl.git
@@ -16,6 +15,10 @@ mkdir downloads
 
 virtualenv env --no-site-packages --verbose
 
+vex --path env pip install --verbose --upgrade -r requirements-dev.txt
+
+exit
+
 # --- before bootstrapping
 #
 # vex --path env pip install --upgrade bottle
@@ -25,8 +28,7 @@ virtualenv env --no-site-packages --verbose
 # echo ""                   >> requirements-dev.txt 
 # vex --path env pip install --upgrade cookiecutter
 # vex --path env pip freeze >> requirements-dev.txt
+# vex --path env pip install --download downloads -r requirements-dev.txt
+# vex --path env pip install --no-index --find-links=/x/bottle-cuturl.git/downloads -r requirements-dev.txt
+#vex --path env cookiecutter https://github.com/avelino/cookiecutter-bottle.git
 
-vex --path env pip install --download downloads -r requirements-dev.txt
-vex --path env pip install --no-index --find-links=/x/bottle-cuturl.git/downloads -r requirements-dev.txt
-
-vex --path env cookiecutter https://github.com/avelino/cookiecutter-bottle.git
