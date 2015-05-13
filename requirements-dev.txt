@@ -2,6 +2,5 @@
 
 binaryornot==0.3.0
 cookiecutter==1.0.0
-MarkupSafe==0.23
 mock==1.0.1
 PyYAML==3.11
