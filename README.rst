@@ -21,5 +21,10 @@ Test / Production (yay) mode:
     init-tst.sh
     vex --path env python manage.py runserver
     
-[![Travis CI](https://img.shields.io/travis/BartGo/bottle-cuturl.svg)](https://travis-ci.org/BartGo/bottle-cuturl)
-[![Requirements Status](https://img.shields.io/requires/github/BartGo/bottle-cuturl.svg)](https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master)
+.. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
+    :target: https://travis-ci.org/BartGo/bottle-cuturl
+
+.. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
+     :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
+     :alt: Requirements Status
+     
