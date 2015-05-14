@@ -4,6 +4,5 @@ python:
 - "2.7.9"
 install:
 - pip install -r requirements-dev.txt
-- pip install -U .
 script:
 - tox
