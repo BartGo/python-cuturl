@@ -19,8 +19,9 @@ mkdir downloads
 
 virtualenv env --no-site-packages
 
-vex --path env pip install --download downloads -r requirements-dev.txt
-vex --path env pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+# vex --path env pip install --download downloads -r requirements-dev.txt
+# vex --path env pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+vex --path env pip install -r requirements-dev.txt
 
 # --- installing external components (non-Python)
 

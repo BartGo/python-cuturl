@@ -1,5 +1,6 @@
 -r requirements.txt
 
+# below are for dev environment only
 binaryornot==0.3.0
 cookiecutter==1.0.0
 mock==1.0.1
