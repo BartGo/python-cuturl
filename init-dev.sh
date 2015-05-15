@@ -1,4 +1,3 @@
-
 # --- how was it cloned
 
 # cd /x/
@@ -20,11 +19,8 @@ mkdir downloads
 
 virtualenv env --no-site-packages
 
-# vex --path env pip install --upgrade -r requirements-dev.txt
-
 vex --path env pip install --download downloads -r requirements-dev.txt
 vex --path env pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
-
 
 # --- installing external components (non-Python)
 
@@ -36,6 +32,8 @@ mkdir --verbose app/static/assets/jquery/js
 curl -LO "https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip" \
      -LO "http://code.jquery.com/jquery-1.11.3.min.js"
 
+# --- in case of problems with curl you can use: vex --path env python nonpip-dl.py
+	 
 mv Skeleton-2.0.4.zip downloads
 unzip -q downloads/Skeleton-2.0.4.zip
 rm downloads/Skeleton-2.0.4.zip
