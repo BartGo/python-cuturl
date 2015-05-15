@@ -1,3 +1,1 @@
-include LICENSE
-graft app/static
-graft app/views
+#

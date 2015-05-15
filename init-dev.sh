@@ -6,8 +6,11 @@
 
 # --- installing additional python components
 
-pip install --user --upgrade pip
-pip install --user --upgrade vex
+# --- note: for pythonanywhere it is better to do pip install --user --upgrade *
+
+pip install --upgrade pip
+pip install --upgrade virtualenv
+pip install --upgrade vex
 
 rm --recursive --force env
 rm --recursive --force build
@@ -19,9 +22,9 @@ mkdir downloads
 
 virtualenv env --no-site-packages
 
-# vex --path env pip install --download downloads -r requirements-dev.txt
-# vex --path env pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
-vex --path env pip install -r requirements-dev.txt
+vex --path env pip install --download downloads -r requirements-dev.txt
+vex --path env pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+# vex --path env pip install -r requirements-dev.txt
 
 # --- installing external components (non-Python)
 
