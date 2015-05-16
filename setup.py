@@ -30,6 +30,7 @@ with open('README.rst') as readme:
             'SQLAlchemy==1.0.4'
         ],
         classifiers=(
+            'Development Status :: 1 - Planning',
             'License :: OSI Approved :: MIT License',
             'Framework :: Bottle',
             'Programming Language :: Python'

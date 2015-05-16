@@ -5,3 +5,5 @@ binaryornot==0.3.0
 cookiecutter==1.0.0
 mock==1.0.1
 PyYAML==3.11
+# bumpversion
+# wheel
