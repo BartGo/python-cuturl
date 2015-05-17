@@ -1,9 +1,10 @@
 -r requirements.txt
 
 # below are for dev environment only
+argcomplete==0.8.8
 binaryornot==0.3.0
+bumpversion==0.5.3
 cookiecutter==1.0.0
 mock==1.0.1
 PyYAML==3.11
-# bumpversion
-# wheel
+wheel==0.24.0

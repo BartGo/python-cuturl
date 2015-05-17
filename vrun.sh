@@ -1,1 +1,0 @@
-vex --path env python manage.py runserver
