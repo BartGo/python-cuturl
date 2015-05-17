@@ -6,6 +6,8 @@ Bottle-cuturl
 
 A simple URL shortening app. Based on cookiecutter-bottle template.
 
+Actually, it's not working... yet.
+
 Quickstart
 ----------
 
