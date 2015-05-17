@@ -1,4 +1,5 @@
 run-dev.sh
+sqlite.db
 app/static/assets
 
 # Byte-compiled / optimized / DLL files

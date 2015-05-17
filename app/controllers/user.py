@@ -35,7 +35,7 @@ def index(db):
 def user(db, name):
     user = db.query(User).filter_by(name=name).first()
     if user:
-        return template("user_view.html", user=user)
+       return template("user_view.html", user=user)
     return HTTPError(404, 'User not found.')
 
 

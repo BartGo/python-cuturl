@@ -36,7 +36,7 @@ mv --verbose Skeleton-2.0.4       app/static/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/static/assets/jquery/js/jquery-1.11.3.min.js
 
 rm -f run-dev.sh
-echo "vex $MY_VENV python manage.py runserver" > run-dev.sh
+echo "vex $MY_VENV python manage.py runserver --debug True" > run-dev.sh
 echo ""
 echo "To run in venv $MY_VENV: run-dev.sh"
 echo ""
