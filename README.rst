@@ -11,19 +11,13 @@ Actually, it's not doing what it should do... yet.
 Quickstart
 ----------
 
-Development mode:
+Development mode (prepare virtual environment and run the app inside):
 
 .. code-block:: bash
 
     init-dev.sh
     vex env python manage.py runserver
 
-Test / Production (yay) mode:
-
-.. code-block:: bash
-
-    init-tst.sh
-    vex env python manage.py runserver
     
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
