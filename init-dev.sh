@@ -17,8 +17,7 @@ echo "Purge and recreate virtual environment named $MY_VENV..."
 vex -r $MY_VENV pip --version
 vex -m $MY_VENV python --version
 echo "Download requirements and keep downloaded packages..."
-rm --recursive --force downloads
-mkdir downloads
+mkdir -p downloads
 vex $MY_VENV pip install --download downloads -r requirements-dev.txt
 vex $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
 
@@ -36,6 +35,7 @@ unzip -q downloads/Skeleton-2.0.4.zip
 mv --verbose Skeleton-2.0.4       app/static/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/static/assets/jquery/js/jquery-1.11.3.min.js
 
+rm -f run-dev.sh
 echo "vex $MY_VENV python manage.py runserver" > run-dev.sh
 echo ""
 echo "To run in venv $MY_VENV: run-dev.sh"
