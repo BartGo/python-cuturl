@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from bottle import Bottle, jinja2_view
+from bottle import Bottle, view
 
 
 home_app = Bottle()
 
 
 @home_app.route('/')
-@jinja2_view('index.html')
+@view('index.html')
 def index():
-    return {'get_url': home_app.get_url}
+  return {'get_url': home_app.get_url}
 
 

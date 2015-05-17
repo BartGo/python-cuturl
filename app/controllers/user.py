@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import Bottle, jinja2_template as template, redirect, HTTPError
+from bottle import Bottle, SimpleTemplate as template, redirect, HTTPError
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from faker import Faker

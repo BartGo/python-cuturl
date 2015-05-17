@@ -1,8 +1,5 @@
-{% extends "base.html" %}
+% rebase('base.html', title='User ' + user.name)
 
-{% block title %}User {{ user.name }}{% endblock %}
-
-{% block body %}
 <strong>User {{ user.name }}</strong>
 
 <table>
@@ -17,4 +14,3 @@
 </table>
 
 <a href="/user/">Back</a>
-{% endblock %}
