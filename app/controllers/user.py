@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import Bottle, SimpleTemplate as template, redirect, HTTPError
+from bottle import Bottle, SimpleTemplate as template, view, redirect, HTTPError
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from faker import Faker
@@ -24,18 +24,20 @@ plugin = sqlalchemy.Plugin(
 )
 user_app.install(plugin)
 
+# You can not use two separate decorators route and view due to Bottle issues 
+# like https://github.com/bottlepy/bottle/issues/207 - below recommended workaround
 
-@user_app.route('/')
+@user_app.route('/', apply=[view('user')])
 def index(db):
     users = db.query(User)
-    return template("user.html", users=users)
+    return {'users' : users}
 
 
-@user_app.route('/:name')
+@user_app.route('/:name', apply=[view('user_view')])
 def user(db, name):
     user = db.query(User).filter_by(name=name).first()
     if user:
-       return template("user_view.html", user=user)
+       return {'user' : user}
     return HTTPError(404, 'User not found.')
 
 
