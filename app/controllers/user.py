@@ -18,10 +18,10 @@ SQLAlchemyBase.metadata.create_all(engine)
 plugin = sqlalchemy.Plugin(
     engine,
     SQLAlchemyBase.metadata,
-    keyword='db',
-    create=True,
-    commit=True,
-    use_kwargs=False
+    keyword=settings.SQA_KEYWORD,
+    create=settings.SQA_CREATE,
+    commit=settings.SQA_COMMIT,
+    use_kwargs=settings.SQA_USE_KWARGS
 )
 user_app.install(plugin) 
    

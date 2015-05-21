@@ -34,6 +34,7 @@ mv Skeleton-2.0.4.zip downloads
 unzip -q downloads/Skeleton-2.0.4.zip
 mv --verbose Skeleton-2.0.4       app/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
+rm -f downloads/Skeleton-2.0.4.zip
 
 rm -f run-dev.sh
 echo "vex $MY_VENV python manage.py runserver --debug True" > run-dev.sh
