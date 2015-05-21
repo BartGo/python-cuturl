@@ -40,6 +40,7 @@ def index(db):
     users = db.query(User)
     return {'users' : users, 'get_url': user_app.get_url}
 
+
 @user_app.route('/:name', apply=[view('user_view')])
 def user(db, name):
     user = db.query(User).filter_by(name=name).first()

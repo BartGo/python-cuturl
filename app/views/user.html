@@ -1,14 +1,17 @@
 % rebase('base.html', title='Users')
 
 <strong>Users</strong>
-<ul>
-% for user in users:
-	<li><a href="/user/{{ user.name }}">{{ user.name }}</a></li>
-% else:
-	<li><em>Entity not found.</em></li>
-% end
-</ul>
+<table>
 
-</ul>
+<thead>
+<tr>
+<th>Name</td>
+<th>Description</td>
+</tr>
+</thead>
+% for user in users:
+	<tr><td><a href="/user/{{ user.name }}">{{ user.name }}</a></td><td>{{ user.fullname }}</td></tr>
+% end
+</table>
 
 <a href="/user/add">Add</a>
