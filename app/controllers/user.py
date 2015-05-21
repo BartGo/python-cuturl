@@ -24,6 +24,11 @@ plugin = sqlalchemy.Plugin(
 )
 user_app.install(plugin)
 
+# BUG: gets /user/assets/... and I do not want the /user part for static
+@user_app.route('/assets/<path:path>', name='assets')
+def assets(path):
+    yield static_file(path, root=settings.STATIC_PATH)
+    
 # You can not use two separate decorators route and view due to Bottle issues 
 # like https://github.com/bottlepy/bottle/issues/207 - below recommended workaround
 
