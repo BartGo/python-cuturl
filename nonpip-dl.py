@@ -39,11 +39,11 @@ if True:
     shutil.move("jquery-1.11.3.min.js", "app/static/assets/jquery/js/jquery-1.11.3.min.js")
 
 if True:
-    shutil.rmtree("app/static/assets/bootstrap", True)
-    download_file("https://github.com/twbs/bootstrap/releases/download/v3.3.4/bootstrap-3.3.4-dist.zip")
-    unzip_file("bootstrap-3.3.4-dist.zip", ".")
-    os.remove("bootstrap-3.3.4-dist.zip")
-    shutil.move("bootstrap-3.3.4-dist", "app/static/assets/bootstrap")
+    shutil.rmtree("app/static/assets/skeletoncss", True)
+    download_file("https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip")
+    unzip_file("Skeleton-2.0.4.zip", ".")
+    os.remove("Skeleton-2.0.4.zip")
+    shutil.move("Skeleton-2.0.4", "app/static/assets/skeletoncss")
 
 print "*** Done"
 print
