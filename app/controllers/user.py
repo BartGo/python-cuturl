@@ -7,6 +7,7 @@ from faker import Faker
 from ..models import engine
 from ..models.users import User
 
+from .. import settings
 
 # User application
 user_app = Bottle()
@@ -22,12 +23,14 @@ plugin = sqlalchemy.Plugin(
     commit=True,
     use_kwargs=False
 )
-user_app.install(plugin)
+user_app.install(plugin) 
+   
 
-# BUG: gets /user/assets/... and I do not want the /user part for static
-@user_app.route('/assets/<path:path>', name='assets')
-def assets(path):
-    yield static_file(path, root=settings.STATIC_PATH)
+@user_app.route('/assets/<filepath:path>', name='assets')
+def static(filepath):
+    print filepath
+    return static_file(filepath, root=settings.STATIC_PATH)
+        
     
 # You can not use two separate decorators route and view due to Bottle issues 
 # like https://github.com/bottlepy/bottle/issues/207 - below recommended workaround
@@ -41,7 +44,7 @@ def index(db):
 def user(db, name):
     user = db.query(User).filter_by(name=name).first()
     if user:
-       return {'user' : user}
+       return {'user' : user, 'get_url': user_app.get_url}
     return HTTPError(404, 'User not found.')
 
 

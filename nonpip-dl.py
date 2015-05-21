@@ -32,18 +32,18 @@ def unzip_file(file_in, file_out):
 print "*** Downloading non-Python components"
 
 if True:
-    shutil.rmtree("app/static/assets/jquery", True)
-    shutil.os.mkdir("app/static/assets/jquery")
-    shutil.os.mkdir("app/static/assets/jquery/js")
+    shutil.rmtree("app/assets/jquery", True)
+    shutil.os.mkdir("app/assets/jquery")
+    shutil.os.mkdir("app/assets/jquery/js")
     download_file("http://code.jquery.com/jquery-1.11.3.min.js")
-    shutil.move("jquery-1.11.3.min.js", "app/static/assets/jquery/js/jquery-1.11.3.min.js")
+    shutil.move("jquery-1.11.3.min.js", "app/assets/jquery/js/jquery-1.11.3.min.js")
 
 if True:
-    shutil.rmtree("app/static/assets/skeletoncss", True)
+    shutil.rmtree("app/assets/skeletoncss", True)
     download_file("https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip")
     unzip_file("Skeleton-2.0.4.zip", ".")
     os.remove("Skeleton-2.0.4.zip")
-    shutil.move("Skeleton-2.0.4", "app/static/assets/skeletoncss")
+    shutil.move("Skeleton-2.0.4", "app/assets/skeletoncss")
 
 print "*** Done"
 print

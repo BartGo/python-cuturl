@@ -4,4 +4,6 @@ import os
 
 PROJECT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)))
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'views')
-STATIC_PATH = os.path.join(PROJECT_PATH, 'static/assets')
+STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
+SQA_DBENGINE = 'sqlite:///sqlite.db'
+SQA_ECHO = True

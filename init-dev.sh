@@ -24,16 +24,16 @@ vex $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirem
 # --- installing external components (non-Python)
 # --- in case you do not want to use curl you can use: vex $MY_VENV python nonpip-dl.py
 
-rm --recursive --force app/static/assets/skeletoncss
-rm --recursive --force app/static/assets/jquery
-mkdir --verbose app/static/assets/jquery
-mkdir --verbose app/static/assets/jquery/js
+rm --recursive --force app/assets/skeletoncss
+rm --recursive --force app/assets/jquery
+mkdir --verbose app/assets/jquery
+mkdir --verbose app/assets/jquery/js
 curl -LO "https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip" \
      -LO "http://code.jquery.com/jquery-1.11.3.min.js"
 mv Skeleton-2.0.4.zip downloads
 unzip -q downloads/Skeleton-2.0.4.zip
-mv --verbose Skeleton-2.0.4       app/static/assets/skeletoncss
-mv --verbose jquery-1.11.3.min.js app/static/assets/jquery/js/jquery-1.11.3.min.js
+mv --verbose Skeleton-2.0.4       app/assets/skeletoncss
+mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
 
 rm -f run-dev.sh
 echo "vex $MY_VENV python manage.py runserver --debug True" > run-dev.sh

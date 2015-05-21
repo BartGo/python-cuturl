@@ -1,6 +1,6 @@
 run-dev.sh
 sqlite.db
-app/static/assets
+app/static
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
