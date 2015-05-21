@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import Bottle, SimpleTemplate as template, view, redirect, HTTPError
+from bottle import Bottle, SimpleTemplate as template, view, redirect, HTTPError, static_file
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from faker import Faker
@@ -30,8 +30,7 @@ user_app.install(plugin)
 @user_app.route('/', apply=[view('user')])
 def index(db):
     users = db.query(User)
-    return {'users' : users}
-
+    return {'users' : users, 'get_url': user_app.get_url}
 
 @user_app.route('/:name', apply=[view('user_view')])
 def user(db, name):
@@ -46,3 +45,6 @@ def add(db):
     fake = Faker()
     db.add(User(fake.user_name(), fullname=fake.name(), password=fake.sha1()))
     redirect("/user/")
+    
+    
+    
