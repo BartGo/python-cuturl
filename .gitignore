@@ -3,6 +3,8 @@ sqlite.db
 app/static
 app/assets
 
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
