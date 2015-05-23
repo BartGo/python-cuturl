@@ -20,4 +20,4 @@ except IOError:
 
 # my app-specific
 from app import settings
-from app.Routes import Routes as application
+from app import Routes as application
