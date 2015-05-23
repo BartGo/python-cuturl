@@ -24,6 +24,7 @@ with open('README.rst') as readme:
             'bottle-sqlalchemy==0.4.2',
             'click==4.0',
             'fake-factory==0.5.0',
+            'importlib==1.0.3', # needs to be added explicitely for OpenShift
             # 'Jinja2==2.7.3',
             # 'MarkupSafe==0.23',
             'requests==2.7.0',

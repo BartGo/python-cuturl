@@ -1,5 +1,5 @@
 run-dev.sh
-sqlite.db
+data/
 app/static
 app/assets
 

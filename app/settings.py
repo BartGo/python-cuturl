@@ -9,7 +9,8 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 
 # SQL Alchemy 
 
-SQA_DBENGINE = 'sqlite:///sqlite.db'
+SQA_DBENGINE = 'sqlite:///../data/bottle-cuturl.sqlite.db'
+
 SQA_ECHO = True
 SQA_KEYWORD = 'db'
 SQA_CREATE = True
