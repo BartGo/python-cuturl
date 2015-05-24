@@ -1,4 +1,5 @@
 run-dev.sh
+sh-dev.sh
 data/
 app/static
 app/assets

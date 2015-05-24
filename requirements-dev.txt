@@ -1,6 +1,7 @@
 -r requirements.txt
 
-# below are for dev environment only
+# -- below are for dev environment only
+
 # argcomplete==0.8.8
 # binaryornot==0.3.0
 # bumpversion==0.5.3
@@ -11,3 +12,10 @@
 # pipdeptree==0.4.2
 # pybuilder
 # eralchemy
+
+# -- used by behave
+# parse
+# six
+# enum34
+# parse-type
+# behave
