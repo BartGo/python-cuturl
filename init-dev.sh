@@ -7,7 +7,7 @@
 # --- note: it is better to do pip install --user --upgrade * but PATH change should follow,
 # --- please see e.g. "The Path problem" from https://github.com/sashahart/vex/blob/master/README.rst
 
-MY_VENV="env"
+MY_VENV="venv-bottle-cuturl"
 
 echo "Upgrade tools..."
 pip install --user --upgrade pip

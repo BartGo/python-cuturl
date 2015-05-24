@@ -9,7 +9,8 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 
 # SQL Alchemy 
 
-SQA_DBENGINE = 'sqlite:///../data/bottle-cuturl.sqlite.db'
+SQA_DBENGINE = 'sqlite:///data//sqlite.db'
+# TODO: it works locally (puts db into app/data), must recheck with openshift
 
 SQA_ECHO = True
 SQA_KEYWORD = 'db'
