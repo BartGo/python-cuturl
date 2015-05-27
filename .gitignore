@@ -1,5 +1,6 @@
-run-dev.sh
-sh-dev.sh
+vx.sh
+vc.sh
+vl.sh
 data/
 app/static
 app/assets
