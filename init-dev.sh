@@ -37,7 +37,7 @@ mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
 rm -f downloads/Skeleton-2.0.4.zip
 
 echo "vex $MY_VENV python manage.py runserver --debug True" > vx.sh
-echo "vex $MY_VENV" > vc.sh
+echo "vex $MY_VENV $1 $2 $3 $4 $5 $6 $7 $8 $9" > vc.sh
 echo "vex --list" > vl.sh
 echo ""
 echo "To run in venv $MY_VENV: vx.sh"
