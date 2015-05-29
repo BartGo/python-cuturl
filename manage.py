@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
+#activate_this = 'u:/.virtualenvs/venv-bottle-cuturl/Scripts/activate_this.py'
+#execfile(activate_this, dict(__file__=activate_this))
+
 import os
 import click
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
