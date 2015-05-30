@@ -18,11 +18,11 @@ pip install --user --upgrade pew
 
 echo "Purge and recreate virtual environment..."
 
-pew rm  $MY_VENV
-pew new $MY_VENV
-pew in  $MY_VENV python --version
-pew in  $MY_VENV pip --version
-pew in  $MY_VENV pip freeze
+pew rm     $MY_VENV
+pew new -d $MY_VENV
+pew in     $MY_VENV python --version
+pew in     $MY_VENV pip --version
+pew in     $MY_VENV pip freeze
 
 echo "Download requirements and keep downloaded packages..."
 mkdir -p downloads
