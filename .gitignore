@@ -1,6 +1,5 @@
-vx.sh
-vc.sh
-vl.sh
+pew-manage.sh
+pew-shell.sh
 data/
 app/static
 app/assets

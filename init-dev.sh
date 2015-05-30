@@ -4,18 +4,19 @@
 # git clone https://github.com/bartgo/bottle-cuturl MYREPO
 # cd MYREPO
 
-
 MY_VENV="venv-bottle-cuturl"
-MY_VENVS_PATH=/u/.virtualenvs
 
+echo "***"
+echo "Creating virtual environment: $WORKON_HOME/$MY_VENV"
+echo "***"
+echo ""
 
-export WORKON_HOME=$MY_VENVS_PATH
 echo "Upgrade tools..."
 pip install --user --upgrade pip
 pip install --user --upgrade virtualenv
 pip install --user --upgrade pew
 
-echo "Purge and recreate virtual environment named $MY_VENV inside $WORKON_HOME"
+echo "Purge and recreate virtual environment..."
 
 pew rm  $MY_VENV
 pew new $MY_VENV
@@ -44,9 +45,9 @@ mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
 rm -f downloads/Skeleton-2.0.4.zip
 
 echo "pew in $MY_VENV python manage.py runserver --debug True" > pew-manage.sh
+echo "pew workon $MY_VENV"                                     > pew-shell.sh
 echo ""
 echo "To start the app: pew-manage.sh"
+echo "Shell:            pew-shell.sh"
 echo "To run (command): pew in $MY_VENV (command)"
-echo "Shell:            pew workon $MY_VENV"
-echo "Known venvs:      pew ls"
 echo ""
