@@ -1,28 +1,35 @@
-# --- how was it cloned
 
+# --- cloning
 # cd /x/
-# git clone https://github.com/bartgo/bottle-cuturl bottle-cuturl.git
-# cd bottle-cuturl.git
+# git clone https://github.com/bartgo/bottle-cuturl MYREPO
+# cd MYREPO
 
-# --- note: it is better to do pip install --user --upgrade * but PATH change should follow,
-# --- please see e.g. "The Path problem" from https://github.com/sashahart/vex/blob/master/README.rst
 
 MY_VENV="venv-bottle-cuturl"
+MY_VENVS_PATH=/u/.virtualenvs
 
+
+export WORKON_HOME=$MY_VENVS_PATH
 echo "Upgrade tools..."
 pip install --user --upgrade pip
 pip install --user --upgrade virtualenv
-pip install --user --upgrade vex
-echo "Purge and recreate virtual environment named $MY_VENV..."
-vex -r $MY_VENV pip --version
-vex -m $MY_VENV python --version
+pip install --user --upgrade pew
+
+echo "Purge and recreate virtual environment named $MY_VENV inside $WORKON_HOME"
+
+pew rm  $MY_VENV
+pew new $MY_VENV
+pew in  $MY_VENV python --version
+pew in  $MY_VENV pip --version
+pew in  $MY_VENV pip freeze
+
 echo "Download requirements and keep downloaded packages..."
 mkdir -p downloads
-vex $MY_VENV pip install --download downloads -r requirements-dev.txt
-vex $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+pew in $MY_VENV pip install --download downloads -r requirements-dev.txt
+pew in $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
 
 # --- installing external components (non-Python)
-# --- in case you do not want to use curl you can use: vex $MY_VENV python nonpip-dl.py
+# --- in case you do not want to use curl you can use: pew in $MY_VENV python nonpip-dl.py
 
 rm --recursive --force app/assets/skeletoncss
 rm --recursive --force app/assets/jquery
@@ -36,11 +43,10 @@ mv --verbose Skeleton-2.0.4       app/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
 rm -f downloads/Skeleton-2.0.4.zip
 
-echo "vex $MY_VENV python manage.py runserver --debug True" > vx.sh
-echo "cd /x/bottle-cuturl.git & vex $MY_VENV $1 $2 $3 $4 $5 $6 $7 $8 $9" > vc.sh
-echo "vex --list" > vl.sh
+echo "pew in $MY_VENV python manage.py runserver --debug True" > pew-manage.sh
 echo ""
-echo "To run in venv $MY_VENV: vx.sh"
-echo "Shell, in venv $MY_VENV: vc.sh"
-echo "To list venvs known by vex: vl.sh"
+echo "To start the app: pew-manage.sh"
+echo "To run (command): pew in $MY_VENV (command)"
+echo "Shell:            pew workon $MY_VENV"
+echo "Known venvs:      pew ls"
 echo ""
