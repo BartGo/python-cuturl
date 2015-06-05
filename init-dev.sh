@@ -12,9 +12,13 @@ echo "***"
 echo ""
 
 echo "Upgrade tools..."
-pip install --user --upgrade pip
-pip install --user --upgrade virtualenv
-pip install --user --upgrade pew
+#pip install --user --upgrade pip
+#pip install --user --upgrade virtualenv
+#pip install --user --upgrade pew
+pip install --upgrade pip
+pip install --upgrade virtualenv
+pip install --upgrade pew
+
 
 echo "Purge and recreate virtual environment..."
 

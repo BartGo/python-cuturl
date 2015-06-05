@@ -1,5 +1,6 @@
 pew-manage.sh
 pew-shell.sh
+pew-bump.sh
 data/
 app/static
 app/assets
