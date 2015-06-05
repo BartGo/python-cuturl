@@ -1,9 +1,11 @@
 from setuptools import setup, find_packages
 
+__version__ = "0.0.1a1"
+
 with open('README.rst') as readme:
     setup(
         name = "Bottle-Cuturl",
-        version = "0.0.1a1",
+        version = __version__,
         description="A simple URL Shortener",
         long_description=readme.read(),
         platforms = "any",
