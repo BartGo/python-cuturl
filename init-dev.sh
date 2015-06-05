@@ -45,9 +45,11 @@ mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
 rm -f downloads/Skeleton-2.0.4.zip
 
 echo "pew in $MY_VENV python manage.py runserver --debug True" > pew-manage.sh
+echo "pew in $MY_VENV bumpversion minor"                       > pew-bump.sh
 echo "pew workon $MY_VENV"                                     > pew-shell.sh
 echo ""
 echo "To start the app: pew-manage.sh"
 echo "Shell:            pew-shell.sh"
+echo "Bump version:     pew-bump.sh"
 echo "To run (command): pew in $MY_VENV (command)"
 echo ""
