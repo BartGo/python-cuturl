@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import Bottle, SimpleTemplate as template, view, redirect, HTTPError, static_file
+from bottle import Bottle, SimpleTemplate as Template, view, redirect, HTTPError, static_file
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from faker import Faker
