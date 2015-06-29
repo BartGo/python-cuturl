@@ -18,17 +18,28 @@ pip install --upgrade virtualenv
 pip install --upgrade pew
 
 echo "Purge and recreate virtual environment..."
-
 pew rm     $MY_VENV
 pew new -d $MY_VENV
+echo ""
+echo "***"
+echo "New virtualenv $MY_VENV will be using:"
 pew in     $MY_VENV python --version
 pew in     $MY_VENV pip --version
+echo "***"
+echo ""
 
+echo "***"
 echo "Download requirements and keep downloaded packages..."
+echo "***"
+echo ""
 mkdir -p downloads
+
+# FIX: below has some issues on cmd.exe (starts with a wrong path to txt files) while working fine with Git bash
 pew in $MY_VENV pip install --download downloads -r requirements-dev.txt
 pew in $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+
 echo ""
+echo "PipDepTree for $MY_VENV:"
 pew in $MY_VENV pipdeptree
 echo ""
 
@@ -51,15 +62,11 @@ mv --verbose Skeleton-2.0.4       app/assets/skeletoncss
 mv --verbose jquery-1.11.3.min.js app/assets/jquery/js/jquery-1.11.3.min.js
 rm -f downloads/Skeleton-2.0.4.zip
 
-echo "***"
-echo "Done with external components..."
-echo "***"
 echo ""
+echo "***"
 echo "pew in $MY_VENV python manage.py runserver --debug True" > pew-manage.sh
 echo "pew in $MY_VENV bumpversion patch"                       > pew-bump.sh
 echo "pew workon $MY_VENV"                                     > pew-shell.sh
-echo ""
-echo "***"
 echo "All done."
 echo "To start the app: pew-manage.sh"
 echo "Shell:            pew-shell.sh"
