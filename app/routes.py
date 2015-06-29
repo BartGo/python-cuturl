@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from bottle import Bottle
 
-from .controllers.home  import home_app
-from .controllers.user  import user_app
+from .controllers.home import home_app
+from .controllers.user import user_app
 from .controllers.about import about_app
 
 
