@@ -12,5 +12,4 @@ def static(filepath):
     
 @about_app.route('/', apply=[view('about')])
 def about():
-  return {'get_url': about_app.get_url}
-    
+    return {'get_url': about_app.get_url}

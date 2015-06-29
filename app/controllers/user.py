@@ -38,14 +38,14 @@ def static(filepath):
 @user_app.route('/', apply=[view('user')])
 def index(db):
     users = db.query(User)
-    return {'users' : users, 'get_url': user_app.get_url}
+    return {'users': users, 'get_url': user_app.get_url}
 
 
 @user_app.route('/:name', apply=[view('user_view')])
 def user(db, name):
-    user = db.query(User).filter_by(name=name).first()
-    if user:
-       return {'user' : user, 'get_url': user_app.get_url}
+    this_user = db.query(User).filter_by(name=name).first()
+    if this_user:
+        return {'user': this_user, 'get_url': user_app.get_url}
     return HTTPError(404, 'User not found.')
 
 
@@ -54,6 +54,5 @@ def add(db):
     fake = Faker()
     db.add(User(fake.user_name(), fullname=fake.name(), password=fake.sha1()))
     redirect("/user/")
-    
-    
-    
+
+
