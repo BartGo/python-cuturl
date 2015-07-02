@@ -1,4 +1,8 @@
 
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\n\t'
+
 # --- cloning
 # cd /x/
 # git clone https://github.com/bartgo/bottle-cuturl MYREPO
