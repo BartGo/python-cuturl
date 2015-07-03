@@ -10,8 +10,8 @@ VENV_USED=0
 VENV_NAME="bottle-cuturl"
 
 # Consider: pip install --user --upgrade *
-pip install --upgrade pip
-pip install --upgrade bumpversion
+#pip install --upgrade pip
+#pip install --upgrade bumpversion
 
 if [ $VENV_USED -eq 1 ]; then
   pip install --upgrade virtualenv

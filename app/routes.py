@@ -2,13 +2,11 @@
 from bottle import Bottle
 
 from .controllers.home import home_app
-from .controllers.user import user_app
-from .controllers.about import about_app
+from .controllers.list import list_app
+#from .controllers.about import about_app
 
 
 Routes = Bottle()
-# App to render / (home)
-Routes.merge(home_app)
-# Mount other applications
-Routes.mount("/user", user_app)
-Routes.mount("/about", about_app)
+Routes.merge(home_app) 
+Routes.mount("/list", list_app) 
+#Routes.mount("/about", about_app)

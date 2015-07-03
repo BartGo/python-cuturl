@@ -2,15 +2,14 @@
 from bottle import Bottle, SimpleTemplate as Template, view, redirect, HTTPError, static_file
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
-from faker import Faker
 
 from ..models import engine
-from ..models.users import User
+from ..models.link import Link
 
 from .. import settings
 
 # User application
-user_app = Bottle()
+list_app = Bottle()
 
 # Bottle Plugin
 SQLAlchemyBase = declarative_base()
@@ -23,10 +22,10 @@ plugin = sqlalchemy.Plugin(
     commit=settings.SQA_COMMIT,
     use_kwargs=settings.SQA_USE_KWARGS
 )
-user_app.install(plugin) 
+list_app.install(plugin) 
    
 
-@user_app.route('/assets/<filepath:path>', name='assets')
+@list_app.route('/assets/<filepath:path>', name='assets')
 def static(filepath):
     print filepath
     return static_file(filepath, root=settings.STATIC_PATH)
@@ -35,24 +34,23 @@ def static(filepath):
 # You can not use two separate decorators route and view due to Bottle issues 
 # like https://github.com/bottlepy/bottle/issues/207 - below recommended workaround
 
-@user_app.route('/', apply=[view('user')])
+@list_app.route('/', apply=[view('list')])
 def index(db):
-    users = db.query(User)
-    return {'users': users, 'get_url': user_app.get_url}
+    links = db.query(Link)
+    return {'links': links, 'get_url': list_app.get_url}
 
 
-@user_app.route('/:name', apply=[view('user_view')])
-def user(db, name):
-    this_user = db.query(User).filter_by(name=name).first()
-    if this_user:
-        return {'user': this_user, 'get_url': user_app.get_url}
-    return HTTPError(404, 'User not found.')
+@list_app.route('/:name', apply=[view('single')])
+def link(db, url):
+    this_link = db.query(Link).filter_by(url=url).first()
+    if this_link:
+        return {'link': this_link, 'get_url': list_app.get_url}
+    return HTTPError(404, 'Link not found.')
 
 
-@user_app.route('/add')
+@list_app.route('/add')
 def add(db):
-    fake = Faker()
-    db.add(User(fake.user_name(), fullname=fake.name(), password=fake.sha1()))
-    redirect("/user/")
+    db.add(Link(url="test-url", description="test-descr", create_date="test-date"))
+    redirect("/list/")
 
 
