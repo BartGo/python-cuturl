@@ -6,17 +6,19 @@
 <thead>
 <tr>
 <th>URL</th>
+<th>Slug</th>
 <th>Description</th>
-<th>Create Date</th>
+<th>Create Time</th>
 </tr>
 </thead>
 % for link in links:
 	<tr>
-            <td><a href="/link/{{ link.url }}">{{ link.url }}</a></td>
+            <td><a href="/list/{{ link.slug }}">{{ link.slug }}</a></td>
+            <td>{{ link.slug }}</td>
             <td>{{ link.description }}</td>
-            <td>{{ link.create_date }}</td>
+            <td>{{ link.create_time }}</td>
         </tr>
 % end
 </table>
 
-<a href="/link/add">Add</a>
+<a href="/list/add">Add</a>

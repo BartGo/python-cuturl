@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from faker import Factory
+from slugify import slugify
 from bottle import Bottle, SimpleTemplate as Template, view, redirect, HTTPError, static_file
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
@@ -7,6 +9,8 @@ from ..models import engine
 from ..models.link import Link
 
 from .. import settings
+
+import datetime
 
 # User application
 list_app = Bottle()
@@ -40,9 +44,9 @@ def index(db):
     return {'links': links, 'get_url': list_app.get_url}
 
 
-@list_app.route('/:name', apply=[view('single')])
-def link(db, url):
-    this_link = db.query(Link).filter_by(url=url).first()
+@list_app.route('/:slug', apply=[view('single')])
+def link(db, slug):
+    this_link = db.query(Link).filter_by(slug=slug).first()
     if this_link:
         return {'link': this_link, 'get_url': list_app.get_url}
     return HTTPError(404, 'Link not found.')
@@ -50,7 +54,9 @@ def link(db, url):
 
 @list_app.route('/add')
 def add(db):
-    db.add(Link(url="test-url", description="test-descr", create_date="test-date"))
+    faker = Factory.create()
+    url=faker.url()
+    db.add(Link(url=url, description=faker.text(), slug=slugify(url), create_time=faker.date_time()))
     redirect("/list/")
 
 

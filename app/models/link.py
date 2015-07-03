@@ -11,18 +11,21 @@ Base = declarative_base()
 class Link(Base):
     __tablename__ = 'link'
     id = Column(Integer, Sequence('link_id_seq'), primary_key=True)
-    url = Column(String(50))
-    description = Column(String(50))
+    url = Column(String(1000))
+    slug = Column(String(1000))
+    description = Column(String(1000))
     create_time = Column(DateTime)
 
-    def __init__(self, url, description, create_time):
+    def __init__(self, slug, url, description, create_time):
         self.url = url
+        self.slug = slug
         self.description = description
         self.create_time = create_time
 
     def __repr__(self):
-        return "<Link('%s','%s', '%s')>" % (self.url, self.description,
-                                            self.create_date)
+        return "<Link('%s','%s','%s', '%s')>" % (self.url, 
+                                                 self.slug, self.description,
+                                                 self.create_time)
 
 
 Link.metadata.create_all(engine)
