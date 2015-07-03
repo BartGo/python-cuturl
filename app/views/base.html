@@ -33,18 +33,42 @@
 		  		  
 	</head>
 	<body>
-        <div class="container">
 
-              <div class="row">
-                  <div class="one-third column"><a href="/" class="button">Home</a></div>
-                  <div class="one-third column"><a href="/user/" class="button">Users</a></div>
-                  <div class="one-third column"><a href="/about/" class="button">About</a></div>
-              </div>  
-        
-        </div>
-  
-        <div class="container">
+<div class="section hero">
+<form>
+  <div class="container">
+  <section class="header">
+  <h1 >Cuturl</h1>
+  </section>
+
+  <div class="row">
+      <div class="six columns">
+        <label>URL</label>
+        <input class="u-full-width" placeholder="http://www.google.com" id="url-input" type="url">
+      </div>
+      <div class="six columns">
+        <label>Comment</label>
+        <input class="u-full-width" placeholder="My favourite search engine" id="comment-input" type="text">
+      </div>
+    </div>
+    <div class="row">
+      <div class="one column">
+        <a href="/list/add" class="button button-primary">Shorten!</a>   
+     </div>
+    </div>
+  </div></form>
+
+  <div class="container">
+          <div class="row">
+              <div class="one-third column"><a href="/" class="button">Home</a></div>
+              <div class="one-third column"><a href="/list/" class="button">List</a></div>
+          </div>  
+  </div>
+  <div class="container">
                 {{!base}}
-        </div>      
-	</body>
+  </div>      
+
+</div> <!-- hero -->
+
+</body>
 </html>

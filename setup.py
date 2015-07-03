@@ -30,7 +30,9 @@ with open('README.rst') as readme:
             # 'Jinja2==2.7.3',
             # 'MarkupSafe==0.23',
             'requests==2.7.0',
-            'SQLAlchemy==1.0.6'
+            'SQLAlchemy==1.0.6',
+            'python-slugify==1.1.2',
+            'Unidecode==0.4.18'
         ],
         classifiers=(
             'Development Status :: 1 - Planning',

@@ -1,0 +1,25 @@
+% rebase('base.html', title='Link ' + link.url)
+
+<strong>Link {{ link.url }}</strong>
+
+<table>
+	<tr>
+		<td>URL</td>
+		<td>{{ link.url }}</td>
+	</tr>
+	<tr>
+		<td>Slug</td>
+		<td>{{ link.slug }}</td>
+	</tr>
+	<tr>
+		<td>Description</td>
+		<td>{{ link.description }}</td>
+	</tr>
+	<tr>
+		<td>Create Time</td>
+		<td>{{ link.create_time }}</td>
+	</tr>
+
+</table>
+
+<a href="/list/">Back</a>

@@ -10,8 +10,8 @@ VENV_USED=0
 VENV_NAME="bottle-cuturl"
 
 # Consider: pip install --user --upgrade *
-pip install --upgrade pip
-pip install --upgrade bumpversion
+#pip install --upgrade pip
+#pip install --upgrade bumpversion
 
 if [ $VENV_USED -eq 1 ]; then
   pip install --upgrade virtualenv
@@ -31,9 +31,9 @@ pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt 
 python nonpip-dl.py
 
 if [ $VENV_USED -eq 1 ]; then
-  echo "pew in $VENV_NAME python manage.py runserver --debug True" > devrun.sh
+  echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
 else
-  echo "python manage.py runserver --debug True" > devrun.sh
+  echo "python -B manage.py runserver --debug True" > devrun.sh
 fi
 echo ""
 echo "To start the app: devrun.sh"
