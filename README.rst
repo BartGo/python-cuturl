@@ -18,7 +18,6 @@ Running in development mode (prepare virtual environment and run the app inside)
     devinit.sh
     devrun.sh
 
-    
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
 
