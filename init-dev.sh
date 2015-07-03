@@ -1,14 +1,14 @@
 
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
-set -euo pipefail
-IFS=$'\n\t'
+#set -euo pipefail
+#IFS=$'\n\t'
 
 # --- cloning
 # cd /x/
 # git clone https://github.com/bartgo/bottle-cuturl MYREPO
 # cd MYREPO
 
-MY_VENV="ve-bc"
+MY_VENV="bottle-cuturl"
 
 echo "***"
 echo "Creating virtual environment $MY_VENV"
@@ -25,27 +25,34 @@ echo "Purge and recreate virtual environment..."
 pew rm     $MY_VENV
 pew new -d $MY_VENV
 echo ""
-echo "***"
-echo "New virtualenv $MY_VENV will be using:"
-pew in     $MY_VENV python --version
-pew in     $MY_VENV pip --version
-echo "***"
-echo ""
+#echo "***"
+#echo "New virtualenv $MY_VENV will be using:"
+#pew in     $MY_VENV python --version
+#pew in     $MY_VENV pip --version
+#echo "***"
+#echo ""
 
 echo "***"
 echo "Download requirements and keep downloaded packages..."
 echo "***"
 echo ""
+
+rm --recursive --force downloads
+rm --recursive --force lib
 mkdir -p downloads
+mkdir -p lib
 
 # FIX: below has some issues on cmd.exe (starts with a wrong path to txt files) while working fine with Git bash
-pew in $MY_VENV pip install --download downloads -r requirements-dev.txt
-pew in $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
+#pew in $MY_VENV pip install --download downloads -r requirements-dev.txt
+#pew in $MY_VENV pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
 
-echo ""
-echo "PipDepTree for $MY_VENV:"
-pew in $MY_VENV pipdeptree
-echo ""
+pip install --download downloads -r requirements-dev.txt
+pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt --target lib
+
+#echo ""
+#echo "PipDepTree for $MY_VENV:"
+#pew in $MY_VENV pipdeptree
+#echo ""
 
 echo "***"
 echo "Installing external components (non-Python)..."
@@ -68,6 +75,7 @@ rm -f downloads/Skeleton-2.0.4.zip
 
 echo ""
 echo "***"
+
 echo "pew in $MY_VENV python manage.py runserver --debug True" > pew-manage.sh
 echo "pew in $MY_VENV bumpversion patch"                       > pew-bump.sh
 echo "pew workon $MY_VENV"                                     > pew-shell.sh
