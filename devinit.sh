@@ -1,5 +1,4 @@
 # --- cloning
-# cd /x/
 # git clone https://github.com/bartgo/bottle-cuturl MYREPO
 # cd MYREPO
 
