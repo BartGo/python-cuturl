@@ -18,6 +18,8 @@ try:
 except IOError:
     pass
 
+sys.path.append("lib")
+    
 # my app-specific
 from app import settings
 from app.routes import Routes as application

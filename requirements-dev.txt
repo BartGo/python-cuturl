@@ -2,9 +2,8 @@
 
 # -- below are for dev environment only
 
-bumpversion==0.5.3
-pipdeptree==0.4.2
-
+# bumpversion==0.5.3
+# pipdeptree==0.4.2
 # argcomplete==0.8.8
 # binaryornot==0.3.0
 # cookiecutter==1.0.0

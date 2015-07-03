@@ -1,6 +1,9 @@
 """Download external components (non-Python)
 """
 
+import sys
+sys.path.append("lib")
+
 import requests
 import zipfile
 import os
