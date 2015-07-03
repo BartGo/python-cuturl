@@ -7,20 +7,19 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-MY_VENV="bottle-cuturl"
-
-echo "Upgrade tools..."
+VENV_USED=0
+VENV_NAME="bottle-cuturl"
 
 # Consider: pip install --user --upgrade *
 pip install --upgrade pip
-pip install --upgrade virtualenv
-pip install --upgrade pew
 pip install --upgrade bumpversion
 
-echo "Purge and recreate virtual environment..."
-pew rm     $MY_VENV
-pew new -d $MY_VENV
-echo ""
+if [ $VENV_USED -eq 1 ]; then
+  pip install --upgrade virtualenv
+  pip install --upgrade pew
+  pew rm     $VENV_NAME
+  pew new -d $VENV_NAME
+fi
 
 rm --recursive --force downloads
 rm --recursive --force lib
@@ -32,7 +31,11 @@ pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt 
 
 python nonpip-dl.py
 
-echo "pew in $MY_VENV python manage.py runserver --debug True" > pew-manage.sh
-echo "To start the app: pew-manage.sh"
-echo "To run (command): pew in $MY_VENV (command)"
+if [ $VENV_USED -eq 1 ]; then
+  echo "pew in $VENV_NAME python manage.py runserver --debug True" > devrun.sh
+else
+  echo "python manage.py runserver --debug True" > devrun.sh
+fi
+echo ""
+echo "To start the app: devrun.sh"
 echo ""
