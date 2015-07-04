@@ -35,7 +35,8 @@
 	<body>
 
 <div class="section hero">
-<form>
+
+<form action="/list/add" method="POST">
   <div class="container">
   <section class="header">
   <h1 >Cuturl</h1>
@@ -44,16 +45,16 @@
   <div class="row">
       <div class="six columns">
         <label>URL</label>
-        <input class="u-full-width" placeholder="http://www.google.com" id="url-input" type="url">
+        <input class="u-full-width" placeholder="http://www.google.com" name="url-input" type="url">
       </div>
       <div class="six columns">
         <label>Comment</label>
-        <input class="u-full-width" placeholder="My favourite search engine" id="comment-input" type="text">
+        <input class="u-full-width" placeholder="My favourite search engine" name="comment-input" type="text">
       </div>
     </div>
     <div class="row">
       <div class="one column">
-        <a href="/list/add" class="button button-primary">Shorten!</a>   
+        <input type="submit" class="button button-primary" name="save" value="Shorten!">
      </div>
     </div>
   </div></form>

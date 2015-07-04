@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from faker import Factory
 from slugify import slugify
-from bottle import Bottle, SimpleTemplate as Template, view, redirect, HTTPError, static_file
+from bottle import Bottle, SimpleTemplate as Template, view, redirect, HTTPError, static_file, request
 from bottle.ext import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -52,11 +51,17 @@ def link(db, slug):
     return HTTPError(404, 'Link not found.')
 
 
-@list_app.route('/add')
+@list_app.route('/add', method="POST")
 def add(db):
-    faker = Factory.create()
-    url=faker.url()
-    db.add(Link(url=url, description=faker.text(), slug=slugify(url), create_time=faker.date_time()))
+    if request.POST.get('url-input','').strip():
+       url = request.POST.get('url-input', '').strip()
+    else:
+       redirect("/list/")
+    if request.POST.get('comment-input','').strip():
+       description = request.POST.get('url-description', '').strip()
+    else:
+       description = ""
+    db.add(Link(url=url, description=description, slug=slugify(url), create_time=datetime.datetime.now()))
     redirect("/list/")
 
 
