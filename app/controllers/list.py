@@ -58,7 +58,7 @@ def add(db):
     else:
        redirect("/list/")
     if request.POST.get('comment-input','').strip():
-       description = request.POST.get('url-description', '').strip()
+       description = request.POST.get('comment-input', '').strip()
     else:
        description = ""
     db.add(Link(url=url, description=description, slug=slugify(url), create_time=datetime.datetime.now()))
