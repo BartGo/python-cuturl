@@ -4,9 +4,17 @@
 Bottle-cuturl
 =============
 
-A simple URL shortening app. Based on cookiecutter-bottle template.
+A simple favourites / URL shortening app in Python.
 
-Actually, it's not doing what it should do... yet.
+Based on:
+
+- `Bottle`_ (microframework)
+
+- SQLite (DB) with `SQLAlchemy`_ (ORM)
+
+- `cookiecutter-bottle`_ template
+
+Deployed to Heroku: http://fathomless-everglades-8154.herokuapp.com/
 
 Quickstart
 ----------
@@ -25,3 +33,6 @@ Running in development mode (prepare virtual environment and run the app inside)
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
      
+.. _cookiecutter-bottle: https://github.com/avelino/cookiecutter-bottle
+.. _bottle: http://bottlepy.org/docs/dev/index.html
+.. _sqlalchemy: http://www.sqlalchemy.org/
