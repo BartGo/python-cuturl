@@ -10,6 +10,8 @@ from ..models.link import Link
 from .. import settings
 
 import datetime
+import json
+import xmlrpclib
 
 # User application
 list_app = Bottle()
@@ -41,6 +43,17 @@ def static(filepath):
 def index(db):
     links = db.query(Link)
     return {'links': links, 'get_url': list_app.get_url}
+
+
+@list_app.route('/api')
+def api_list(db):
+    links = db.query(Link)
+    jlinks = { }
+    for link in links:
+        jlinks[link.slug] = { 'url' : link.url, 'description' : link.description, 'create_time' : str(link.create_time) }
+    j = json.dumps(jlinks)
+    #x = (xmlrpclib.dumps(jlinks))
+    return {'links': j}
 
 
 @list_app.route('/:slug', apply=[view('single')])
