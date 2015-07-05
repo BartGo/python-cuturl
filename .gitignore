@@ -1,8 +1,5 @@
 devrun.sh
 data/
-app/assets/jquery/
-app/assets/skeletoncss/
-app/static/
 .idea/
 
 # Byte-compiled / optimized / DLL files

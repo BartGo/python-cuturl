@@ -28,8 +28,6 @@ mkdir -p lib
 pip install --download downloads -r requirements-dev.txt
 pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt --target lib
 
-python nonpip-dl.py
-
 if [ $VENV_USED -eq 1 ]; then
   echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
 else
