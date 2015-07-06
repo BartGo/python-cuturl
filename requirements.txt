@@ -1,3 +1,9 @@
-# the dot takes requirements from setup.py
+# --no-index
+# --find-links deps/
 
+# the dot takes requirements from setup.py
+# editable mode:
+# -e .
+
+# non-editable mode:
 .
