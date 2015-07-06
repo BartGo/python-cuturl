@@ -10,7 +10,7 @@ Based on:
 
 - `Bottle`_ (microframework)
 
-- SQLite (DB) with `SQLAlchemy`_ (ORM)
+- SQLite (todo: move to PostgreSQL) with `SQLAlchemy`_ (ORM)
 
 - `cookiecutter-bottle`_ template
 
