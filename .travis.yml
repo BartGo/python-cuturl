@@ -19,17 +19,10 @@ matrix:
   - python: '3.2'
   - python: '3.3'
   fast_finish: true
-before_install:
-- sudo apt-get update -qq
-- sudo apt-get install -qq cowsay
 install:
 - pip install -r requirements-dev.txt
 script:
 - nosetests
-after_success:
-- cowsay "Build OK!"
-after_failure:
-- cowsay "Build failed!"
 # http://docs.travis-ci.com/user/deployment/heroku/
 # note: case of the repo name matters, workaround by correcting it in [travis] section of .git/config
 deploy:
@@ -37,5 +30,9 @@ deploy:
   api_key:
     secure: TiKEC1UKeG2/mUfJvBSsDVm8ju2IxvOn9td3pO83HMNzJtp+DtaCMpIO4YL03MOJ9WaMbtpkpEeovlSEAeIJ7v0xkbsLQtxmZDNPWJ/A0YX85+sE8RaQnWnVEDhLy9C+Pk4HyAkbl+lqZz7G79kbIq9TZnH+baop5fiq8PpCKiI=
   app: cuturl
-after_deploy:
-- cowsay "Deployed!"
+notifications:
+  email:
+    recipients:
+      - bartoszgo@gmail.com
+    on_success: always
+    on_failure: always
