@@ -23,15 +23,15 @@ install:
 - pip install -r requirements-dev.txt
 script:
 - nosetests
-# http://docs.travis-ci.com/user/deployment/heroku/
-# note: case of the repo name matters, workaround by correcting it in [travis] section of .git/config
 deploy:
   provider: heroku
-  api_key:
-    secure: "TiKEC1UKeG2/mUfJvBSsDVm8ju2IxvOn9td3pO83HMNzJtp+DtaCMpIO4YL03MOJ9WaMbtpkpEeovlSEAeIJ7v0xkbsLQtxmZDNPWJ/A0YX85+sE8RaQnWnVEDhLy9C+Pk4HyAkbl+lqZz7G79kbIq9TZnH+baop5fiq8PpCKiI="
 notifications:
   email:
     recipients:
       - bartoszgo@gmail.com
     on_success: always
     on_failure: always
+env:
+  global:
+    - secure: TiKEC1UKeG2/mUfJvBSsDVm8ju2IxvOn9td3pO83HMNzJtp+DtaCMpIO4YL03MOJ9WaMbtpkpEeovlSEAeIJ7v0xkbsLQtxmZDNPWJ/A0YX85+sE8RaQnWnVEDhLy9C+Pk4HyAkbl+lqZz7G79kbIq9TZnH+baop5fiq8PpCKiI=
+    
