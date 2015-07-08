@@ -47,7 +47,7 @@ def cmds():
 @click.option('--debug', default=False,
               help=u'Set application server debug!')
 def runserver(port, ip, debug):
-    click.echo('Start server at: {}:{}'.format(ip, port))
+    click.echo('Start server at: {0}:{1}'.format(ip, port))
     run(app=app, host=ip, port=port, debug=debug, reloader=debug)
 
 
@@ -56,8 +56,8 @@ def test():
     import unittest
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
-    testRunner = unittest.runner.TextTestRunner()
-    testRunner.run(tests)
+    test_runner = unittest.runner.TextTestRunner()
+    test_runner.run(tests)
 
 
 if __name__ == "__main__":
