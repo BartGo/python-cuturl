@@ -16,6 +16,7 @@
 # .
 
 # for the moment it "duplicates" information from setup.py, need to understand if it is fine
+
 Beaker==1.7.0
 bottle==0.12.8
 bottle-sqlalchemy==0.4.2

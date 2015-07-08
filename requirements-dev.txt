@@ -2,6 +2,9 @@
 
 # -- below are for dev environment only
 
+tox
+nose
+
 # WebTest==2.0.18
 
 # bumpversion==0.5.3

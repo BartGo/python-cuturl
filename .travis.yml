@@ -25,13 +25,12 @@ env:
   global:
   - CUTURL_DEBUG="True"
 script:
-- nosetests
+- nosetests tests
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
   provider: heroku
-  api_key:
-    secure: "TiKEC1UKeG2/mUfJvBSsDVm8ju2IxvOn9td3pO83HMNzJtp+DtaCMpIO4YL03MOJ9WaMbtpkpEeovlSEAeIJ7v0xkbsLQtxmZDNPWJ/A0YX85+sE8RaQnWnVEDhLy9C+Pk4HyAkbl+lqZz7G79kbIq9TZnH+baop5fiq8PpCKiI="
+  api_key: "2f46b01d-ef8a-475b-a47b-0079246596d2"
   app: cuturl
   on:
     repo: BartGo/bottle-cuturl

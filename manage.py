@@ -16,7 +16,6 @@ from beaker.middleware import SessionMiddleware
 from app import settings
 from app.routes import Routes
 
-
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
 session_opts = {
     'session.type': 'file',
