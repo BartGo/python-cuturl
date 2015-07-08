@@ -21,6 +21,11 @@ matrix:
   fast_finish: true
 install:
 - pip install -r requirements-dev.txt
+env:
+  global:
+  - CUTURL_DEBUG="True"
+script:
+- nosetests
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
@@ -28,10 +33,10 @@ deploy:
   api_key:
     secure: "TiKEC1UKeG2/mUfJvBSsDVm8ju2IxvOn9td3pO83HMNzJtp+DtaCMpIO4YL03MOJ9WaMbtpkpEeovlSEAeIJ7v0xkbsLQtxmZDNPWJ/A0YX85+sE8RaQnWnVEDhLy9C+Pk4HyAkbl+lqZz7G79kbIq9TZnH+baop5fiq8PpCKiI="
   app: cuturl
+  on:
+    repo: BartGo/bottle-cuturl
   run:
   - restart
-script:
-- nosetests
 notifications:
   email:
     recipients:
