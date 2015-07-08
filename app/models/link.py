@@ -5,10 +5,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from ..models import engine
 
 
-Base = declarative_base()
+base = declarative_base()
 
 
-class Link(Base):
+class Link(base):
     __tablename__ = 'link'
     id = Column(Integer, Sequence('link_id_seq'), primary_key=True)
     url = Column(String(1000))
@@ -23,9 +23,7 @@ class Link(Base):
         self.create_time = create_time
 
     def __repr__(self):
-        return "<Link('%s','%s','%s', '%s')>" % (self.url, 
-                                                 self.slug, self.description,
-                                                 self.create_time)
-
-
+        repr = "<Link('{0}', '{1}', '{2}', '{3}')>".format(self.url, self.slug, self.description, self.create_time)
+        return repr
+        
 Link.metadata.create_all(engine)
