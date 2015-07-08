@@ -1,4 +1,3 @@
-# http://docs.travis-ci.com/user/customizing-the-build/
 language: python
 matrix:
   include:
@@ -30,11 +29,12 @@ before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
   provider: heroku
-  api_key: "2f46b01d-ef8a-475b-a47b-0079246596d2"
+  api_key:
+    secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
   app: fathomless-everglades-8154
 notifications:
   email:
     recipients:
-      - bartoszgo@gmail.com
+    - bartoszgo@gmail.com
     on_success: always
     on_failure: always
