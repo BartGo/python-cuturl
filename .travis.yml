@@ -31,8 +31,6 @@ before_deploy:
 deploy:
   provider: heroku
   api_key: "2f46b01d-ef8a-475b-a47b-0079246596d2"
-  on:
-    repo: BartGo/bottle-cuturl
   run:
   - restart
 notifications:
