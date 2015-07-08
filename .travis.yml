@@ -22,7 +22,7 @@ matrix:
 install:
 - pip install -r requirements-dev.txt
 before_deploy:
-  export PATH="$PATH:$HOME/.local/bin"
+- export PATH="$PATH:$HOME/.local/bin"
 deploy:
   provider: heroku
   api_key:
