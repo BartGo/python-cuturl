@@ -16,7 +16,10 @@ Based on:
 
 - `cookiecutter-bottle`_ template
 
-Deployed to Heroku: http://fathomless-everglades-8154.herokuapp.com/
+Works with Travis CI. Successfull builds are deployed to Heroku:
+http://fathomless-everglades-8154.herokuapp.com/
+
+Codeship integration in progress.
 
 Quickstart
 ----------
