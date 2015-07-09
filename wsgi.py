@@ -12,13 +12,14 @@ def show_var(name):
         print name + " = " + os.environ[""+name+""]
     except:
         print name + " : not found"
+        pass
     return
 print "*** openshift environment variables:"
 show_var('OPENSHIFT_PYTHON_VERSION')
 show_var('PYTHON_EGG_CACHE')
 show_var('OPENSHIFT_PYTHON_DIR')
 show_var('OPENSHIFT_HOMEDIR')
-show_var('PATH_INFO')
+#show_var('PATH_INFO')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
     print "*** succeeded venv activation: " + virtualenv 
