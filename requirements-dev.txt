@@ -1,11 +1,5 @@
 -r requirements.txt
 
-# -- below are for dev environment only
-
-tox
-nose
-bumpversion==0.5.3
-
 # WebTest==2.0.18
 # pipdeptree==0.4.2
 # argcomplete==0.8.8

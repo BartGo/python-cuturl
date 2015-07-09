@@ -6,10 +6,12 @@ VENV_USED=1
 VENV_NAME="bottle-cuturl"
 
 pip install --upgrade pip
-pip install --upgrade virtualenv
 pip install --upgrade pew
-pip install --upgrade vex
-pip install --upgrade bumpversion
+#pip install --upgrade virtualenv
+#pip install --upgrade vex
+#pip install --upgrade tox
+#pip install --upgrade bumpversion
+#pip install --upgrade nose
 
 if [ $VENV_USED -eq 1 ]; then
   pew rm     $VENV_NAME
@@ -24,7 +26,7 @@ mkdir -p lib
 pew in $VENV_NAME pip install --download downloads -r requirements-dev.txt
 pew in $VENV_NAME pip install --upgrade --no-index --find-links=downloads -r requirements-dev.txt
 
-# Disputable, do not install into venv but into ./lib
+# Disputable, maybe better to not into venv but into ./lib
 # pip install --upgrade --no-index --find-links=downloads -r \
 #     requirements-dev.txt --target lib
 

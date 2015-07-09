@@ -17,12 +17,11 @@ matrix:
   - python: '2.6'
   - python: '3.2'
   - python: '3.3'
+  - python: '3.4'
+  - python: 'pypy'
   fast_finish: true
 install:
 - pip install -r requirements-dev.txt
-env:
-  global:
-  - CUTURL_DEBUG="True"
 script:
 - nosetests tests
 before_deploy:
@@ -36,5 +35,5 @@ notifications:
   email:
     recipients:
     - bartoszgo@gmail.com
-    on_success: always
-    on_failure: always
+    on_success: change
+    on_failure: change
