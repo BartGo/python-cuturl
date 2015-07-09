@@ -19,6 +19,7 @@ show_evar('OPENSHIFT_PYTHON_VERSION')
 show_evar('PYTHON_EGG_CACHE')
 show_evar('OPENSHIFT_PYTHON_DIR')
 show_evar('OPENSHIFT_HOMEDIR')
+show_evar('VIRTUAL_ENV')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
     print "*** succeeded venv activation: " + virtualenv 
@@ -27,7 +28,6 @@ except IOError:
     pass
 sys.path.append("lib")
 from app import settings
-print "*** app environment variables:"
 print "*** config variables:"
 settings.SQA_DBENGINE="sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
 print settings.PROJECT_PATH

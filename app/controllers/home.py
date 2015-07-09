@@ -9,7 +9,7 @@ home_app = Bottle()
 def static(filepath):
     return static_file(filepath, root=settings.STATIC_PATH)
     
-@home_app.route('/', apply=[view('index')])
+@home_app.route('/', apply=[view('index.html')])
 def index():
   return {'get_url': home_app.get_url}
   

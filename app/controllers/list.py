@@ -39,7 +39,7 @@ def static(filepath):
 # You can not use two separate decorators route and view due to Bottle issues 
 # like https://github.com/bottlepy/bottle/issues/207 - below recommended workaround
 
-@list_app.route('/', apply=[view('list')])
+@list_app.route('/', apply=[view('list.html')])
 def index(db):
     links = db.query(Link)
     return {'links': links, 'get_url': list_app.get_url}
@@ -56,7 +56,7 @@ def api_list(db):
     return {'links': j}
 
 
-@list_app.route('/:slug', apply=[view('single')])
+@list_app.route('/:slug', apply=[view('single.html')])
 def link(db, slug):
     this_link = db.query(Link).filter_by(slug=slug).first()
     if this_link:
