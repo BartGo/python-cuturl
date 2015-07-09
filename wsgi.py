@@ -1,6 +1,10 @@
 #!/usr/bin/python
+
 import os
 import sys
+
+sys.path.append("lib")
+
 print "*** wsgi.py starting"
 virtenv                         = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'], 'virtenv')
 virtualenv                      = os.path.join(virtenv, 'bin/activate_this.py')
@@ -14,11 +18,13 @@ def show_evar(name):
         print name + " : not found"
         pass
     return
+
 print "*** openshift environment variables:"
 show_evar('OPENSHIFT_PYTHON_VERSION')
 show_evar('PYTHON_EGG_CACHE')
 show_evar('OPENSHIFT_PYTHON_DIR')
 show_evar('OPENSHIFT_HOMEDIR')
+show_evar('OPENSHIFT_REPODIR')
 show_evar('VIRTUAL_ENV')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
@@ -26,20 +32,21 @@ try:
 except IOError:
     print "*** failed venv activation: " + virtualenv 
     pass
-sys.path.append("lib")
+
 from app import settings
 print "*** config variables:"
 settings.SQA_DBENGINE="sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
-print "PROJECT PATH  = " + settings.PROJECT_PATH
+settings.TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'app', 'views')) 
+print "PROJECT_PATH  = " + settings.PROJECT_PATH
 print "TEMPLATE_PATH = " + settings.TEMPLATE_PATH 
 print "STATIC_PATH   = " + settings.STATIC_PATH
-print ""                 + str(settings.SQA_DBENGINE)
-print ""                 + str(settings.SQA_ECHO) 
-print ""                 + str(settings.SQA_KEYWORD) 
-print ""                 + str(settings.SQA_CREATE) 
-print ""                 + str(settings.SQA_COMMIT) 
-print ""                 + str(settings.SQA_USE_KWARGS)
-print "*** templates found:"
-os.listdir(settings.TEMPLATE_PATH)
+print "SQA_DBENGINE  = " + str(settings.SQA_DBENGINE)
+print "SQA_ECHO      = " + str(settings.SQA_ECHO)
+print "SQA_KEYWORD   = " + str(settings.SQA_KEYWORD)
+print "SQA_CREATE    = " + str(settings.SQA_CREATE) 
+print "SQA_COMMIT    = " + str(settings.SQA_COMMIT) 
+print "SQA_USE_KWARGS= " + str(settings.SQA_USE_KWARGS)
+print "BOTTLE TMPLTS = " + os.listdir(settings.TEMPLATE_PATH)
+
 from app.routes import Routes as application
 print "*** wsgi.py finished"
