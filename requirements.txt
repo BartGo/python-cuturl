@@ -10,10 +10,10 @@
 
 # the dot takes requirements from setup.py
 # editable mode:
-# -e .
+-e .
 
 # non-editable mode:
-.
+# .
 
 # for the moment it "duplicates" information from setup.py, need to understand if it is fine
 
