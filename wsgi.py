@@ -1,25 +1,39 @@
 #!/usr/bin/python
 import os
 import sys
-
-sys.path.insert(0, os.path.dirname(__file__) or '.')
-
-PY_DIR = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], "python")
-
-virtenv = PY_DIR + '/venv/'
-
-PY_CACHE = os.path.join(virtenv, 'lib', os.environ['OPENSHIFT_PYTHON_VERSION'], 'site-packages')
-
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(PY_CACHE)
+print "*** wsgi.py starting"
+py_version = os.environ['OPENSHIFT_PYTHON_VERSION']
+py_cache  = os.path.join(virtenv, 'lib', py_version, 'site-packages')
+os.environ['PYTHON_EGG_CACHE'] = os.path.join(py_cache)
+def show_var(name):
+    print name + " = " + os.environ[""+name""]
+    return
+print "*** openshift environment variables:"
+show_var('OPENSHIFT_PYTHON_VERSION')
+show_var('PYTHON_EGG_CACHE')
+show_var('OPENSHIFT_PYTHON_DIR')
+show_var('OPENSHIFT_HOMEDIR')
+show_var('PATH_INFO')
+virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-
 try:
-    exec(open(virtualenv).read(), dict(__file__=virtualenv))
+    execfile(virtualenv, dict(__file__=virtualenv))
+    print "*** succeeded venv activation: " + virtualenv 
 except IOError:
+    print "*** failed venv activation: " + virtualenv 
     pass
-
 sys.path.append("lib")
-    
-# my app-specific
 from app import settings
 from app.routes import Routes as application
+print "*** app environment variables:"
+show_var('PROJECT_PATH')
+show_var('TEMPLATE_PATH') 
+show_var('STATIC_PATH')
+os.environ['SQA_DBENGINE']=os.path.join(os.environ['OPENSHIFT_HOMEDIR'], 'data', 'sqlite.db') 
+show_var('SQA_DBENGINE') # 'sqlite:///data//sqlite.db'
+show_var('SQA_ECHO') 
+show_var('SQA_KEYWORD') 
+show_var('SQA_CREATE') 
+show_var('SQA_COMMIT') 
+show_var('SQA_USE_KWARGS')
+print "*** wsgi.py finished"

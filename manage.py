@@ -58,6 +58,17 @@ def test():
     test_runner = unittest.runner.TextTestRunner()
     test_runner.run(tests)
 
+    
+@cmds.command()
+@click.option('--db', default='data/sqlite.db', type=str,
+              help=u'Set path for the db to remove!')
+def rmsqlitedb(db):
+    try:
+        os.remove(db)
+        click.echo('Removed {0}!'.format(db))
+    except OSError:
+        click.echo('Not possible to remove, {0} not found!'.format(db))
+        pass
 
 if __name__ == "__main__":
     cmds()
