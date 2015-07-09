@@ -36,7 +36,7 @@ def show_pvar(name):
         pass
     return
 print "*** config variables:"
-os.environ['SQA_DBENGINE']=os.path.join(os.environ['OPENSHIFT_HOMEDIR'], 'data', 'sqlite.db') 
+SQA_DBENGINE=os.environ["OPENSHIFT_DATA_DIR"]
 show_pvar('PROJECT_PATH')
 show_pvar('TEMPLATE_PATH') 
 show_pvar('STATIC_PATH')
