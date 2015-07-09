@@ -28,23 +28,16 @@ except IOError:
 sys.path.append("lib")
 from app import settings
 print "*** app environment variables:"
-def show_pvar(name):
-    try:
-        print name + " = " + os.environ[""+name+""]
-    except:
-        print name + " : not found"
-        pass
-    return
 print "*** config variables:"
 SQA_DBENGINE=os.environ["OPENSHIFT_DATA_DIR"]
-show_pvar('PROJECT_PATH')
-show_pvar('TEMPLATE_PATH') 
-show_pvar('STATIC_PATH')
-show_pvar('SQA_DBENGINE') # 'sqlite:///data//sqlite.db'
-show_pvar('SQA_ECHO') 
-show_pvar('SQA_KEYWORD') 
-show_pvar('SQA_CREATE') 
-show_pvar('SQA_COMMIT') 
-show_pvar('SQA_USE_KWARGS')
+print PROJECT_PATH
+print TEMPLATE_PATH 
+print STATIC_PATH
+print SQA_DBENGINE # 'sqlite:///data//sqlite.db'
+print SQA_ECHO 
+print SQA_KEYWORD 
+print SQA_CREATE 
+print SQA_COMMIT 
+print SQA_USE_KWARGS
 from app.routes import Routes as application
 print "*** wsgi.py finished"
