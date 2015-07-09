@@ -30,14 +30,14 @@ from app import settings
 print "*** app environment variables:"
 print "*** config variables:"
 SQA_DBENGINE=os.environ["OPENSHIFT_DATA_DIR"]
-print PROJECT_PATH
-print TEMPLATE_PATH 
-print STATIC_PATH
-print SQA_DBENGINE # 'sqlite:///data//sqlite.db'
-print SQA_ECHO 
-print SQA_KEYWORD 
-print SQA_CREATE 
-print SQA_COMMIT 
-print SQA_USE_KWARGS
+print settings.PROJECT_PATH
+print settings.TEMPLATE_PATH 
+print settings.STATIC_PATH
+print settings.SQA_DBENGINE # 'sqlite:///data//sqlite.db'
+print settings.SQA_ECHO 
+print settings.SQA_KEYWORD 
+print settings.SQA_CREATE 
+print settings.SQA_COMMIT 
+print settings.SQA_USE_KWARGS
 from app.routes import Routes as application
 print "*** wsgi.py finished"
