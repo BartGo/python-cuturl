@@ -2,9 +2,11 @@
 import os
 import sys
 print "*** wsgi.py starting"
-py_version = os.environ['OPENSHIFT_PYTHON_VERSION']
-py_cache  = os.path.join(virtenv, 'lib', py_version, 'site-packages')
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(py_cache)
+virtenv                         = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
+virtualenv                      = os.path.join(virtenv, 'bin/activate_this.py')
+py_version                      = os.environ['OPENSHIFT_PYTHON_VERSION']
+py_cache                        = os.path.join(virtenv, 'lib', py_version, 'site-packages')
+os.environ['PYTHON_EGG_CACHE']  = os.path.join(py_cache)
 def show_var(name):
     print name + " = " + os.environ[""+name+""]
     return
@@ -14,8 +16,6 @@ show_var('PYTHON_EGG_CACHE')
 show_var('OPENSHIFT_PYTHON_DIR')
 show_var('OPENSHIFT_HOMEDIR')
 show_var('PATH_INFO')
-virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
-virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
     print "*** succeeded venv activation: " + virtualenv 
