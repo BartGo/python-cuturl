@@ -4,7 +4,6 @@
 
 tox
 nose
-bower.py
 bumpversion==0.5.3
 
 # WebTest==2.0.18
