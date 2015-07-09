@@ -33,12 +33,12 @@ settings.SQA_DBENGINE="sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"]
 print "PROJECT PATH  = " + settings.PROJECT_PATH
 print "TEMPLATE_PATH = " + settings.TEMPLATE_PATH 
 print "STATIC_PATH   = " + settings.STATIC_PATH
-print ""                 + settings.SQA_DBENGINE
-print ""                 + settings.SQA_ECHO 
-print ""                 + settings.SQA_KEYWORD 
-print ""                 + settings.SQA_CREATE 
-print ""                 + settings.SQA_COMMIT 
-print ""                 + settings.SQA_USE_KWARGS
+print ""                 + str(settings.SQA_DBENGINE)
+print ""                 + str(settings.SQA_ECHO) 
+print ""                 + str(settings.SQA_KEYWORD) 
+print ""                 + str(settings.SQA_CREATE) 
+print ""                 + str(settings.SQA_COMMIT) 
+print ""                 + str(settings.SQA_USE_KWARGS)
 print "*** templates found:"
 os.listdir(settings.TEMPLATE_PATH)
 from app.routes import Routes as application
