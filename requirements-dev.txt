@@ -1,5 +1,7 @@
 -r requirements.txt
 
+nose
+
 # WebTest==2.0.18
 # pipdeptree==0.4.2
 # argcomplete==0.8.8
