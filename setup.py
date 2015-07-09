@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from setuptools import setup, find_packages
 
 __appname__ = "Bottle-Cuturl"
