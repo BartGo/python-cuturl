@@ -5,6 +5,7 @@ import sys
 
 sys.path.append("lib")
 
+print ""
 print "*** wsgi.py starting"
 virtenv                         = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'], 'virtenv')
 virtualenv                      = os.path.join(virtenv, 'bin/activate_this.py')
@@ -24,7 +25,7 @@ show_evar('OPENSHIFT_PYTHON_VERSION')
 show_evar('PYTHON_EGG_CACHE')
 show_evar('OPENSHIFT_PYTHON_DIR')
 show_evar('OPENSHIFT_HOMEDIR')
-show_evar('OPENSHIFT_REPODIR')
+show_evar('OPENSHIFT_REPO_DIR')
 show_evar('VIRTUAL_ENV')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
@@ -34,7 +35,7 @@ except IOError:
     pass
 
 from app import settings
-print "*** config variables:"
+print "*** application config variables:"
 settings.SQA_DBENGINE  = "sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
 settings.TEMPLATE_PATH = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'app', 'views')
 print "PROJECT_PATH  = " + settings.PROJECT_PATH
@@ -46,7 +47,8 @@ print "SQA_KEYWORD   = " + str(settings.SQA_KEYWORD)
 print "SQA_CREATE    = " + str(settings.SQA_CREATE) 
 print "SQA_COMMIT    = " + str(settings.SQA_COMMIT) 
 print "SQA_USE_KWARGS= " + str(settings.SQA_USE_KWARGS)
-print "BOTTLE TMPLTS = " + os.listdir(settings.TEMPLATE_PATH)
-
+print "BOTTLE TMPLTS = ", 
+print os.listdir(settings.TEMPLATE_PATH)
+print "*** starting the application"
 from app.routes import Routes as application
 print "*** wsgi.py finished"
