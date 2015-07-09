@@ -35,6 +35,10 @@ Running in development mode (prepare virtual environment and run the app inside)
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
      
+.. image:: http://www.quantifiedcode.com/api/v1/project/74d7fde00d2d444b879a31e065589de7/badge.svg
+     :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
+     :alt: Code Issues
+
 .. _cookiecutter-bottle: https://github.com/avelino/cookiecutter-bottle
 .. _bottle: http://bottlepy.org/docs/dev/index.html
 .. _sqlalchemy: http://www.sqlalchemy.org/
