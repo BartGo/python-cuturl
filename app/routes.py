@@ -5,6 +5,7 @@ from .controllers.home import home_app
 from .controllers.list import list_app
 #from .controllers.about import about_app
 
+from . import settings
 
 Routes = Bottle()
 Routes.merge(home_app) 
