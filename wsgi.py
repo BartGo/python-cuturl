@@ -35,8 +35,8 @@ except IOError:
 
 from app import settings
 print "*** config variables:"
-settings.SQA_DBENGINE="sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
-settings.TEMPLATE_PATH.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'app', 'views')) 
+settings.SQA_DBENGINE  = "sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
+settings.TEMPLATE_PATH = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'app', 'views')
 print "PROJECT_PATH  = " + settings.PROJECT_PATH
 print "TEMPLATE_PATH = " + settings.TEMPLATE_PATH 
 print "STATIC_PATH   = " + settings.STATIC_PATH
