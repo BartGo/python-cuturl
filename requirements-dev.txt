@@ -4,10 +4,10 @@
 
 tox
 nose
+bower.py
+bumpversion==0.5.3
 
 # WebTest==2.0.18
-
-# bumpversion==0.5.3
 # pipdeptree==0.4.2
 # argcomplete==0.8.8
 # binaryornot==0.3.0
