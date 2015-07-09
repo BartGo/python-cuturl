@@ -29,7 +29,7 @@ sys.path.append("lib")
 from app import settings
 print "*** app environment variables:"
 print "*** config variables:"
-SQA_DBENGINE=os.environ["OPENSHIFT_DATA_DIR"]
+settings.SQA_DBENGINE=os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
 print settings.PROJECT_PATH
 print settings.TEMPLATE_PATH 
 print settings.STATIC_PATH
