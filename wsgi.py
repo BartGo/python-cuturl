@@ -8,7 +8,10 @@ py_version                      = os.environ['OPENSHIFT_PYTHON_VERSION']
 py_cache                        = os.path.join(virtenv, 'lib', py_version, 'site-packages')
 os.environ['PYTHON_EGG_CACHE']  = os.path.join(py_cache)
 def show_var(name):
-    print name + " = " + os.environ[""+name+""]
+    try:
+        print name + " = " + os.environ[""+name+""]
+    except:
+        print name + " : not found"
     return
 print "*** openshift environment variables:"
 show_var('OPENSHIFT_PYTHON_VERSION')
