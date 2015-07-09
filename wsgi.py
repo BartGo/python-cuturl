@@ -50,5 +50,10 @@ print "SQA_USE_KWARGS= " + str(settings.SQA_USE_KWARGS)
 print "BOTTLE TMPLTS = ", 
 print os.listdir(settings.TEMPLATE_PATH)
 print "*** starting the application"
+
+# http://bottlepy.org/docs/dev/deployment.html
+os.chdir(os.path.dirname(__file__))
 from app.routes import Routes as application
+
 print "*** wsgi.py finished"
+
