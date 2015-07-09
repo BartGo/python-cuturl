@@ -34,9 +34,14 @@ Running in development mode (prepare virtual environment and run the app inside)
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
 
+.. image:: https://codeship.com/projects/b9cd91a0-0880-0133-b16d-52c6dae51101/status?branch=master
+    :target: https://codeship.com/projects/90320
+    :alt: Codeship Status
+
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
+     
      
 .. image:: http://www.quantifiedcode.com/api/v1/project/74d7fde00d2d444b879a31e065589de7/badge.svg
      :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
