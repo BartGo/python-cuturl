@@ -28,16 +28,18 @@ script:
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
+- provider: openshift
+  user: bartoszgo@gmail.com
+  password:
+    secure: Am/FDRc7zKOVmuZ09SSsKCAVZXcFawx3yvre5XrzVlUWG0NaBwklmngUCUYKxIOLpObo3dVEkb5LwtKThDbddmN3Z16XcF3QbOu/NIWQXE9SvduDqMcf27C8VbMfwteYxxCpQVCfLE1py5n9i9rpH8rk50wMOoQP5s02VbjgB1I=
+  app: cuturl
+  domain: bartoszgo
+  on:
+    repo: BartGo/bottle-cuturl
 - provider: heroku
   api_key:
     secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
   app: fathomless-everglades-8154
-- provider: openshift
-  user: bartoszgo@gmail.com
-  password:
-    secure: Kur99g4TRisNxpYts5mRaXBuTQUbiPNMtY34LO5r8mzs5AXgcL864hBuiozgXU9XufO2khg56TjYbkrVGiO+eyxjwHItyTuNg3S1D2eLe43/T7LHg4kuiquO8OcX3EMiAJOPD2/3XWyDz2P2V5lW09ZiHTCtsXMs75wfkh1TBR4=
-  app: bottle-cuturl
-  domain: bartoszgo
 notifications:
   slack:
     secure: f3xEytXoPGc+7bkgvtG0wUUwQ/WHZhom0xbNyDdRBCQc8ec/PhLg14VTc7eCWwCMkT2j4mDwiLnofsetAsNwMaBzKvja261vqOEgTE4oxL6KNXN2vP/FoKaFDKcJFksEIwiwlk9Q8nMcUNZ/KV0ywNGtqJXvHI/gdKMa+SJTQII=
