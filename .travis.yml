@@ -28,14 +28,14 @@ script:
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
-  - provider: openshift
-    user: bartgo@gmail.com
-    password:
-      secure: JakfMpStlmP9NnQQRGJ+4uS1gQTGoI93nOZSKq99V53ki4zgpt3CamCjdOa6+l07op7ZlrO97v5TujfGxM2nEaUt69bK/tKrq+FSF8j6yeV04g4DbOmCxH3hxlLRHuV479ZigKv754SyoHwV/hHSC/ctzb3cbZUoToRpp7v17UM=
-    app: bottle-cuturl
-    domain: bartoszgo
-    on:
-      repo: BartGo/bottle-cuturl
+#  - provider: openshift
+#    user: bartgo@gmail.com
+#    password:
+#      secure: JakfMpStlmP9NnQQRGJ+4uS1gQTGoI93nOZSKq99V53ki4zgpt3CamCjdOa6+l07op7ZlrO97v5TujfGxM2nEaUt69bK/tKrq+FSF8j6yeV04g4DbOmCxH3hxlLRHuV479ZigKv754SyoHwV/hHSC/ctzb3cbZUoToRpp7v17UM=
+#    app: bottle-cuturl
+#    domain: bartoszgo
+#    on:
+#      repo: BartGo/bottle-cuturl
   - provider: heroku
     api_key:
       secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
