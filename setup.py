@@ -24,6 +24,7 @@ with open('README.rst') as readme:
                               "assets/skeletoncss/images/*.*",
                               "assets/jquery/js/*.*"]},
         install_requires=[
+            'cherrypy==3.8.0',
             'Beaker==1.7.0',
             'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.2',

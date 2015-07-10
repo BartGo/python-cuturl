@@ -15,6 +15,9 @@
 # non-editable mode:
 # .
 
+# remove duplicated
+cherrypy==3.6.0
+
 # travis seems to ignore the dot convention and likes to have all requirements here
 
 #Beaker==1.7.0

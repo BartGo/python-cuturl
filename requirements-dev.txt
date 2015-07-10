@@ -1,6 +1,5 @@
 -r requirements.txt
 
-cherrypy==3.6.0
 nose
 
 # tox

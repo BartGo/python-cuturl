@@ -2,22 +2,25 @@
 
 import os
 import sys
-
 import wsgi
 from cherrypy import wsgiserver
 
 sys.path.append("lib")
+from app import settings
+
 
 print ""
 print "*** wsgi.py starting"
+
 virtenv                         = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'], 'virtenv')
 virtualenv                      = os.path.join(virtenv, 'bin/activate_this.py')
 py_version                      = os.environ['OPENSHIFT_PYTHON_VERSION']
 py_cache                        = os.path.join(virtenv, 'lib', py_version, 'site-packages')
 os.environ['PYTHON_EGG_CACHE']  = os.path.join(py_cache)
-wsgi_ip = os.environ["OPENSHIFT_PYTHON_IP"]
-wsgi_port = os.environ["OPENSHIFT_PYTHON_PORT"]
-wsgi_host = os.environ["OPENSHIFT_GEAR_DNS"]
+wsgi_ip                         = os.environ["OPENSHIFT_PYTHON_IP"]
+wsgi_port                       = os.environ["OPENSHIFT_PYTHON_PORT"]
+wsgi_host                       = os.environ["OPENSHIFT_GEAR_DNS"]
+
 def show_evar(name):
     try:
         print name + " = " + os.environ[""+name+""]
@@ -30,19 +33,18 @@ show_evar('PYTHON_EGG_CACHE')
 show_evar('OPENSHIFT_PYTHON_DIR')
 show_evar('OPENSHIFT_HOMEDIR')
 show_evar('OPENSHIFT_REPO_DIR')
-
 show_evar('OPENSHIFT_PYTHON_IP')
 show_evar('OPENSHIFT_PYTHON_PORT')
 show_evar('OPENSHIFT_GEAR_DNS')
-                             
 show_evar('VIRTUAL_ENV')
+
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
     print "*** succeeded venv activation: " + virtualenv 
 except IOError:
     print "*** failed venv activation: " + virtualenv 
+    exit()
 
-from app import settings
 print "*** application config variables:"
 settings.SQA_DBENGINE  = "sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
 settings.TEMPLATE_PATH = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'app', 'views')
@@ -57,7 +59,7 @@ print "SQA_COMMIT    = " + str(settings.SQA_COMMIT)
 print "SQA_USE_KWARGS= " + str(settings.SQA_USE_KWARGS)
 print "BOTTLE TMPLTS = ", 
 print os.listdir(settings.TEMPLATE_PATH)
-print "*** starting the application"
+print "*** application import"
 
 # http://bottlepy.org/docs/dev/deployment.html
 os.chdir(os.path.dirname(__file__))
@@ -73,7 +75,7 @@ from app.routes import Routes as application
 
 
 print "*** starting cherrypy wsgi server"
-server = wsgiserver.CherryPyWSGIServer((wsgi_ip, wsgi_port), application, server_name=wsgi_host)
+server = wsgiserver.CherryPyWSGIServer((wsgi_ip, int(wsgi_port)), application, server_name=wsgi_host)
 server.start()
 
 print "*** wsgi.py finished"
