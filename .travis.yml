@@ -36,7 +36,7 @@ deploy:
     user: bartoszgo@gmail.com
     password:
       secure: JakfMpStlmP9NnQQRGJ+4uS1gQTGoI93nOZSKq99V53ki4zgpt3CamCjdOa6+l07op7ZlrO97v5TujfGxM2nEaUt69bK/tKrq+FSF8j6yeV04g4DbOmCxH3hxlLRHuV479ZigKv754SyoHwV/hHSC/ctzb3cbZUoToRpp7v17UM=
-    app: bottle-cuturl
+    app: cuturl
     domain: bartoszgo
 notifications:
   email:
