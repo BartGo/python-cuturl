@@ -1,4 +1,5 @@
 language: python
+sudo: false
 matrix:
   include:
   - python: '2.6'
@@ -31,6 +32,9 @@ deploy:
   api_key:
     secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
   app: fathomless-everglades-8154
+# TODO
+# deploy:
+#   provider: openshift
 notifications:
   email:
     recipients:
