@@ -17,8 +17,6 @@ def show_evar(name):
         print name + " = " + os.environ[""+name+""]
     except:
         print name + " : not found"
-        pass
-    return
 
 print "*** openshift environment variables:"
 show_evar('OPENSHIFT_PYTHON_VERSION')
@@ -32,7 +30,6 @@ try:
     print "*** succeeded venv activation: " + virtualenv 
 except IOError:
     print "*** failed venv activation: " + virtualenv 
-    pass
 
 from app import settings
 print "*** application config variables:"
@@ -55,10 +52,13 @@ print "*** starting the application"
 os.chdir(os.path.dirname(__file__))
 from app.routes import Routes as application
 
-from wsgiref.simple_server import make_server
-httpd = make_server('localhost', 8051, application)
-# Wait for a single request, serve it and quit.
-httpd.handle_request()
+# --- an example from openshift 
+# from wsgiref.simple_server import make_server
+# httpd = make_server('localhost', 8051, application)
+# --- Wait for a single request, serve it and quit.
+# httpd.handle_request()
+
+httpd.serve_forever()
 
 print "*** wsgi.py finished"
 
