@@ -1,5 +1,6 @@
 -r requirements.txt
 
+cherrypy==3.6.0
 nose
 
 # WebTest==2.0.18
