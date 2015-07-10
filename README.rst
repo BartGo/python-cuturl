@@ -50,3 +50,9 @@ Running in development mode (prepare virtual environment and run the app inside)
 .. _cookiecutter-bottle: https://github.com/avelino/cookiecutter-bottle
 .. _bottle: http://bottlepy.org/docs/dev/index.html
 .. _sqlalchemy: http://www.sqlalchemy.org/
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/BartGo/bottle-cuturl/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
