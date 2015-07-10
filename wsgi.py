@@ -15,6 +15,9 @@ virtualenv                      = os.path.join(virtenv, 'bin/activate_this.py')
 py_version                      = os.environ['OPENSHIFT_PYTHON_VERSION']
 py_cache                        = os.path.join(virtenv, 'lib', py_version, 'site-packages')
 os.environ['PYTHON_EGG_CACHE']  = os.path.join(py_cache)
+wsgi_ip = os.environ["OPENSHIFT_PYTHON_IP"]
+wsgi_port = os.environ["OPENSHIFT_PYTHON_PORT"]
+wsgi_host = os.environ["OPENSHIFT_GEAR_DNS"]
 def show_evar(name):
     try:
         print name + " = " + os.environ[""+name+""]
@@ -68,7 +71,9 @@ from app.routes import Routes as application
 # httpd.serve_forever()
 
 
-server = wsgiserver.CherryPyWSGIServer((ip, port), wsgi.application, server_name=host_name)
+
+print "*** starting cherrypy wsgi server"
+server = wsgiserver.CherryPyWSGIServer((wsgi_ip, wsgi_port), application, server_name=wsgi_host)
 server.start()
 
 print "*** wsgi.py finished"
