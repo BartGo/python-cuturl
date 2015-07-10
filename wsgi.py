@@ -17,8 +17,6 @@ def show_evar(name):
         print name + " = " + os.environ[""+name+""]
     except:
         print name + " : not found"
-        pass
-    return
 
 print "*** openshift environment variables:"
 show_evar('OPENSHIFT_PYTHON_VERSION')
@@ -32,7 +30,6 @@ try:
     print "*** succeeded venv activation: " + virtualenv 
 except IOError:
     print "*** failed venv activation: " + virtualenv 
-    pass
 
 from app import settings
 print "*** application config variables:"
