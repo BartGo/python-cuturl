@@ -3,6 +3,9 @@
 import os
 import sys
 
+import wsgi
+from cherrypy import wsgiserver
+
 sys.path.append("lib")
 
 print ""
@@ -24,6 +27,11 @@ show_evar('PYTHON_EGG_CACHE')
 show_evar('OPENSHIFT_PYTHON_DIR')
 show_evar('OPENSHIFT_HOMEDIR')
 show_evar('OPENSHIFT_REPO_DIR')
+
+show_evar('OPENSHIFT_PYTHON_IP')
+show_evar('OPENSHIFT_PYTHON_PORT')
+show_evar('OPENSHIFT_GEAR_DNS')
+                             
 show_evar('VIRTUAL_ENV')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
@@ -57,8 +65,11 @@ from app.routes import Routes as application
 # httpd = make_server('localhost', 8051, application)
 # --- Wait for a single request, serve it and quit.
 # httpd.handle_request()
+# httpd.serve_forever()
 
-httpd.serve_forever()
+
+server = wsgiserver.CherryPyWSGIServer((ip, port), wsgi.application, server_name=host_name)
+server.start()
 
 print "*** wsgi.py finished"
 
