@@ -1,3 +1,9 @@
+* 2015-07-13 17:41:02 +0200 - Tunings according to quantifiedcode.com suggestions
+* 2015-07-11 01:24:44 +0200 - Openshift?
+* 2015-07-11 01:19:04 +0200 - Openshift?
+* 2015-07-11 01:06:12 +0200 - Trying to fix Openshift... Almost there...
+* 2015-07-11 00:55:45 +0200 - Trying to fix Openshift...
+* 2015-07-11 00:44:09 +0200 - Introduced changelog based on `git log`. Restored user data in setup for Openshift.
 * 2015-07-10 23:52:12 +0200 - Bump version: 0.0.7 → 0.0.8
 * 2015-07-10 21:23:26 +0200 - Trying to fix Openshift...
 * 2015-07-10 21:18:11 +0200 - Openshift disabled
