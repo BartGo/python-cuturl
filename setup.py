@@ -29,6 +29,7 @@ with open('README.rst') as readme:
             'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.2',
             'click==4.0',
+            "configparser>=3.3.0",
             # 'importlib==1.0.3',  # needs to be added explicitely for OpenShift
             'requests==2.7.0',
             'SQLAlchemy==1.0.6',
