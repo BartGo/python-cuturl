@@ -7,7 +7,7 @@ from .controllers.list import list_app
 
 from . import settings
 
-Routes = Bottle()
-Routes.merge(home_app) 
-Routes.mount("/list", list_app) 
-#Routes.mount("/about", about_app)
+routes = Bottle()
+routes.merge(home_app) 
+routes.mount("/list", list_app) 
+#routes.mount("/about", about_app)

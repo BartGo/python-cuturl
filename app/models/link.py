@@ -23,7 +23,7 @@ class Link(base):
         self.create_time = create_time
 
     def __repr__(self):
-        repr = "<Link('{0}', '{1}', '{2}', '{3}')>".format(self.url, self.slug, self.description, self.create_time)
-        return repr
+        rpr = "<Link('{0}', '{1}', '{2}', '{3}')>".format(self.url, self.slug, self.description, self.create_time)
+        return rpr
         
 Link.metadata.create_all(engine)

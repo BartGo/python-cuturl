@@ -17,11 +17,11 @@ import xmlrpclib
 list_app = Bottle()
 
 # Bottle Plugin
-SQLAlchemyBase = declarative_base()
-SQLAlchemyBase.metadata.create_all(engine)
+sqa_base = declarative_base()
+sqa_base.metadata.create_all(engine)
 plugin = sqlalchemy.Plugin(
     engine,
-    SQLAlchemyBase.metadata,
+    sqa_base.metadata,
     keyword=settings.SQA_KEYWORD,
     create=settings.SQA_CREATE,
     commit=settings.SQA_COMMIT,

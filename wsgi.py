@@ -24,7 +24,7 @@ wsgi_host                       = os.environ["OPENSHIFT_GEAR_DNS"]
 def show_evar(name):
     try:
         print name + " = " + os.environ[""+name+""]
-    except:
+    except (IOError, OSError):
         print name + " : not found"
 
 print "*** openshift environment variables:"
