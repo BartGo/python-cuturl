@@ -20,7 +20,7 @@
 #Beaker==1.7.0
 #bottle==0.12.8
 #bottle-sqlalchemy==0.4.2
-#click==4.0
+#click==4.1
 ## importlib may be needed explicitely for OpenShift
 ## importlib==1.0.3
 #requests==2.7.0
