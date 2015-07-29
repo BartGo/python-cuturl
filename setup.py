@@ -32,9 +32,9 @@ with open('README.rst') as readme:
             "configparser>=3.3.0",
             # 'importlib==1.0.3',  # needs to be added explicitely for OpenShift
             'requests==2.7.0',
-            'SQLAlchemy==1.0.7',
+            'SQLAlchemy==1.0.8',
             'python-slugify==1.1.3',
-            'Unidecode==0.4.18'
+            'Unidecode==0.04.18'
         ],
         classifiers=(
             'Development Status :: 1 - Planning',
