@@ -34,7 +34,7 @@ with open('README.rst') as readme:
             'requests==2.7.0',
             'SQLAlchemy==1.0.8',
             'python-slugify==1.1.3',
-            'Unidecode==0.04.18'
+            'Unidecode==0.4.18'
         ],
         classifiers=(
             'Development Status :: 1 - Planning',
