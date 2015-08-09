@@ -14,7 +14,7 @@ from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware
 
 from app import settings
-from app.routes import Routes
+from app.routes import routes
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
 session_opts = {
@@ -25,7 +25,7 @@ session_opts = {
 app = SessionMiddleware(Bottle(), session_opts)
 
 # Bottle Routes
-app.wrap_app.merge(Routes)
+app.wrap_app.merge(routes)
 
 
 @app.wrap_app.route('/assets/<path:path>', name='assets')
