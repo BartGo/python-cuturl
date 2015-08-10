@@ -4,12 +4,16 @@
 # for openshift
 # -------------
 
-WSGI_DBG = 0
+WSGI_DBG = 1
 
 import os
 import sys
 import wsgi
 from cherrypy import wsgiserver
+
+# https://developers.openshift.com/en/python-getting-started.html#step4
+# hack to make sure we can load wsgi.py as a module in this class
+sys.path.insert(0, os.path.dirname(__file__))
 
 sys.path.append("lib")
 from app import settings
