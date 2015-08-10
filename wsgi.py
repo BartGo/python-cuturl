@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+# -------------
+# for openshift
+# -------------
+
+WSGI_DBG = 0
+
 import os
 import sys
 import wsgi
@@ -7,10 +13,6 @@ from cherrypy import wsgiserver
 
 sys.path.append("lib")
 from app import settings
-
-
-print ""
-print "*** wsgi.py starting"
 
 virtenv                         = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'], 'virtenv')
 virtualenv                      = os.path.join(virtenv, 'bin/activate_this.py')
@@ -27,39 +29,42 @@ def show_evar(name):
     except (IOError, OSError):
         print name + " : not found"
 
-print "*** openshift environment variables:"
-show_evar('OPENSHIFT_PYTHON_VERSION')
-show_evar('PYTHON_EGG_CACHE')
-show_evar('OPENSHIFT_PYTHON_DIR')
-show_evar('OPENSHIFT_HOMEDIR')
-show_evar('OPENSHIFT_REPO_DIR')
-show_evar('OPENSHIFT_PYTHON_IP')
-show_evar('OPENSHIFT_PYTHON_PORT')
-show_evar('OPENSHIFT_GEAR_DNS')
-show_evar('VIRTUAL_ENV')
+if WSGI_DBG == 1:
+  show_evar('OPENSHIFT_PYTHON_VERSION')
+  show_evar('PYTHON_EGG_CACHE')
+  show_evar('OPENSHIFT_PYTHON_DIR')
+  show_evar('OPENSHIFT_HOMEDIR')
+  show_evar('OPENSHIFT_REPO_DIR')
+  show_evar('OPENSHIFT_PYTHON_IP')
+  show_evar('OPENSHIFT_PYTHON_PORT')
+  show_evar('OPENSHIFT_GEAR_DNS')
+  show_evar('VIRTUAL_ENV')
 
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
-    print "*** succeeded venv activation: " + virtualenv 
+    # print "*** succeeded venv activation: " + virtualenv 
 except IOError:
     print "*** failed venv activation: " + virtualenv 
     exit()
 
-print "*** application config variables:"
+# print "*** application config variables:"
 settings.SQA_DBENGINE  = "sqlite:///"+os.path.join(os.environ["OPENSHIFT_DATA_DIR"], 'sqlite.db')
 settings.TEMPLATE_PATH = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'app', 'views')
-print "PROJECT_PATH  = " + settings.PROJECT_PATH
-print "TEMPLATE_PATH = " + settings.TEMPLATE_PATH 
-print "STATIC_PATH   = " + settings.STATIC_PATH
-print "SQA_DBENGINE  = " + str(settings.SQA_DBENGINE)
-print "SQA_ECHO      = " + str(settings.SQA_ECHO)
-print "SQA_KEYWORD   = " + str(settings.SQA_KEYWORD)
-print "SQA_CREATE    = " + str(settings.SQA_CREATE) 
-print "SQA_COMMIT    = " + str(settings.SQA_COMMIT) 
-print "SQA_USE_KWARGS= " + str(settings.SQA_USE_KWARGS)
-print "BOTTLE TMPLTS = ", 
-print os.listdir(settings.TEMPLATE_PATH)
-print "*** application import"
+
+if WSGI_DBG == 1:
+  print "PROJECT_PATH  = " + settings.PROJECT_PATH
+  print "TEMPLATE_PATH = " + settings.TEMPLATE_PATH 
+  print "STATIC_PATH   = " + settings.STATIC_PATH
+  print "SQA_DBENGINE  = " + str(settings.SQA_DBENGINE)
+  print "SQA_ECHO      = " + str(settings.SQA_ECHO)
+  print "SQA_KEYWORD   = " + str(settings.SQA_KEYWORD)
+  print "SQA_CREATE    = " + str(settings.SQA_CREATE) 
+  print "SQA_COMMIT    = " + str(settings.SQA_COMMIT) 
+  print "SQA_USE_KWARGS= " + str(settings.SQA_USE_KWARGS)
+  print "BOTTLE TMPLTS = ", 
+
+# print os.listdir(settings.TEMPLATE_PATH)
+# print "*** application import"
 
 # http://bottlepy.org/docs/dev/deployment.html
 os.chdir(os.path.dirname(__file__))
@@ -72,11 +77,10 @@ from app.routes import Routes as application
 # httpd.handle_request()
 # httpd.serve_forever()
 
+# print "*** starting cherrypy wsgi server"
 
-
-print "*** starting cherrypy wsgi server"
 server = wsgiserver.CherryPyWSGIServer((wsgi_ip, int(wsgi_port)), application, server_name=wsgi_host)
 server.start()
 
-print "*** wsgi.py finished"
+# print "*** wsgi.py finished"
 

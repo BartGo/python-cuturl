@@ -1,3 +1,7 @@
+* 2015-08-09 14:48:47 +0200 - fixed: "routes" is lowercase
+* 2015-07-29 15:32:58 +0200 - sqlalchemy -> 1.0.8
+* 2015-07-22 19:32:47 +0200 - sqlalchemy -> 1.0.7
+* 2015-07-14 01:56:22 +0200 - Create .noserc
 * 2015-07-13 17:41:02 +0200 - Tunings according to quantifiedcode.com suggestions
 * 2015-07-11 01:24:44 +0200 - Openshift?
 * 2015-07-11 01:19:04 +0200 - Openshift?

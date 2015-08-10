@@ -10,7 +10,7 @@ rm --recursive --force lib
 mkdir -p downloads
 mkdir -p lib
 
-# pip install --upgrade pip pew virtualenv vex bumpversion tox pylint
+pip install --upgrade pip pew virtualenv vex bumpversion tox pylint
 
 if [ $VENV_USED -eq 1 ]; then
   pew rm     $VENV_NAME
