@@ -68,7 +68,7 @@ if WSGI_DBG == 1:
 
 # http://bottlepy.org/docs/dev/deployment.html
 os.chdir(os.path.dirname(__file__))
-from app.routes import Routes as application
+from app.routes import routes as application
 
 # --- an example from openshift 
 # from wsgiref.simple_server import make_server
