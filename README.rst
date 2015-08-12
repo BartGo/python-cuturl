@@ -38,8 +38,8 @@ Running in development mode (prepare virtual environment and run the app inside)
     :target: https://codeship.com/projects/90320
     :alt: Codeship Status
 
-.. image:: https://drone.io/github.com/BartGo/bottle-stack/status.png
-    :target: https://drone.io/github.com/BartGo/bottle-stack/latest
+.. image:: https://drone.io/github.com/BartGo/bottle-cuturl/status.png
+    :target: https://drone.io/github.com/BartGo/bottle-cuturl/latest
     :alt: Drone.IO Status
 
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
