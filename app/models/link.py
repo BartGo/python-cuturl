@@ -10,7 +10,7 @@ base = declarative_base()
 
 class Link(base):
     __tablename__ = 'link'
-    id = Column(Integer, Sequence('link_id_seq'), primary_key=True)
+    link_id = Column(Integer, Sequence('link_id_seq'), primary_key=True)
     url = Column(String(1000))
     slug = Column(String(1000))
     description = Column(String(1000))
