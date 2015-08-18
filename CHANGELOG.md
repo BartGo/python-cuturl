@@ -1,3 +1,8 @@
+* 2015-08-18 17:45:38 +0200 - Create .crashreporter.cfg
+* 2015-08-17 15:49:12 +0200 - Renamed id to link_id in Models
+* 2015-08-17 15:19:02 +0200 - click -> 5.1
+* 2015-08-12 15:43:31 +0200 - Badge for drone.io.
+* 2015-08-10 23:35:35 +0200 - Routes to lowercase also in wsgi.py (Openshift)
 * 2015-08-10 22:54:03 +0200 - Bump version: 0.0.9 → 0.0.10
 * 2015-08-09 14:48:47 +0200 - fixed: "routes" is lowercase
 * 2015-07-29 15:32:58 +0200 - sqlalchemy -> 1.0.8
