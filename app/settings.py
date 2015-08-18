@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
 
+APP_NAME = 'bottle-cuturl'
+
 # Paths
 
 PROJECT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)))
@@ -15,4 +17,11 @@ SQA_KEYWORD = 'db'
 SQA_CREATE = True
 SQA_COMMIT = True
 SQA_USE_KWARGS = False
+
+# Crashreporter
+
+from crashreporter import CrashReporter
+cr = CrashReporter(report_dir='~/crashreporter/', check_interval=10, config='./.crashreporter.cfg')
+cr.application_name = APP_NAME
+cr.application_version = '0.0.10' # bumpversion updates that
 
