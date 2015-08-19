@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 VENV_USED=1
-VENV_NAME="bottle-cuturl"
+VENV_NAME=${PWD##*/}
 
 rm --recursive --force downloads
 rm --recursive --force lib
