@@ -34,6 +34,9 @@ Running in development mode (prepare virtual environment and run the app inside)
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
 
+.. image:: https://semaphoreci.com/api/v1/projects/82f94cd9-6144-4e99-966e-649ca567a603/531764/badge.svg
+    :target: https://semaphoreci.com/bartgo/bottle-cuturl
+
 .. image:: https://codeship.com/projects/b9cd91a0-0880-0133-b16d-52c6dae51101/status?branch=master
     :target: https://codeship.com/projects/90320
     :alt: Codeship Status
@@ -42,14 +45,15 @@ Running in development mode (prepare virtual environment and run the app inside)
     :target: https://drone.io/github.com/BartGo/bottle-cuturl/latest
     :alt: Drone.IO Status
 
+
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
      
-     
 .. image:: http://www.quantifiedcode.com/api/v1/project/74d7fde00d2d444b879a31e065589de7/badge.svg
      :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
      :alt: Code Issues
+
 
 .. _cookiecutter-bottle: https://github.com/avelino/cookiecutter-bottle
 .. _bottle: http://bottlepy.org/docs/dev/index.html
