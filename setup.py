@@ -4,6 +4,8 @@ __appname__ = "Bottle-Cuturl"
 __description__ = "A simple URL Shortener"
 __version__ = "0.0.12"
 __repository__ = "http://github.com/bartgo/bottle-cuturl"
+__tarball__ = "https://github.com/bartgo/bottle-cuturl/tarball/v0.0.12"
+
 
 with open('README.rst') as readme:
     setup(
@@ -17,6 +19,7 @@ with open('README.rst') as readme:
         license="MIT",
         keywords="url shortener python bottle",
         url=__repository__,
+        download_url = __tarball__,
         packages=find_packages(),
         package_data={'app': ["views/*.*",
                               "assets/skeletoncss/index.html",
