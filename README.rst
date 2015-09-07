@@ -31,6 +31,19 @@ Running in development mode (prepare virtual environment and run the app inside)
     devinit.sh
     devrun.sh
 
+How am I releasing this to PyPi:
+
+.. code-block:: bash
+
+    bumpversion patch
+    git add .
+    git commit -m "Bump version: x.x.x → y.y.y"
+    git tag vy.y.y
+    git push
+    git push --tags
+    python setup.py register
+    # python setup.py sdist upload 
+
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
 
