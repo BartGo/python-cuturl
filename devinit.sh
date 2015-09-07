@@ -5,21 +5,18 @@ IFS=$'\n\t'
 VENV_USED=1
 VENV_NAME=${PWD##*/}
 
-rm --recursive --force downloads
-rm --recursive --force lib
-mkdir -p downloads
-mkdir -p lib
+#rm --recursive --force lib
+#mkdir -p lib
 
-pip install --upgrade pip pew virtualenv vex bumpversion tox pylint
+pip install --user --upgrade pip pew virtualenv vex bumpversion tox pylint wheel setuptools
 
 if [ $VENV_USED -eq 1 ]; then
   pew rm     $VENV_NAME
   pew new -d $VENV_NAME
-  # pew in   $VENV_NAME pip install --download downloads --requirement requirements-dev.txt
   pew in     $VENV_NAME pip install --upgrade --requirement requirements-dev.txt
-  #                                 --no-index --find-links=downloads 
   echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
 else
+  #pip install --requirement requirements-dev.txt --target lib #not working
   echo "python -B manage.py runserver --debug True" > devrun.sh
 fi
 
