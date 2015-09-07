@@ -24,16 +24,18 @@ with open('README.rst') as readme:
                               "assets/skeletoncss/images/*.*",
                               "assets/jquery/js/*.*"]},
         install_requires=[
-            'crashreporter',
-            'cherrypy==3.8.0',
             'Beaker==1.7.0',
             'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.2',
+            'cherrypy==3.8.0',
             'click==5.1',
             "configparser>=3.3.0",
-            # 'importlib==1.0.3',  # needs to be added explicitely for OpenShift
+	        "crashreporter==1.07",
+            # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
+            "logbook==0.10.1",
             'requests==2.7.0',
             'SQLAlchemy==1.0.8',
+            # --
             'python-slugify==1.1.3',
             'Unidecode==0.4.18'
         ],
