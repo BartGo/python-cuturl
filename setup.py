@@ -4,7 +4,7 @@ __appname__ = "Bottle-Cuturl"
 __description__ = "A simple URL Shortener"
 __version__ = "0.0.12"
 __repository__ = "http://github.com/bartgo/bottle-cuturl"
-__tarball__ = "https://github.com/bartgo/bottle-cuturl/tarball/v0.0.12"
+__tarball__ = "https://github.com/bartgo/bottle-cuturl/tarball/v0.0.13"
 
 
 with open('README.rst') as readme:
