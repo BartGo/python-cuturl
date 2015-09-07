@@ -23,5 +23,5 @@ SQA_USE_KWARGS = False
 from crashreporter import CrashReporter
 cr = CrashReporter(report_dir='~/crashreporter/', check_interval=10, config='./.crashreporter.cfg')
 cr.application_name = APP_NAME
-cr.application_version = '0.0.11' # bumpversion updates that
+cr.application_version = '0.0.12' # bumpversion updates that
 
