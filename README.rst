@@ -42,7 +42,7 @@ How am I releasing this to PyPi:
     git push
     git push --tags
     python setup.py register
-    # python setup.py sdist upload 
+    # python setup.py sdist upload # ???
 
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
@@ -67,6 +67,9 @@ How am I releasing this to PyPi:
      :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
      :alt: Code Issues
 
+.. image:: http://img.shields.io/pypi/v/Bottle-Cuturl.svg
+     :target: https://pypi.python.org/pypi/Bottle-Cuturl
+     :alt: PyPI
 
 .. _cookiecutter-bottle: https://github.com/avelino/cookiecutter-bottle
 .. _bottle: http://bottlepy.org/docs/dev/index.html
