@@ -36,7 +36,9 @@ How am I releasing this to PyPi:
 .. code-block:: bash
 
     # .pypirc must be prepared, see http://peterdowns.com/posts/first-time-with-pypi.html
-    bumpversion patch
+    # commit all
+    devucl.sh
+    bumpversion --allow-dirty patch
     git add .
     git commit -m "Bump version: x.x.x → y.y.y"
     git tag vy.y.y
