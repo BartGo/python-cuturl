@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 __appname__ = "Bottle-Cuturl"
 __description__ = "A simple URL Shortener"
-__version__ = "__version__ = '0.0.15'" 
+__version__ = "0.0.15" 
 __repository__ = "http://github.com/bartgo/bottle-cuturl"
 __tarball__ = "https://github.com/bartgo/bottle-cuturl/tarball/v" + __version__
 
