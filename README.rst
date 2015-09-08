@@ -48,6 +48,7 @@ How am I releasing this to PyPi:
     python setup.py sdist upload -r pypitest
     python setup.py register -r pypi
     python setup.py sdist upload -r pypi
+    #python setup.py sdist bdist_wheel upload
 
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
