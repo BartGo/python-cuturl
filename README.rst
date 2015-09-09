@@ -4,7 +4,7 @@
 Bottle-cuturl
 =============
 
-v0.0.16
+v0.0.17
 
 A simple favourites / URL shortening app in Python.
 
