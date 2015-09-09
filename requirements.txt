@@ -1,17 +1,2 @@
-# read this:
-# https://caremad.io/2013/07/setup-vs-requirement/
-# http://stackoverflow.com/questions/14399534/how-can-i-reference-requirements-txt-for-the-install-requires-kwarg-in-setuptool
-# https://www.davidfischer.name/2010/04/why-you-should-be-using-pip-and-virtualenv/
-# https://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/
-# http://stackoverflow.com/questions/5360873/how-do-i-package-a-python-application-to-make-it-pip-installable
-
-# --no-index
-# --find-links deps/
-
-# the dot takes requirements from setup.py
-# editable mode:
+# '.' is editable mode, '-e' is non-editable
 -e .
-
-# non-editable mode:
-# .
-

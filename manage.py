@@ -2,13 +2,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-#activate_this = 'u:/.virtualenvs/venv-bottle-cuturl/Scripts/activate_this.py'
-#execfile(activate_this, dict(__file__=activate_this))
-
-import sys
-sys.path.append("lib")
-
 import os
+import vendor
+vendor.add('lib')
+
 import click
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware

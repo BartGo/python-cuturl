@@ -15,7 +15,6 @@ from cherrypy import wsgiserver
 # hack to make sure we can load wsgi.py as a module in this class
 sys.path.insert(0, os.path.dirname(__file__))
 
-sys.path.append("lib")
 from app import settings
 
 virtenv                         = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'], 'virtenv')
