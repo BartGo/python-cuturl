@@ -1,3 +1,6 @@
+* 2015-09-09 07:41:48 +0200 - Tryint to pip into lib using vendor.py
+* 2015-09-07 23:36:55 +0200 - Peewee can work also with PostgreSQL!
+* 2015-09-07 22:35:40 +0200 - Bump version: 0.0.15 → 0.0.16
 * 2015-09-07 22:32:50 +0200 - Fixed version config
 * 2015-09-07 22:18:30 +0200 - Bump version: 0.0.14 → 0.0.15
 * 2015-09-07 18:40:55 +0200 - Bump version: 0.0.13 → 0.0.14
