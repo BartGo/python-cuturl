@@ -12,14 +12,12 @@ Based on:
 
 - `Bottle`_ (microframework)
 
-- SQLite (todo: move to PostgreSQL) with `SQLAlchemy`_ (ORM)
+- PostgreSQL with `SQLAlchemy`_ (ORM)
 
 - `cookiecutter-bottle`_ template
 
 Works with Travis CI. Successfull builds are deployed to Heroku:
 http://fathomless-everglades-8154.herokuapp.com/
-
-Codeship integration in progress.
 
 Quickstart
 ----------
