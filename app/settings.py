@@ -12,11 +12,19 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 # SQL Alchemy 
 
 # *** PostgreSQL
-# import psycopg2
+import psycopg2
+import urlparse
 # # for windows, add to PATH: C:\Program Files\PostgreSQL\9.4\bin
+
+# Local-style
 # SQA_DBENGINE = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
+# Heroku-style
+urlparse.uses_netloc.append("postgres")
+SQA_DBENGINE = urlparse.urlparse(os.environ["DATABASE_URL"])
+
 # *** SQLite
-SQA_DBENGINE = 'sqlite:///data//sqlite.db'
+#SQA_DBENGINE = 'sqlite:///data//sqlite.db'
+
 SQA_ECHO = True
 SQA_KEYWORD = 'db'
 SQA_CREATE = True
