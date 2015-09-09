@@ -35,8 +35,7 @@ How am I releasing this to PyPi:
 
 .. code-block:: bash
 
-    # .pypirc must be prepared, see http://peterdowns.com/posts/first-time-with-pypi.html
-    # commit all
+    # no uncommited changes at this point
     devucl.sh
     bumpversion --allow-dirty patch
     git add .
@@ -44,11 +43,12 @@ How am I releasing this to PyPi:
     git tag vy.y.y
     git push
     git push --tags
-    python setup.py register -r pypitest
-    python setup.py sdist upload -r pypitest
-    python setup.py register -r pypi
-    python setup.py sdist upload -r pypi
-    #python setup.py sdist bdist_wheel upload
+    # .pypirc must be prepared, see http://peterdowns.com/posts/first-time-with-pypi.html
+    # python setup.py register -r pypitest
+    # python setup.py sdist upload -r pypitest
+    # python setup.py register -r pypi
+    # python setup.py sdist upload -r pypi
+    # python setup.py sdist bdist_wheel upload
 
 .. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
     :target: https://travis-ci.org/BartGo/bottle-cuturl
