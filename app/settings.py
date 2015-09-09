@@ -13,14 +13,9 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 
 # *** PostgreSQL
 import psycopg2
-import urlparse
 # # for windows, add to PATH: C:\Program Files\PostgreSQL\9.4\bin
-
-# Local-style
-# SQA_DBENGINE = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
-# Heroku-style
-urlparse.uses_netloc.append("postgres")
-SQA_DBENGINE = urlparse.urlparse(os.environ["DATABASE_URL"]).path
+# DATABASE_URL is an environment variable used by Heroku
+SQA_DBENGINE = os.environ["DATABASE_URL"] or "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
 
 # *** SQLite
 #SQA_DBENGINE = 'sqlite:///data//sqlite.db'
