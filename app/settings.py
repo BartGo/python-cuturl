@@ -20,7 +20,7 @@ import urlparse
 # SQA_DBENGINE = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
 # Heroku-style
 urlparse.uses_netloc.append("postgres")
-SQA_DBENGINE = urlparse.urlparse(os.environ["DATABASE_URL"])
+SQA_DBENGINE = urlparse.urlparse(os.environ["DATABASE_URL"]).path
 
 # *** SQLite
 #SQA_DBENGINE = 'sqlite:///data//sqlite.db'
