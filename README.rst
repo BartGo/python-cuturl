@@ -12,7 +12,7 @@ Based on:
 
 - `Bottle`_ (microframework)
 
-- PostgreSQL with `SQLAlchemy`_ (ORM)
+- PostgreSQL with `SQLAlchemy`_ (ORM), fallback to SQLite
 
 - `cookiecutter-bottle`_ template
 
