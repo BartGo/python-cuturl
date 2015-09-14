@@ -6,9 +6,11 @@ Bottle-cuturl
 
 v0.0.17
 
-A simple favourites / URL shortening app in Python.
+A simple favourites / URL shortening app in Python. Work in progress.
+The idea is to have a simple, working web application linked with a set 
+of tools - which could be used in larger projects.
 
-Based on:
+Uses:
 
 - `Bottle`_ (microframework)
 
@@ -16,8 +18,14 @@ Based on:
 
 - `cookiecutter-bottle`_ template
 
-Works with Travis CI. Successfull builds are deployed to Heroku:
+- `nosetests` and `tox` (dummy tests for the moment) 
+
+Works with Travis CI.
+
+Successfull builds are deployed to Heroku:
 http://fathomless-everglades-8154.herokuapp.com/
+
+At some moment it will work with Openshift as well.
 
 Quickstart
 ----------
@@ -29,7 +37,7 @@ Running in development mode (prepare virtual environment and run the app inside)
     devinit.sh
     devrun.sh
 
-How am I releasing this to PyPi:
+I am struggling a bit with releasing to PyPi, it will work soon.
 
 .. code-block:: bash
 
