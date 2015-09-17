@@ -40,7 +40,7 @@ with open('README.rst') as readme:
             'requests==2.7.0',
             #'SQLAlchemy==1.0.8',
             'alembic==0.8.2',
-            'Mako==0.1.2',
+            'Mako==1.0.2',
             # --
             'python-slugify==1.1.3',
             'Unidecode==0.4.18'

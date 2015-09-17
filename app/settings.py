@@ -13,7 +13,7 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 # SQL Alchemy 
 
 # *** PostgreSQL
-SQL_PG_USE_LOCAL = 1
+SQL_PG_USE_LOCAL = 0
 SQL_PG_DBENGINE_LOCAL = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
 try:
   import psycopg2
