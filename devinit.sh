@@ -14,14 +14,18 @@ if [ $VENV_USED -eq 1 ]; then
   pew new -d $VENV_NAME
   pew in     $VENV_NAME pip install --upgrade --requirement requirements-dev.txt
   echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
+  echo "pew in $VENV_NAME python -B manage.py alltests" > devtests.sh
 else
   mkdir -p lib
   pip install --upgrade --requirement requirements-dev.txt --target lib
-  echo "python -B manage.py runserver --debug True" > devrun.sh
+  echo "python -B manage.py runserver alltests" > devtests.sh
 fi
 
+./devtests.sh
+
 echo ""
-echo "To start the app: devrun.sh"
+echo "To start the app:   devrun.sh"
+echo "To rerun all tests: devtests.sh"
 echo ""
 
 sleep 3
