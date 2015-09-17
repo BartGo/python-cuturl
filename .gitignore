@@ -1,6 +1,7 @@
 devrun.sh
 data/
 .idea/
+crashreporter/
 *~
 
 # Byte-compiled / optimized / DLL files

@@ -1,17 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
+
 
 import os
 import vendor
 vendor.add('lib')
-
 import click
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware
-
 from app import settings
 from app.routes import routes
+
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
 session_opts = {
@@ -19,8 +20,8 @@ session_opts = {
     'session.auto': True
 }
 
-app = SessionMiddleware(Bottle(), session_opts)
 
+app = SessionMiddleware(Bottle(), session_opts)
 # Bottle Routes
 app.wrap_app.merge(routes)
 
@@ -48,13 +49,46 @@ def runserver(port, ip, debug):
 
 
 @cmds.command()
-def test():
+def unittest():
     import unittest
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
     test_runner = unittest.runner.TextTestRunner()
     test_runner.run(tests)
 
+    
+@cmds.command()
+def webtest():
+    
+    print
+    print "*** webtest started"
+    
+    import uuid
+    from webtest import TestApp
+    test_app = TestApp(app)
+
+    # return json
+    resp = test_app.get('/list/api')
+    assert resp.status == '200 OK'
+    assert resp.status_int == 200
+    assert resp.content_type == 'application/json'
+    
+    # save a link into db
+    resp = test_app.get('/list')
+    assert resp.status == '200 OK'
+    assert resp.status_int == 200
+    form = resp.forms[0]
+    ex_url = "http://" + uuid.uuid1().urn + ".ex"
+    ex_name = uuid.uuid1()
+    form["url-input"].value = ex_url
+    form["comment-input"].value = ex_name
+    print form.fields.values() 
+    resp = form.submit("save")
+    assert resp.status == '302 Found'
+    assert resp.status_int == 302
+    
+    print "*** webtest finished"
+      
     
 @cmds.command()
 @click.option('--db', default='data/sqlite.db', type=str,
@@ -67,5 +101,6 @@ def rmsqlitedb(db):
         click.echo('Not possible to remove, {0} not found!'.format(db))
         pass
 
+        
 if __name__ == "__main__":
     cmds()
