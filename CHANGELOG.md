@@ -1,3 +1,8 @@
+* 2015-09-17 17:26:26 +0200 - Added simple functional tests - using WebTest
+* 2015-09-09 11:37:00 +0200 - Fallback to SQLite
+* 2015-09-09 10:42:22 +0200 - Postgres?
+* 2015-09-09 10:16:57 +0200 - Bump version: 0.0.16 → 0.0.17
+* 2015-09-09 10:14:31 +0200 - Seems to work with vendor.py and modules in lib (no venv)...
 * 2015-09-09 07:41:48 +0200 - Tryint to pip into lib using vendor.py
 * 2015-09-07 23:36:55 +0200 - Peewee can work also with PostgreSQL!
 * 2015-09-07 22:35:40 +0200 - Bump version: 0.0.15 → 0.0.16

@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
-
 import os
 import vendor
 vendor.add('lib')
@@ -15,18 +12,18 @@ from app.routes import routes
 
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
-session_opts = {
+SESSION_OPTS = {
     'session.type': 'file',
     'session.auto': True
 }
 
 
-app = SessionMiddleware(Bottle(), session_opts)
+my_app = SessionMiddleware(Bottle(), SESSION_OPTS)
 # Bottle Routes
-app.wrap_app.merge(routes)
+my_app.wrap_app.merge(routes)
 
 
-@app.wrap_app.route('/assets/<path:path>', name='assets')
+@my_app.wrap_app.route('/assets/<path:path>', name='assets')
 def assets(path):
     yield static_file(path, root=settings.STATIC_PATH)
 
@@ -45,34 +42,34 @@ def cmds():
               help=u'Set application server debug!')
 def runserver(port, ip, debug):
     click.echo('Start server at: {0}:{1}'.format(ip, port))
-    run(app=app, host=ip, port=port, debug=debug, reloader=debug)
+    run(app=my_app, host=ip, port=port, debug=debug, reloader=debug)
 
 
-@cmds.command()
-def unittest():
+def unittest_body():
     import unittest
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
     test_runner = unittest.runner.TextTestRunner()
     test_runner.run(tests)
 
-    
-@cmds.command()
-def webtest():
-    
+
+def webtest_body():
+
     print
-    print "*** webtest started"
-    
+    print "----------------------------------------------------------------------"
+
     import uuid
     from webtest import TestApp
-    test_app = TestApp(app)
+    test_app = TestApp(my_app)
+    nr_tests = 0
 
     # return json
     resp = test_app.get('/list/api')
     assert resp.status == '200 OK'
     assert resp.status_int == 200
     assert resp.content_type == 'application/json'
-    
+    nr_tests += 1
+
     # save a link into db
     resp = test_app.get('/list')
     assert resp.status == '200 OK'
@@ -82,25 +79,54 @@ def webtest():
     ex_name = uuid.uuid1()
     form["url-input"].value = ex_url
     form["comment-input"].value = ex_name
-    print form.fields.values() 
     resp = form.submit("save")
     assert resp.status == '302 Found'
     assert resp.status_int == 302
-    
-    print "*** webtest finished"
-      
-    
+    nr_tests += 1
+
+    print "Ran " + str(nr_tests) + " tests\n\nOK"
+
+
+def behavetest_body():
+    print
+    print "----------------------------------------------------------------------"
+    os.system("pew in bottle-cuturl behave")
+    print
+    print "OK"
+
+
+@cmds.command()
+def unittests():
+    unittest_body()
+
+
+@cmds.command()
+def webtests():
+    webtest_body()
+
+
+@cmds.command()
+def behavetests():
+    behavetest_body()
+
+
+@cmds.command()
+def alltests():
+    unittest_body()
+    webtest_body()
+    behavetest_body()
+
+
 @cmds.command()
 @click.option('--db', default='data/sqlite.db', type=str,
               help=u'Set path for the db to remove!')
-def rmsqlitedb(db):
+def rmsqlitedb(database):
     try:
-        os.remove(db)
-        click.echo('Removed {0}!'.format(db))
+        os.remove(database)
+        click.echo('Removed {0}!'.format(database))
     except OSError:
-        click.echo('Not possible to remove, {0} not found!'.format(db))
-        pass
+        click.echo('Not possible to remove, {0} not found!'.format(database))
 
-        
+
 if __name__ == "__main__":
     cmds()

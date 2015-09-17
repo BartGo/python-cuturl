@@ -2,6 +2,7 @@
 import os
 
 APP_NAME = 'bottle-cuturl'
+CRASH_REPORT = 0
 
 # Paths
 
@@ -22,16 +23,16 @@ except:
   # *** SQLite
   SQA_DBENGINE = 'sqlite:///data//sqlite.db'
 
-SQA_ECHO = True
+SQA_ECHO = False
 SQA_KEYWORD = 'db'
 SQA_CREATE = True
 SQA_COMMIT = True
 SQA_USE_KWARGS = False
 
 # Crashreporter
-
-from crashreporter import CrashReporter
-cr = CrashReporter(report_dir='crashreporter', check_interval=10, config='.crashreporter.cfg')
-cr.application_name = APP_NAME
-cr.application_version = '0.0.17' # bumpversion updates that
+if CRASH_REPORT == 1:
+    from crashreporter import CrashReporter
+    cr = CrashReporter(report_dir='crashreporter', check_interval=10, config='.crashreporter.cfg')
+    cr.application_name = APP_NAME
+    cr.application_version = '0.0.18' # bumpversion updates that
 
