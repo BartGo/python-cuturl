@@ -11,9 +11,10 @@ pip install --user pew==0.1.15
 pip install --user --upgrade virtualenv vex bumpversion tox pylint wheel setuptools
 
 if [ $VENV_USED -eq 1 ]; then
+  pew wipeenv $VENV_NAME
   pew rm     $VENV_NAME
-  pew new -d $VENV_NAME
-  pew in     $VENV_NAME pip install --upgrade --requirement requirements-dev.txt
+  pew new -d  $VENV_NAME
+  pew in      $VENV_NAME pip install --upgrade --requirement requirements-dev.txt
   echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
   echo "pew in $VENV_NAME python -B manage.py alltests" > devtests.sh
 else
