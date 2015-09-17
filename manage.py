@@ -114,7 +114,7 @@ def behavetests():
 def alltests():
     unittest_body()
     webtest_body()
-    behavetest_body()
+    #behavetest_body()
 
 
 @cmds.command()

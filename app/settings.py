@@ -13,12 +13,16 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 # SQL Alchemy 
 
 # *** PostgreSQL
+SQL_PG_USE_LOCAL = 1
+SQL_PG_DBENGINE_LOCAL = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
 try:
   import psycopg2
   # # for windows, add to PATH: C:\Program Files\PostgreSQL\9.4\bin
   # DATABASE_URL is an environment variable used by Heroku
-  SQL_DBENGINE_LOCAL = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
-  SQA_DBENGINE = os.environ["DATABASE_URL"] or SQL_DBENGINE_LOCAL
+  if SQL_PG_USE_LOCAL == 1:
+    SQA_DBENGINE = SQL_PG_DBENGINE_LOCAL
+  else:
+    SQA_DBENGINE = os.environ["DATABASE_URL"]
 except:
   # *** SQLite
   SQA_DBENGINE = 'sqlite:///data//sqlite.db'

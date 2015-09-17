@@ -7,7 +7,8 @@ VENV_NAME=${PWD##*/}
 
 rm --recursive --force lib
 
-pip install --user --upgrade pip pew virtualenv vex bumpversion tox pylint wheel setuptools
+pip install --user pew==0.1.15
+pip install --user --upgrade virtualenv vex bumpversion tox pylint wheel setuptools
 
 if [ $VENV_USED -eq 1 ]; then
   pew rm     $VENV_NAME
