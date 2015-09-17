@@ -12,17 +12,15 @@ of tools - which could be used in larger projects.
 
 Uses:
 
-- `Bottle`_ (microframework)
+- `Bottle`_ (microframework), Skeleton
 
 - PostgreSQL with `SQLAlchemy`_ (ORM), fallback to SQLite
 
-- `cookiecutter-bottle`_ template
+- `cookiecutter-bottle`_ template, `bumpversion`, `vendor`, `crashreporter`
 
-- `nosetests` and `tox` (dummy tests for the moment) 
+- playing with testing, using `unittest`, `nosetests`, `tox`, `behave`, `WebTest`
 
-Works with Travis CI.
-
-Successfull builds are deployed to Heroku:
+Works with Travis CI, successfull builds are deployed to Heroku:
 http://fathomless-everglades-8154.herokuapp.com/
 
 At some moment it will work with Openshift as well.
