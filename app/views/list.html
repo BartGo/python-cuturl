@@ -13,8 +13,8 @@
 </thead>
 % for link in links:
 	<tr>
-            <td><a href="/list/{{ link.slug }}">{{ link.slug }}</a></td>
-            <td>{{ link.url }}</td>
+            <td><a href="{{link.url}}">{{link.url}}</a></td>
+            <td><a href="/list/{{link.slug}}">{{link.slug}}</a></td>
             <td>{{ link.description }}</td>
             <td>{{ link.create_time }}</td>
         </tr>
