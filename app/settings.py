@@ -23,7 +23,7 @@ try:
     SQA_DBENGINE = SQL_PG_DBENGINE_LOCAL
   else:
     SQA_DBENGINE = os.environ["DATABASE_URL"]
-except:
+except (OSError, ImportError):
   # *** SQLite
   SQA_DBENGINE = 'sqlite:///data//sqlite.db'
 
