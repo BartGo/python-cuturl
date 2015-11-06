@@ -33,14 +33,14 @@ with open('README.rst') as readme:
             'cherrypy==3.8.0',
             'click==5.1',
             "configparser>=3.3.0",
-	        "crashreporter==1.07",
+	    "crashreporter==1.08",
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
-            "logbook==0.11.2",
+            "logbook==0.11.3",
             "psycopg2", # if you want to use peewee with postgresql
             'requests==2.8.1',
             #'SQLAlchemy==1.0.8',
             'alembic==0.8.3',
-            'Mako==1.0.2',
+            'Mako==1.0.3',
             'python-slugify==1.1.4',
             'Unidecode==0.4.18'
         ],
