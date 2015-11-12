@@ -10,7 +10,7 @@ pipdeptree==0.4.3
 py==1.4.30
 PyYAML==3.11
 requests==2.8.1
-tox==2.1.1
+tox==2.2.1
 wheel==0.26.0
 
 # -- functional testing 
