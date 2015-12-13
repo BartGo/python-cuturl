@@ -29,13 +29,13 @@ with open('README.rst') as readme:
         install_requires=[
             'Beaker==1.7.0',
             #'bottle==0.12.8',
-            'bottle-sqlalchemy==0.4.2',
-            'cherrypy==3.8.0',
-            'click==5.1',
+            'bottle-sqlalchemy==0.4.3',
+            'cherrypy==3.8.1',
+            'click==6.2',
             "configparser>=3.3.0",
-	    "crashreporter==1.08",
+	    "crashreporter==1.09",
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
-            "logbook==0.11.3",
+            "logbook==0.12.3",
             "psycopg2", # if you want to use peewee with postgresql
             'requests==2.8.1',
             #'SQLAlchemy==1.0.8',
