@@ -1,5 +1,7 @@
 -r requirements.txt
 
+pipreqs
+
 bumpversion==0.5.3
 coverage==4.0.3
 coveralls==1.1
@@ -37,4 +39,3 @@ behave==1.2.5
 # robotframework
 # argcomplete==0.8.8
 # cookiecutter==1.0.0
-
