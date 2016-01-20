@@ -1,3 +1,9 @@
+* 2016-01-15 21:21:24 +0100 - Git on Android
+* 2015-10-09 11:49:21 +0200 - Avoid untyped exception handlers.
+* 2015-10-09 10:02:15 +0200 - pew moved from dev requirements to env init script
+* 2015-10-08 16:45:17 +0200 - pew --> 0.1.15
+* 2015-09-17 20:48:44 +0200 - Some fun with Alembic
+* 2015-09-17 18:07:24 +0200 - Bump version: 0.0.17 → 0.0.18
 * 2015-09-17 17:26:26 +0200 - Added simple functional tests - using WebTest
 * 2015-09-09 11:37:00 +0200 - Fallback to SQLite
 * 2015-09-09 10:42:22 +0200 - Postgres?

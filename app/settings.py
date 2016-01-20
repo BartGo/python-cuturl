@@ -38,5 +38,5 @@ if CRASH_REPORT == 1:
     from crashreporter import CrashReporter
     cr = CrashReporter(report_dir='crashreporter', check_interval=10, config='.crashreporter.cfg')
     cr.application_name = APP_NAME
-    cr.application_version = '0.0.18' # bumpversion updates that
+    cr.application_version = '0.0.19' # bumpversion updates that
 
