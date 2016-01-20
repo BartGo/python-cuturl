@@ -30,18 +30,18 @@ with open('README.rst') as readme:
             'Beaker==1.7.0',
             #'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==3.8.2',
+            'cherrypy==4.0.0',
             'click==6.2',
             "configparser>=3.3.0",
 	    "crashreporter==1.09",
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
-            "logbook==0.12.3",
+            "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql
             'requests==2.9.0',
             #'SQLAlchemy==1.0.8',
             'alembic==0.8.4',
             'Mako==1.0.3',
-            'python-slugify==1.1.4',
+            'python-slugify==1.2.0',
             'Unidecode==0.4.18'
         ],
         classifiers=(
