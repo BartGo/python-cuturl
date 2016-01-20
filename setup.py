@@ -37,7 +37,7 @@ with open('README.rst') as readme:
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
             "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql
-            'requests==2.9.0',
+            'requests==2.9.1',
             #'SQLAlchemy==1.0.8',
             'alembic==0.8.4',
             'Mako==1.0.3',
