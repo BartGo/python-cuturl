@@ -42,7 +42,7 @@ with open('README.rst') as readme:
             'alembic==0.8.4',
             'Mako==1.0.3',
             'python-slugify==1.2.0',
-            'Unidecode==0.4.18'
+            'Unidecode==0.4.19'
         ],
         classifiers=(
             'Development Status :: 1 - Planning',
