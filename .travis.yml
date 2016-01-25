@@ -39,6 +39,7 @@ deploy:
   on:
     repo: BartGo/bottle-cuturl
 - provider: heroku
+  skip_cleanup: true
   api_key:
     secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
   app: fathomless-everglades-8154
