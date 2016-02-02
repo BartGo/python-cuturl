@@ -27,13 +27,13 @@ with open('README.rst') as readme:
                               "assets/skeletoncss/images/*.*",
                               "assets/jquery/js/*.*"]},
         install_requires=[
-            'Beaker==1.7.0',
+            'Beaker==1.8.0',
             #'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.3',
             'cherrypy==4.0.0',
             'click==6.2',
             "configparser>=3.3.0",
-	    "crashreporter==1.09",
+	    "crashreporter==1.10",
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
             "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql
