@@ -30,9 +30,9 @@ with open('README.rst') as readme:
             'Beaker==1.8.0',
             #'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==4.0.0',
+            'cherrypy==5.0.1',
             'click==6.2',
-            "configparser>=3.3.0",
+            "configparser==3.3.0",
 	    "crashreporter==1.10",
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
             "logbook==0.12.5",
