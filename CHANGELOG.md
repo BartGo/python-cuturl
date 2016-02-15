@@ -1,3 +1,6 @@
+* 2016-02-15 11:46:23 +0100 - Python Dockerfile
+* 2016-01-25 16:20:46 +0100 - Heroku skip cleanup
+* 2016-01-20 21:18:37 +0100 - Bump version: 0.0.18 → 0.0.19
 * 2016-01-15 21:21:24 +0100 - Git on Android
 * 2015-10-09 11:49:21 +0200 - Avoid untyped exception handlers.
 * 2015-10-09 10:02:15 +0200 - pew moved from dev requirements to env init script
