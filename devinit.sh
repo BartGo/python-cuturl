@@ -3,12 +3,11 @@ set -euo pipefail
 IFS=$'\n\t'
 
 VENV_USED=1
-VENV_NAME=${PWD##*/}
+VENV_NAME=$( echo ${PWD##*/} | sed 's/[^a-z]*//g' ) # venv name is the current folder name (only lowercase characters)
 
 rm --recursive --force lib
 
-pip install --user pew 
-pip install --user --upgrade virtualenv vex bumpversion tox pylint wheel setuptools
+pip install --user --upgrade pew virtualenv vex bumpversion tox pylint wheel setuptools
 
 if [ $VENV_USED -eq 1 ]; then
   pew wipeenv $VENV_NAME
