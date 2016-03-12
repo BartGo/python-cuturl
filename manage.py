@@ -5,6 +5,7 @@ import os
 import vendor
 vendor.add('lib')
 import click
+from faker import Factory
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware
 from app import settings
@@ -46,6 +47,8 @@ def runserver(port, ip, debug):
 
 
 def unittest_body():
+    # todo: run tests on a perishable db
+    print "\nTO DO: Tests should be run against a temporary/test database!"
     import unittest
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
@@ -75,8 +78,9 @@ def webtest_body():
     assert resp.status == '200 OK'
     assert resp.status_int == 200
     form = resp.forms[0]
-    ex_url = "http://" + uuid.uuid1().urn + ".ex"
-    ex_name = uuid.uuid1()
+    fake = Factory.create()
+    ex_url = fake.url() # "http://" + uuid.uuid1().urn + ".ex"
+    ex_name = fake.name() # uuid.uuid1()
     form["url-input"].value = ex_url
     form["comment-input"].value = ex_name
     resp = form.submit("save")
