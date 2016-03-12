@@ -30,7 +30,7 @@ with open('README.rst') as readme:
             'Beaker==1.8.0',
             #'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==5.0.1',
+            'cherrypy==5.1.0',
             'click==6.3',
             "configparser==3.5.0b2",
 	    "crashreporter==1.10",
@@ -39,8 +39,8 @@ with open('README.rst') as readme:
             "psycopg2", # if you want to use peewee with postgresql
             'requests==2.9.1',
             #'SQLAlchemy==1.0.8',
-            'alembic==0.8.4',
-            'Mako==1.0.3',
+            'alembic==0.8.5',
+            'Mako==1.0.4',
             'python-slugify==1.2.0',
             'Unidecode==0.4.19'
         ],

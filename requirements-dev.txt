@@ -18,7 +18,7 @@ wheel==0.29.0
 pypi-publisher
 
 # -- functional testing 
-paste==2.0.2
+paste==2.0.3
 pastedeploy==1.5.2
 WebTest==2.0.20
 WSGIProxy2==0.4.2
