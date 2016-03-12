@@ -3,6 +3,8 @@ set -euo pipefail
 IFS=$'\n\t'
 
 VENV_USED=1
+VENV_FIRST_INIT=1
+
 VENV_NAME=$( echo ${PWD##*/} | sed 's/[^a-z]*//g' ) # venv name is the current folder name (only lowercase characters)
 
 rm --recursive --force lib
@@ -10,8 +12,10 @@ rm --recursive --force lib
 pip install --user --upgrade pew virtualenv vex bumpversion tox pylint wheel setuptools
 
 if [ $VENV_USED -eq 1 ]; then
-  pew wipeenv $VENV_NAME
-  pew rm     $VENV_NAME
+  if [ $VENV_FIRST_INIT -eq 0 ]; then
+    #pew wipeenv $VENV_NAME
+    pew rm     $VENV_NAME
+  fi
   pew new -d  $VENV_NAME
   pew in      $VENV_NAME pip install --upgrade --requirement requirements-dev.txt
   echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
