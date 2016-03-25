@@ -9,11 +9,11 @@ VENV_NAME=$( echo ${PWD##*/} | sed 's/[^a-z]*//g' ) # venv name is the current f
 
 rm --recursive --force lib
 
-pip install --user --upgrade pew virtualenv vex bumpversion tox pylint wheel setuptools
+pip install --user --upgrade --requirement requirements-dev-base.txt
 
 if [ $VENV_USED -eq 1 ]; then
   if [ $VENV_FIRST_INIT -eq 0 ]; then
-    #pew wipeenv $VENV_NAME
+    pew wipeenv $VENV_NAME
     pew rm     $VENV_NAME
   fi
   pew new -d  $VENV_NAME

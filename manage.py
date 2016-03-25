@@ -97,12 +97,12 @@ def webtest_body():
     print "Ran " + str(nr_tests) + " tests\n\nOK"
 
 
-def behavetest_body():
-    print
-    print "----------------------------------------------------------------------"
-    os.system("pew in bottle-cuturl behave")
-    print
-    print "OK"
+#def behavetest_body():
+#    print
+#    print "----------------------------------------------------------------------"
+#    os.system("pew in bottle-cuturl behave")
+#    print
+#    print "OK"
 
 
 @cmds.command()
@@ -115,9 +115,9 @@ def webtests():
     webtest_body()
 
 
-@cmds.command()
-def behavetests():
-    behavetest_body()
+#@cmds.command()
+#def behavetests():
+#    behavetest_body()
 
 
 @cmds.command()
