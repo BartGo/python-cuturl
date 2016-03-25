@@ -35,7 +35,8 @@ with open('README.rst') as readme:
             "configparser==3.5.0b2",
             "crashreporter==1.11",
             "fake-factory==0.5.7",
-            'importlib==1.0.3',  # may need to be added explicitely for OpenShift
+            "importlib==1.0.3",  # may need to be added explicitely for OpenShift
+            "ipaddress==1.0.16", # may need to be added explicitely for Drone.io, probably due to fake-factory
             "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql
             'requests==2.9.1',
