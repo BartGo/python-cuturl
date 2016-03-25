@@ -7,7 +7,6 @@
   "addons": [
     "mailgun",
     "papertrail",
-    "pgstudio",
     "heroku-postgresql"
   ],
   "buildpacks": [
