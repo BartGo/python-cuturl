@@ -23,8 +23,14 @@ Uses:
 - playing with testing, using `unittest`, `nosetests`, `tox`, `behave`, `WebTest`
 
 Works with Travis CI, successfull builds are deployed to Heroku:
+
 http://fathomless-everglades-8154.herokuapp.com/
 
+You can do the same:
+
+.. image:: https://www.herokucdn.com/deploy/button.svg
+    :target: https://heroku.com/deploy?template=https://github.com/bartgo/bottle-cuturl/production
+    
 At some moment it will work with Openshift as well.
 
 Quickstart
