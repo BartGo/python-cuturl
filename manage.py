@@ -10,6 +10,12 @@ from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware
 from app import settings
 from app.routes import routes
+import atexit
+
+
+@atexit.register
+def goodbye():
+    print "Bye."
 
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
