@@ -31,9 +31,10 @@ with open('README.rst') as readme:
             #'bottle==0.12.8',
             'bottle-sqlalchemy==0.4.3',
             'cherrypy==5.1.0',
-            'click==6.3',
+            'click==6.4',
             "configparser==3.5.0b2",
-	    "crashreporter==1.10",
+            "crashreporter==1.11",
+            "fake-factory==0.5.7",
             # 'importlib==1.0.3',  # may need to be added explicitely for OpenShift
             "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql
