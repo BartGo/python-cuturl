@@ -31,7 +31,7 @@ with open('README.rst') as readme:
             'bottle==0.12.9',
             'bottle-sqlalchemy==0.4.3',
             'cherrypy==5.1.0',
-            'click==6.4',
+            'click==6.6',
             "configparser==3.5.0b2",
             "crashreporter==1.11",
             "fake-factory==0.5.7",
