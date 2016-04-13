@@ -1,7 +1,7 @@
 pip==8.1.1
 bumpversion==0.5.3
 pew==0.1.19
-pipdeptree==0.5.0
+pipdeptree==0.6.0
 tox==2.3.1
 virtualenv==15.0.1
 
