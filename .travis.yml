@@ -22,8 +22,11 @@ matrix:
 #  - python: pypy
 #  fast_finish: true
 install:
+- python --version
+- pip --version
 #- pip install --upgrade pip
 #- pip install --upgrade pew
+- pip install -r requirements-dev-base.txt
 - pip install -r requirements-dev.txt
 script:
 - nosetests tests
