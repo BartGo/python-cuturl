@@ -30,7 +30,7 @@ with open('README.rst') as readme:
             'Beaker==1.8.0',
             'bottle==0.12.9',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==5.1.0',
+            'cherrypy==5.3.0',
             'click==6.6',
             "configparser==3.5.0b2",
             "crashreporter==1.11",
@@ -39,9 +39,9 @@ with open('README.rst') as readme:
             "ipaddress==1.0.16", # may need to be added explicitely for Drone.io, probably due to fake-factory
             "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql
-            'requests==2.9.1',
+            'requests==2.10.0',
             'SQLAlchemy==1.0.12',
-            'alembic==0.8.5',
+            'alembic==0.8.6',
             'Mako==1.0.4',
             'python-slugify==1.2.0',
             'Unidecode==0.4.19'
