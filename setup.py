@@ -35,7 +35,7 @@ with open('README.rst') as readme:
             "configparser==3.5.0b2",
             "crashreporter==1.11",
             "fake-factory==0.5.7",
-            "funcsigs==1.0.2", # 1.0.3 breaks Beaker
+            "funcsigs==1.0.1", # 1.0.2, 1.0.3 breaks Beaker
             "importlib==1.0.3",  # may need to be added explicitely for OpenShift
             "ipaddress==1.0.16", # may need to be added explicitely for Drone.io, probably due to fake-factory
             "logbook==0.12.5",
