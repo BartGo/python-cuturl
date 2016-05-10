@@ -103,3 +103,9 @@ I am struggling a bit with releasing to PyPi, it will work soon.
    :alt: Bitdeli badge
    :target: https://bitdeli.com/free
 
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/BartGo/bottle-cuturl/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
