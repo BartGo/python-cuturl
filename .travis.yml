@@ -26,7 +26,7 @@ install:
 - pip --version
 #- pip install --upgrade pip
 #- pip install --upgrade pew
-- pip install -r requirements-dev-base.txt
+#- pip install -r requirements-dev-base.txt # TODO: how to make sure Travis has the best version of these tools?
 - pip install -r requirements-dev.txt
 script:
 - nosetests tests
