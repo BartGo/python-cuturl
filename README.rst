@@ -30,6 +30,11 @@ You can do the same:
 
 .. image:: https://www.herokucdn.com/deploy/button.svg
     :target: https://heroku.com/deploy?template=https://github.com/bartgo/bottle-cuturl/production
+
+.. image:: https://heroku-badges.herokuapp.com/?app=fathomless-everglades-8154
+    :target: http://fathomless-everglades-8154.herokuapp.com/
+    
+
     
 At some moment it will work with Openshift as well.
 
