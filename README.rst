@@ -6,7 +6,7 @@ Bottle-cuturl
 
 2015-10-09: Broke compatibility with all Python versions except of 2.7 
 
-v0.0.21
+v0.0.22
 
 A simple favourites / URL shortening app in Python. Work in progress.
 The idea is to have a simple, working web application linked with a set 

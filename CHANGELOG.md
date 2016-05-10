@@ -1,3 +1,4 @@
+* 2016-05-10 13:57:12 +0200 - Dependency cleanup...
 * 2016-03-25 23:39:38 +0100 - Attempting dependency cleanup
 * 2016-03-25 13:36:46 +0100 - Deploy to Heroku botton
 * 2016-03-25 13:10:07 +0100 - Faker moved to non-dev requirements
