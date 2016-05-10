@@ -1,5 +1,6 @@
 devrun.sh
 devtests.sh
+devlint.sh
 data/
 .idea/
 crashreporter/

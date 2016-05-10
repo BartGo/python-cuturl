@@ -1,3 +1,7 @@
+* 2016-03-25 23:39:38 +0100 - Attempting dependency cleanup
+* 2016-03-25 13:36:46 +0100 - Deploy to Heroku botton
+* 2016-03-25 13:10:07 +0100 - Faker moved to non-dev requirements
+* 2016-03-25 11:46:19 +0100 - For Heroku's review apps
 * 2016-02-15 16:52:18 +0100 - Bump version: 0.0.20 → 0.0.21
 * 2016-02-15 15:10:27 +0100 - Bump version: 0.0.19 → 0.0.20
 * 2016-02-15 11:46:23 +0100 - Python Dockerfile
