@@ -32,9 +32,11 @@ You can do the same:
 .. image:: https://heroku-badges.herokuapp.com/?app=fathomless-everglades-8154
     :target: http://fathomless-everglades-8154.herokuapp.com/
     
+Deployment to Heroku is done against the version defined in runtime.txt, as specified in
 
-    
-At some moment it will work with Openshift as well.
+https://github.com/heroku/heroku-buildpack-python
+
+At some moment automatic deployments will work with Openshift as well.
 
 Quickstart
 ----------
