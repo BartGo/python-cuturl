@@ -4,8 +4,6 @@
 Bottle-cuturl
 =============
 
-2015-10-09: Broke compatibility with all Python versions except of 2.7 
-
 v0.0.22
 
 A simple favourites / URL shortening app in Python. Work in progress.
@@ -81,7 +79,6 @@ I am struggling a bit with releasing to PyPi, it will work soon.
     :target: https://drone.io/github.com/BartGo/bottle-cuturl/latest
     :alt: Drone.IO Status
 
-
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
@@ -98,8 +95,4 @@ I am struggling a bit with releasing to PyPi, it will work soon.
 .. _bottle: http://bottlepy.org/docs/dev/index.html
 .. _sqlalchemy: http://www.sqlalchemy.org/
 
-
-.. image:: https://d2weczhvl823v0.cloudfront.net/BartGo/bottle-cuturl/trend.png
-   :alt: Bitdeli badge
-   :target: https://bitdeli.com/free
 

@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 VENV_USED=1
-VENV_FIRST_INIT=0
+VENV_FIRST_INIT=1
 
 VENV_NAME=$( echo ${PWD##*/} | sed 's/[^a-z]*//g' ) # venv name is the current folder name (only lowercase characters)
 
