@@ -15,7 +15,7 @@ import atexit
 
 @atexit.register
 def goodbye():
-    print "Bye."
+    click.echo("Bye.")
 
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
@@ -54,7 +54,7 @@ def runserver(port, ip, debug):
 
 def unittest_body():
     # todo: run tests on a perishable db
-    print "\nTO DO: Tests should be run against a temporary/test database!"
+    click.echo("\nTO DO: Tests should be run against a temporary/test database!")
     import unittest
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
@@ -64,8 +64,7 @@ def unittest_body():
 
 def webtest_body():
 
-    print
-    print "----------------------------------------------------------------------"
+    click.echo("\n----------------------------------------------------------------------")
 
     import uuid
     from webtest import TestApp
@@ -94,15 +93,14 @@ def webtest_body():
     assert resp.status_int == 302
     nr_tests += 1
 
-    print "Ran " + str(nr_tests) + " tests\n\nOK"
+    summary = "Ran " + str(nr_tests) + " tests\n\nOK"
+    click.echo(summary)
 
 
 #def behavetest_body():
-#    print
-#    print "----------------------------------------------------------------------"
-#    os.system("pew in bottle-cuturl behave")
-#    print
-#    print "OK"
+#    click.echo("\n----------------------------------------------------------------------")
+#    os.system("pew in THISENV behave")
+#    click.echo("OK")
 
 
 @cmds.command()
