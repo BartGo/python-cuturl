@@ -2,7 +2,8 @@
   "name": "bottle-cuturl",
   "scripts": {},
   "env": {
-    "TEMP_CONF_VAR": "1"
+    "TEMP_CONF_VAR": "1",
+    "PORT": "9090"
   },
   "addons": [
     "mailgun",
