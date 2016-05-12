@@ -8,6 +8,8 @@ from beaker.middleware import SessionMiddleware
 
 os.environ['BOTTLE_RUN'] = 'False'
 
+APP_DIR = 'app'
+
 SESSION_OPTS = {
     'session.type': 'file',
     'session.cookie_expires': 300,
@@ -15,9 +17,18 @@ SESSION_OPTS = {
     'session.auto': True
 }
 
-path = os.path.join('home','bgolda','bottle-cuturl.git','app')
-if path not in sys.path:
-    sys.path.append(path)
+#PROJECT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)))
+PROJECT_PATH = os.path.join('home','bgolda','bottle-cuturl.git', APP_DIR)
+if PROJECT_PATH not in sys.path:
+    sys.path.append(PROJECT_PATH)
+
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'views')
+if TEMPLATE_PATH not in sys.path:
+    sys.path.append(TEMPLATE_PATH)
+
+STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
+if STATIC_PATH not in sys.path:
+    sys.path.append(STATIC_PATH)
 
 import app
 from app.controllers import home
