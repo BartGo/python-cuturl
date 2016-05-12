@@ -14,15 +14,15 @@ matrix:
 #    env: TEST_SUITE=suite_3_4
   - python: '3.5'
     env: TEST_SUITE=suite_3_5
-  - python: pypy
-    env: TEST_SUITE=suite_pypy
+#  - python: pypy
+#    env: TEST_SUITE=suite_pypy
   allow_failures:
 #  - python: '2.6'
 #  - python: '3.2'
 #  - python: '3.3'
 #  - python: '3.4'
 #  - python: '3.5'
-   - python: pypy
+#  - python: pypy
   fast_finish: true
 install:
 - python --version
@@ -36,6 +36,8 @@ before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
 - provider: openshift
+# skip for openshift?
+  skip_cleanup: true
   user: bartoszgo@gmail.com
   password:
     secure: Am/FDRc7zKOVmuZ09SSsKCAVZXcFawx3yvre5XrzVlUWG0NaBwklmngUCUYKxIOLpObo3dVEkb5LwtKThDbddmN3Z16XcF3QbOu/NIWQXE9SvduDqMcf27C8VbMfwteYxxCpQVCfLE1py5n9i9rpH8rk50wMOoQP5s02VbjgB1I=
