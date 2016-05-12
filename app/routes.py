@@ -10,6 +10,6 @@ from .controllers.list import list_app
 
 #from . import settings
 
-ROUTES = bottle.Bottle()
-ROUTES.merge(home_app)
-ROUTES.mount("/list", list_app)
+routes = bottle.Bottle()
+routes.merge(home_app)
+routes.mount("/list", list_app)
