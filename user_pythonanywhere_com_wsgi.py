@@ -1,28 +1,23 @@
 # -*- coding: utf-8 -*-
-# not working yet
 
 import os
 import sys
+
 from bottle import Bottle
-# from beaker.middleware import SessionMiddleware
+from beaker.middleware import SessionMiddleware
 
 os.environ['TEST_ENV'] = 'True'
-
-path = os.path.join('home','bgolda','bottle-cuturl.git','app')
-if path not in sys.path:
-    sys.path.append(path)
 
 SESSION_OPTS = {
     'session.type': 'file',
     'session.auto': True
 }
 
-main_app = Bottle() # SessionMiddleware(Bottle(), SESSION_OPTS)
+path = os.path.join('home','bgolda','bottle-cuturl.git','app')
+if path not in sys.path:
+    sys.path.append(path)
 
-import controllers
-import controllers.home
-import controllers.home.home_app
+from app.controllers import home
 
-main_app.merge(controllers.home.home_app)
-
-
+main_app = SessionMiddleware(Bottle(), SESSION_OPTS)
+main_app.wrap_app.merge(home.home_app)
