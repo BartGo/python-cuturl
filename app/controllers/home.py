@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from bottle import Bottle, view, static_file, TEMPLATE_PATH
 
 from .. import settings
