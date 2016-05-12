@@ -32,7 +32,7 @@ list_app.install(plugin)
 
 @list_app.route('/assets/<filepath:path>', name='assets')
 def static(filepath):
-    print filepath
+    # print filepath
     return static_file(filepath, root=settings.STATIC_PATH)
         
     
