@@ -41,7 +41,7 @@ with open('README.rst') as readme:
             "logbook==0.12.5",
             "psycopg2", # if you want to use peewee with postgresql; not that it cannot be directly used with pypy
             'requests==2.10.0',
-            'SQLAlchemy==1.0.12',
+            'SQLAlchemy==1.0.13',
             'alembic==0.8.6',
             'Mako==1.0.4',
             'python-slugify==1.2.0',
