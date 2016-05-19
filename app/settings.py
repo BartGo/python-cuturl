@@ -2,6 +2,8 @@
 import os
 
 APP_NAME = 'bottle-cuturl'
+
+# disabled but also removed crashreporter==1.11 from setup.py, somehow does not like setuptools==21.0.0
 CRASH_REPORT = 0
 
 # Paths
