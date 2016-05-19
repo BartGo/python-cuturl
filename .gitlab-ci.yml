@@ -1,0 +1,10 @@
+# TODO: http://dezoito.github.io/2016/05/11/django-gitlab-continuous-integration-phantomjs.html
+
+image: python:2.7
+
+all_tests:
+  script:
+   - tox
+  when: on_success
+  only:
+    - master
