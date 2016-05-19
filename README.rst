@@ -81,10 +81,19 @@ I am struggling a bit with releasing to PyPi, it will work soon.
     :target: https://drone.io/github.com/BartGo/bottle-cuturl/latest
     :alt: Drone.IO Status
 
+.. image:: https://img.shields.io/circleci/project/BartGo/bottle-stack.svg
+    :target: https://circleci.com/gh/BartGo/bottle-stack
+    :alt: Circle CI Status
+
+
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
-     
+
+.. image:: https://img.shields.io/gemnasium/BartGo/bottle-stack.svg
+     :target: hhttps://gemnasium.com/BartGo/bottle-stack
+     :alt: Gemnasium Status
+
 .. image:: http://www.quantifiedcode.com/api/v1/project/74d7fde00d2d444b879a31e065589de7/badge.svg
      :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
      :alt: Code Issues
