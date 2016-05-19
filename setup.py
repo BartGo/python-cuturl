@@ -33,7 +33,7 @@ with open('README.rst') as readme:
             'cherrypy==5.4.0',
             'click==6.6',
             "configparser==3.5.0b2",
-            "crashreporter==1.11",
+            #"crashreporter==1.11", # somehow does not like setuptools==21.0.0
             "fake-factory==0.5.7",
             "funcsigs==1.0.2",
             # "importlib==1.0.3",  # may need to be added explicitely for OpenShift; is it OK for Python 3??
