@@ -94,6 +94,10 @@ I am struggling a bit with releasing to PyPi, it will work soon.
      :target: hhttps://gemnasium.com/BartGo/bottle-stack
      :alt: Gemnasium Status
 
+
+.. image:: https://codecov.io/gh/BartGo/bottle-cuturl/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/BartGo/bottle-cuturl
+  
 .. image:: http://www.quantifiedcode.com/api/v1/project/74d7fde00d2d444b879a31e065589de7/badge.svg
      :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
      :alt: Code Issues
