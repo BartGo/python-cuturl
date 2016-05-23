@@ -32,6 +32,8 @@ install:
 - pip install -r requirements-dev.txt
 script:
 - nosetests tests
+after_success:
+- bash <(curl -s https://codecov.io/bash)
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:
