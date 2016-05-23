@@ -22,7 +22,8 @@ test:
   - source venv27/bin/activate ; pip install -r requirements-dev-base.txt --upgrade ; pip install -r requirements-dev.txt --upgrade ; pip freeze ; python2.7 setup.py install 
   override:
   - source venv27/bin/activate ; tox ; python -B manage.py alltests ; nosetests tests ; coverage run setup.py test
-
+  post:
+  - bash <(curl -s https://codecov.io/bash)
 # *** need to provide  repo_token in .coveralls.yml, or launch via Travis
 #  post:
 #  - coverage combine
