@@ -32,7 +32,7 @@ with open('README.rst') as readme:
             'bottle-sqlalchemy==0.4.3',
             'cherrypy==5.4.0',
             'click==6.6',
-            "configparser==3.5.0b2",
+            "configparser==3.5.0",
             #"crashreporter==1.11", # somehow does not like setuptools==21.0.0
             "fake-factory==0.5.7",
             "funcsigs==1.0.2",
