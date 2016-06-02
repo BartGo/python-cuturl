@@ -1,12 +1,12 @@
 pip==8.1.2
-setuptools==21.2.0
-virtualenv==15.0.1
+setuptools==22.0.0
+virtualenv==15.0.2
 pew==0.1.19
 tox==2.3.1
 pylint==1.5.5
 bumpversion==0.5.3
 fabric==1.11.1
-#pipdeptree==0.6.0
+pipdeptree==0.6.0
 #vex
 #wheel
 
