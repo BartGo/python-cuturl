@@ -1,11 +1,12 @@
-bumpversion==0.5.3
 pip==8.1.2
-pipdeptree==0.6.0
-pew==0.1.19
-pylint==1.5.5
 setuptools==21.2.0
-tox==2.3.1
 virtualenv==15.0.1
+pew==0.1.19
+tox==2.3.1
+pylint==1.5.5
+bumpversion==0.5.3
+fabric==1.11.1
+#pipdeptree==0.6.0
 #vex
 #wheel
 
