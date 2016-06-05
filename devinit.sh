@@ -21,12 +21,21 @@ if [ $VENV_USED -eq 1 ]; then
   echo "pew in $VENV_NAME python -B manage.py runserver --debug True" > devrun.sh
   echo "pew in $VENV_NAME python -B manage.py alltests" > devtests.sh
   echo "pew in $VENV_NAME pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
+  # useful for fabric
+  chmod +x devrun.sh
+  chmod +x devtests.sh
+  chmod +x devlint.sh 
 else
   mkdir -p lib
   pip install --upgrade --requirement requirements-dev.txt --target lib
-  echo "python -B manage.py runserver alltests" > devtests.sh
+  echo "python -B manage.py alltests" > devtests.sh
+  echo "python -B manage.py runserver" > devrun.sh
+  # useful for fabric 
+  chmod +x ./devtests.sh
+  chmod +x ./devrun.sh
 fi
 
+chmod +x manage.py
 ./devtests.sh
 
 echo ""
