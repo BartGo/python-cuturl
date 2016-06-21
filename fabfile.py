@@ -7,6 +7,8 @@ import re
 
 # By convention, venv for the current application is the name
 # of the current folder (letters only).
+
+# TODO: what if we use only clean venv (+libs)
 CURR_VENV = re.sub(re.compile('\W'), '', os.getcwd().split(os.sep)[-1])
 
 def ve():
