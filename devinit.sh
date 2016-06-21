@@ -2,12 +2,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-VENV_USED=1
+VENV_USED=0
 VENV_FIRST_INIT=1
 
 VENV_NAME=$( echo ${PWD##*/} | sed 's/[^a-z]*//g' ) # venv name is the current folder name (only lowercase characters)
 
 rm --recursive --force lib
+rm --recursive --force downloads
 
 pip install --user --upgrade --requirement requirements-dev-base.txt # TODO: sure for global?
 
@@ -27,7 +28,9 @@ if [ $VENV_USED -eq 1 ]; then
   chmod +x devlint.sh 
 else
   mkdir -p lib
-  pip install --upgrade --requirement requirements-dev.txt --target lib
+  mkdir -p downloads
+  pip install --download downloads --requirements requirements-dev.txt # will be made obsolete by pip download
+  pip install --no-index --find-links=downloads --upgrade --requirement requirements-dev.txt --target lib # some will be wheels, not sure if it is OK?
   echo "python -B manage.py alltests" > devtests.sh
   echo "python -B manage.py runserver" > devrun.sh
   # useful for fabric 
