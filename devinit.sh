@@ -29,9 +29,10 @@ if [ $VENV_USED -eq 1 ]; then
 else
   mkdir -p lib
   mkdir -p downloads
-  pip install --download downloads --requirements requirements-dev.txt # will be made obsolete by pip download
+  pip install --download downloads --requirement requirements-dev.txt # will be made obsolete by pip download
   pip install --no-index --find-links=downloads --upgrade --requirement requirements-dev.txt --target lib # some will be wheels, not sure if it is OK?
   echo "python -B manage.py alltests" > devtests.sh
+  # TODO: actually, run should be done by a clean python from venv and use ./lib
   echo "python -B manage.py runserver" > devrun.sh
   # useful for fabric 
   chmod +x ./devtests.sh
