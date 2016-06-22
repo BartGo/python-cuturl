@@ -30,7 +30,7 @@ with open('README.rst') as readme:
             'Beaker==1.8.0',
             'bottle==0.12.9',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==5.4.0',
+            'cherrypy==6.0.1',
             'click==6.6',
             "configparser==3.5.0",
             #"crashreporter==1.11", # somehow does not like setuptools==21.0.0
