@@ -91,7 +91,7 @@ I am struggling a bit with releasing to PyPi, it will work soon.
      :alt: Requirements Status
 
 .. image:: https://img.shields.io/gemnasium/BartGo/bottle-stack.svg
-     :target: hhttps://gemnasium.com/BartGo/bottle-stack
+     :target: https://gemnasium.com/BartGo/bottle-stack
      :alt: Gemnasium Status
 
 
