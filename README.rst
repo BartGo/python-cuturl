@@ -29,9 +29,6 @@ You can do the same:
 .. image:: https://www.herokucdn.com/deploy/button.svg
     :target: https://heroku.com/deploy?template=https://github.com/bartgo/bottle-cuturl/production
 
-.. image:: https://heroku-badges.herokuapp.com/?app=fathomless-everglades-8154
-    :target: http://fathomless-everglades-8154.herokuapp.com/
-    
 Deployment to Heroku is done against the version defined in runtime.txt, as specified in
 
 https://github.com/heroku/heroku-buildpack-python
