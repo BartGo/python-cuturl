@@ -81,9 +81,8 @@ I am struggling a bit with releasing to PyPi, it will work soon.
     :target: https://drone.io/github.com/BartGo/bottle-cuturl/latest
     :alt: Drone.IO Status
 
-.. image:: https://img.shields.io/circleci/project/BartGo/bottle-stack.svg
-    :target: https://circleci.com/gh/BartGo/bottle-stack
-    :alt: Circle CI Status
+.. image:: https://circleci.com/gh/BartGo/bottle-cuturl/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/BartGo/bottle-cuturl/tree/master
 
 
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
