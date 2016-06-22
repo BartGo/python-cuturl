@@ -97,11 +97,10 @@ def webtest_body():
     click.echo(summary)
 
 
-#def behavetest_body():
-#    click.echo("\n----------------------------------------------------------------------")
-#    os.system("pew in THISENV behave")
-#    click.echo("OK")
-
+def behavetest_body():
+    click.echo("\n----------------------------------------------------------------------")
+    os.system("behave")
+    click.echo("\n----------------------------------------------------------------------")
 
 @cmds.command()
 def unittests():
@@ -113,16 +112,16 @@ def webtests():
     webtest_body()
 
 
-#@cmds.command()
-#def behavetests():
-#    behavetest_body()
+@cmds.command()
+def behavetests():
+    behavetest_body()
 
 
 @cmds.command()
 def alltests():
     unittest_body()
     webtest_body()
-    #behavetest_body()
+    behavetest_body()
 
 
 @cmds.command()
