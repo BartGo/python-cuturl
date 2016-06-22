@@ -89,8 +89,8 @@ I am struggling a bit with releasing to PyPi, it will work soon.
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
      :alt: Requirements Status
 
-.. image:: https://img.shields.io/gemnasium/BartGo/bottle-stack.svg
-     :target: https://gemnasium.com/BartGo/bottle-stack
+.. image:: https://img.shields.io/gemnasium/BartGo/bottle-cuturl.svg
+     :target: https://gemnasium.com/BartGo/bottle-cuturl
      :alt: Gemnasium Status
 
 
