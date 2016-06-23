@@ -15,7 +15,7 @@ import atexit
 
 @atexit.register
 def goodbye():
-    click.echo("Bye.")
+    pass
 
 
 TEMPLATE_PATH.insert(0, settings.TEMPLATE_PATH)
@@ -53,8 +53,7 @@ def runserver(port, ip, debug):
 
 
 def unittest_body():
-    # todo: run tests on a perishable db
-    click.echo("\nTO DO: Tests should be run against a temporary/test database!")
+    # TODO: run tests on a perishable db
     import unittest
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
@@ -64,12 +63,13 @@ def unittest_body():
 
 def webtest_body():
 
-    click.echo("\n----------------------------------------------------------------------")
+    click.echo("\nRunning web tests...")
 
     import uuid
     from webtest import TestApp
-    test_app = TestApp(my_app)
-    nr_tests = 0
+    test_app  = TestApp(my_app)
+    all_tests = 2
+    nr_tests  = 0
 
     # return json
     resp = test_app.get('/list/api')
@@ -93,14 +93,9 @@ def webtest_body():
     assert resp.status_int == 302
     nr_tests += 1
 
-    summary = "Ran " + str(nr_tests) + " tests\n\nOK"
+    summary = "\nRun " + str(nr_tests) + "/" + str(all_tests)
     click.echo(summary)
 
-
-def behavetest_body():
-    click.echo("\n----------------------------------------------------------------------")
-    os.system("behave")
-    click.echo("\n----------------------------------------------------------------------")
 
 @cmds.command()
 def unittests():
@@ -113,16 +108,9 @@ def webtests():
 
 
 @cmds.command()
-def behavetests():
-    behavetest_body()
-
-
-@cmds.command()
 def alltests():
     unittest_body()
     webtest_body()
-    behavetest_body()
-
 
 @cmds.command()
 @click.option('--db', default='data/sqlite.db', type=str,
