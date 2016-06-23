@@ -12,9 +12,8 @@ dependencies:
   post:
     - rm -r ~/.gradle
     - python setup.py test --dry-run
-    - pip install -r requirements-dev-base.txt --upgrade
+    - pip install -r requirements-global.txt --upgrade
     - pip install -r requirements-dev.txt --upgrade
-    # TODO how to manage difference between deps possibly different for dev and non-dev envs?
    
 test:
   pre:
