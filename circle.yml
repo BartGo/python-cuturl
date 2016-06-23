@@ -19,9 +19,9 @@ dependencies:
 test:
   pre:
   - virtualenv -p ~/.pyenv/versions/2.7.11/bin/python2.7 venv27 --distribute
-  - source venv27/bin/activate ; pip install -r requirements-dev-base.txt --upgrade ; pip install -r requirements-dev.txt --upgrade ; pip freeze ; python2.7 setup.py install 
+  - source venv27/bin/activate ; pip install -r requirements-global.txt --upgrade ; pip install -r requirements-dev.txt --upgrade ; pip freeze ; python2.7 setup.py install 
   override:
-  - source venv27/bin/activate ; tox ; python -B manage.py alltests ; nosetests tests ; coverage run setup.py test
+  - source venv27/bin/activate ; tox ; python -B manage.py alltests ; nosetests tests ; behave ; coverage run setup.py test
   post:
   - bash <(curl -s https://codecov.io/bash)
 # *** need to provide  repo_token in .coveralls.yml, or launch via Travis

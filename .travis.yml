@@ -27,11 +27,12 @@ matrix:
 install:
 - python --version
 - pip --version
-- pip install --upgrade pip nose tox setuptools pew
-#- pip install -r requirements-dev-base.txt # TODO: how to make sure Travis has the best version of these tools?
+#- pip install --upgrade pip nose tox setuptools pew
+- pip install -r requirements-global.txt
 - pip install -r requirements-dev.txt
 script:
 - nosetests tests
+- behave
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:
