@@ -30,19 +30,19 @@ with open('README.rst') as readme:
             'Beaker==1.8.0',
             'bottle==0.12.9',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==6.0.1',
+            'cherrypy==7.1.0',
             'click==6.6',
             "configparser==3.5.0",
             #"crashreporter==1.11", # somehow does not like setuptools==21.0.0
-            "fake-factory==0.5.7",
+            "fake-factory==0.5.10",
             "funcsigs==1.0.2",
             # "importlib==1.0.3",  # may need to be added explicitely for OpenShift; is it OK for Python 3??
             "ipaddress==1.0.16", # may need to be added explicitely for Drone.io, probably due to fake-factory
-            "logbook==0.12.5",
+            "logbook==1.0.0",
             #"psycopg2", # if you want to use peewee with postgresql; note that it cannot be directly used with pypy
             'requests==2.10.0',
-            'SQLAlchemy==1.0.13',
-            'alembic==0.8.6',
+            'SQLAlchemy==1.0.14',
+            'alembic==0.8.7',
             'Mako==1.0.4',
             'python-slugify==1.2.0',
             'Unidecode==0.4.19'
