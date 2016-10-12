@@ -2,17 +2,19 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-mkdir -p downloads
-pip install  --user --upgrade -r requirements-global.txt
-pip download -d downloads     -r requirements-dev.txt
+# *** note that both lib and downloads are present in .gitignore
 rm --recursive --force lib
-mkdir -p lib
+#rm --recursive --force downloads
+mkdir --parents downloads
+mkdir --parents lib
+pip install  --user --upgrade --requirement requirements-global.txt
+pip download --download downloads --requirement requirements-dev.txt
 
-virtualenv --clear -q -p python2.7 --no-pip --no-wheel --no-setuptools ./.cvenv
-virtualenv --clear -q -p python2.7                                     ./.dvenv
+virtualenv --clear --quiet --PYTHON=python2.7 --no-pip --no-wheel --no-setuptools ./.cvenv
+virtualenv --clear --quiet --PYTHON=python2.7                                     ./.dvenv
 
-./.dvenv/bin/pip install -r requirements-dev.txt -f downloads --no-index -U
-             pip install -r requirements.txt     -f downloads --no-index -U -t lib
+./.dvenv/bin/pip install --requirement requirements-dev.txt --find-links downloads --no-index --upgrade
+             pip install --requirement requirements.txt     --find-links downloads --no-index --upgrade --target lib
 
 echo "./.cvenv/bin/python -B manage.py runserver" > devrun.sh
 echo "./.dvenv/bin/python -B manage.py alltests"  > devtests.sh
