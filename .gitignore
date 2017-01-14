@@ -6,9 +6,6 @@ data/
 crashreporter/
 *~
 
-.cvenv/
-.dvenv/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

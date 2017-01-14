@@ -45,7 +45,8 @@ with open('README.rst') as readme:
             'alembic==0.8.8',
             'Mako==1.0.4',
             'python-slugify==1.2.1',
-            'Unidecode==0.4.19'
+            'Unidecode==0.4.19',
+            'WebTest==2.0.23'
         ],
         classifiers=(
             'Development Status :: 1 - Planning',
