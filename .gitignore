@@ -2,12 +2,10 @@ devrun.sh
 devtests.sh
 devlint.sh
 data/
+dnv/
 .idea/
 crashreporter/
 *~
-
-.cvenv/
-.dvenv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

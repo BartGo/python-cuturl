@@ -103,16 +103,6 @@ def unittests():
 
 
 @cmds.command()
-def webtests():
-    webtest_body()
-
-
-@cmds.command()
-def alltests():
-    unittest_body()
-    webtest_body()
-
-@cmds.command()
 @click.option('--db', default='data/sqlite.db', type=str,
               help=u'Set path for the db to remove!')
 def rmsqlitedb(database):
