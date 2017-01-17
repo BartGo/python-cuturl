@@ -1,3 +1,8 @@
 {
-    "python.pythonPath": "${workspaceRoot}/env/bin/python2.7"
+    "python.pythonPath": "${workspaceRoot}/env/bin/python2.7",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.unitTest.nosetestArgs": [],
+    "python.unitTest.nosetestsEnabled": true 
+
 }

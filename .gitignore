@@ -1,6 +1,7 @@
 devrun.sh
 devtests.sh
 devlint.sh
+.noseids
 data/
 dnv/
 .idea/
