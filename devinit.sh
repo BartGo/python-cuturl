@@ -8,10 +8,10 @@ rm --recursive --force lib
 mkdir --parents downloads
 mkdir --parents lib
 pip install  --user --upgrade --requirement requirements-global.txt
-pip download --download downloads --requirement requirements-dev.txt
+pip download -d downloads     --requirement requirements-dev.txt
 
-virtualenv --clear --quiet --PYTHON=python2.7 --no-pip --no-wheel --no-setuptools ./.cvenv
-virtualenv --clear --quiet --PYTHON=python2.7                                     ./.dvenv
+virtualenv --clear --quiet -p python2.7 --no-pip --no-wheel --no-setuptools ./.cvenv
+virtualenv --clear --quiet -p python2.7                                     ./.dvenv
 
 ./.dvenv/bin/pip install --requirement requirements-dev.txt --find-links downloads --no-index --upgrade
              pip install --requirement requirements.txt     --find-links downloads --no-index --upgrade --target lib
