@@ -1,10 +1,8 @@
 {
     "python.pythonPath": "x:/bottle-cuturl/env/scripts/python.exe",
-    /* "python.pythonPath": "${workspaceRoot}/env/bin/python2.7", 
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": false,
-    "python.unitTest.nosetestArgs": [],
-    */
-    "python.unitTest.nosetestsEnabled": true 
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.promptToConfigure": false,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.unittestEnabled": false
 }
 
