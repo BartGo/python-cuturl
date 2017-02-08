@@ -2,4 +2,4 @@ pip #==9.0.1
 setuptools #==29.0.1
 virtualenv #==15.1.0
 wheel #==0.29.0
-requests[security] #==???
+# requests[security] # to fix pip warnings; not working on Windows
