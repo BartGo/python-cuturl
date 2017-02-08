@@ -44,7 +44,6 @@
             "stopOnEntry": true,
             "pythonPath": "${config.python.pythonPath}",
             "module": "module.name",
-            "program": "",
             "cwd": "${workspaceRoot}",
             "debugOptions": [
                 "WaitOnAbnormalExit",
@@ -78,6 +77,23 @@
             "debugOptions": [
                 "WaitOnAbnormalExit",
                 "WaitOnNormalExit"
+            ]
+        },
+        {
+            "name": "Bottle",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "${config.python.pythonPath}",
+            "program": "${workspaceRoot}/manage.py",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "runserver"
+            ],
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"            
             ]
         },
         {
@@ -122,7 +138,7 @@
             ]
         },
         {
-            "name": "Bottle",
+            "name": "Bottle (2)",
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,

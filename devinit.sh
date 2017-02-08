@@ -2,29 +2,25 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# *** note that both lib and downloads are present in .gitignore
-rm --recursive --force lib
-#rm --recursive --force downloads
-mkdir --parents downloads
-mkdir --parents lib
-pip install  --user --upgrade --requirement requirements-global.txt
-pip download -d downloads     --requirement requirements-dev.txt
+pip install --user --upgrade --requirement requirements-global.txt
 
-virtualenv --clear --quiet -p python2.7 --no-pip --no-wheel --no-setuptools ./.cvenv
-virtualenv --clear --quiet -p python2.7                                     ./.dvenv
+virtualenv --clear --quiet --python=python2.7 ./env
+virtualenv --clear --quiet --python=python2.7 ./dnv
 
-./.dvenv/bin/pip install --requirement requirements-dev.txt --find-links downloads --no-index --upgrade
-             pip install --requirement requirements.txt     --find-links downloads --no-index --upgrade --target lib
+# TODO: use Scripts for Windows
+./dnv/bin/pip install --upgrade --requirement requirements-dev.txt
+./env/bin/pip install --upgrade --requirement requirements.txt
 
-echo "./.cvenv/bin/python -B manage.py runserver" > devrun.sh
-echo "./.dvenv/bin/python -B manage.py alltests"  > devtests.sh
-echo "printf '\nRunning feature tests\n\n'"      >> devtests.sh
-echo "./.dvenv/bin/behave"                       >> devtests.sh
-echo "./.dvenv/bin/pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
+echo "./env/bin/python -B manage.py runserver" > devrun.sh
+echo "./env/bin/python -B manage.py unittests" > devtests.sh
+echo "printf '\nRunning feature tests\n\n'"    >> devtests.sh
+echo "./dnv/bin/behave"                        >> devtests.sh
+echo "./dnv/bin/pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
 
 chmod +x ./devrun.sh
 chmod +x ./devtests.sh
 chmod +x ./devlint.sh
+chmod +x ./devucl.sh
 chmod +x ./manage.py
 
 ./devtests.sh

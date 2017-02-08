@@ -31,10 +31,13 @@ install:
 - pip install -r requirements-global.txt
 - pip install -r requirements-dev.txt
 script:
-- nosetests tests
+- nosetests --with-coverage tests
 - behave
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+- coverage xml
+- export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
+- python-codacy-coverage -r coverage.xml
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 deploy:

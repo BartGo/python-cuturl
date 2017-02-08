@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-import vendor
-vendor.add('lib')
+#import vendor
+#vendor.add('lib')
 import click
 from faker import Factory
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
@@ -101,16 +101,6 @@ def webtest_body():
 def unittests():
     unittest_body()
 
-
-@cmds.command()
-def webtests():
-    webtest_body()
-
-
-@cmds.command()
-def alltests():
-    unittest_body()
-    webtest_body()
 
 @cmds.command()
 @click.option('--db', default='data/sqlite.db', type=str,
