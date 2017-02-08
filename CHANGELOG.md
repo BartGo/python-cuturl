@@ -1,3 +1,16 @@
+* 2017-02-08 18:12:11 +0100 - Venv-related
+* 2016-10-14 17:08:22 +0200 - An attempt to integrate with Codacy
+* 2016-06-23 21:49:31 +0200 - Reorganised devinit script
+* 2016-06-21 23:56:40 +0200 - Caching wheels for local pip install
+* 2016-06-02 14:08:33 +0200 - Create fabfile.py
+* 2016-05-19 17:57:22 +0200 - Create .gitlab-ci.yml
+* 2016-05-19 14:16:15 +0200 - Create circle.yml
+* 2016-05-12 18:38:15 +0200 - Create user_pythonanywhere_com_wsgi.py
+* 2016-05-11 22:51:44 +0200 - Trying to make at least manage.py compatible with Python 3.
+* 2016-05-11 21:38:26 +0200 - How would it work with Python 3.5?
+* 2016-05-10 15:00:36 +0200 - "Heroku Deployed" badge added to readme
+* 2016-05-10 14:55:40 +0200 - Heroku: Python upgrade to 2.7.11
+* 2016-05-10 13:58:45 +0200 - Bump version: 0.0.21 → 0.0.22
 * 2016-05-10 13:57:12 +0200 - Dependency cleanup...
 * 2016-03-25 23:39:38 +0100 - Attempting dependency cleanup
 * 2016-03-25 13:36:46 +0100 - Deploy to Heroku botton
