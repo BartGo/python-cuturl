@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "/bottle-cuturl/env/bin/python",
+    "python.pythonPathWindows": "x:/bottle-cuturl/env/scripts/python.exe",
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.promptToConfigure": false,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.unittestEnabled": false,
+    "python.linting.pylintEnabled": false
+}
+

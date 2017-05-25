@@ -1,30 +1,33 @@
+#!/bin/bash
 
-set -euo pipefail
+set -e -u -o pipefail
 IFS=$'\n\t'
 
-# *** note that both lib and downloads are present in .gitignore
-rm --recursive --force lib
-#rm --recursive --force downloads
-mkdir --parents downloads
-mkdir --parents lib
-pip install  --user --upgrade --requirement requirements-global.txt
-pip download --download downloads --requirement requirements-dev.txt
+pip install --user --upgrade --requirement requirements-global.txt
 
-virtualenv --clear --quiet --PYTHON=python2.7 --no-pip --no-wheel --no-setuptools ./.cvenv
-virtualenv --clear --quiet --PYTHON=python2.7                                     ./.dvenv
+virtualenv --clear --quiet ./env # --python=python2.7
+virtualenv --clear --quiet ./dnv # --python=python2.7
 
-./.dvenv/bin/pip install --requirement requirements-dev.txt --find-links downloads --no-index --upgrade
-             pip install --requirement requirements.txt     --find-links downloads --no-index --upgrade --target lib
+if [ "$OSTYPE" == "msys" ] ; then
+  PYVE="Scripts"
+else
+  PYVE="bin"
+fi
+#echo $PYVE
 
-echo "./.cvenv/bin/python -B manage.py runserver" > devrun.sh
-echo "./.dvenv/bin/python -B manage.py alltests"  > devtests.sh
+./dnv/$PYVE/pip install --upgrade --requirement requirements-dev.txt
+./env/$PYVE/pip install --upgrade --requirement requirements.txt
+
+echo "./env/$PYVE/python -B manage.py runserver" >  devrun.sh
+echo "./env/$PYVE/python -B manage.py unittests" >  devtests.sh
 echo "printf '\nRunning feature tests\n\n'"      >> devtests.sh
-echo "./.dvenv/bin/behave"                       >> devtests.sh
-echo "./.dvenv/bin/pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
+echo "./dnv/$PYVE/behave"                        >> devtests.sh
+echo "./dnv/$PYVE/pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
 
 chmod +x ./devrun.sh
 chmod +x ./devtests.sh
 chmod +x ./devlint.sh
+chmod +x ./devucl.sh
 chmod +x ./manage.py
 
 ./devtests.sh
