@@ -34,7 +34,7 @@ with open('README.rst') as readme:
             'click==6.7',
             "configparser==3.5.0",
             #"crashreporter", # somehow does not like setuptools==21.0.0
-            "fake-factory==0.7.17",
+            "fake-factory==0.7.4",
             "funcsigs==1.0.2",
             # "importlib",  # may need to be added explicitely for OpenShift; is it OK for Python 3??
             "ipaddress==1.0.18", # may need to be added explicitely for Drone.io, probably due to fake-factory
