@@ -27,26 +27,27 @@ with open('README.rst') as readme:
                               "assets/skeletoncss/images/*.*",
                               "assets/jquery/js/*.*"]},
         install_requires=[
-            'Beaker==1.8.1',
+            'Beaker==1.9.0',
             'bottle==0.12.13',
             'bottle-sqlalchemy==0.4.3',
-            'cherrypy==10.2.2',
+            'cherrypy==11.0.0',
             'click==6.7',
             "configparser==3.5.0",
             #"crashreporter", # somehow does not like setuptools==21.0.0
-            "fake-factory==0.7.4",
+            #"fake-factory==0.7.4",
+            "Faker==0.7.18",
             "funcsigs==1.0.2",
             # "importlib",  # may need to be added explicitely for OpenShift; is it OK for Python 3??
             "ipaddress==1.0.18", # may need to be added explicitely for Drone.io, probably due to fake-factory
-            "logbook==1.0.0",
+            "logbook==1.1.0",
             #"psycopg2", # if you want to use peewee with postgresql; note that it cannot be directly used with pypy
-            'requests==2.18.1',
-            'SQLAlchemy==1.1.10',
-            'alembic==0.9.2',
-            'Mako==1.0.6',
+            'requests==2.18.3',
+            'SQLAlchemy==1.1.13',
+            'alembic==0.9.4',
+            'Mako==1.0.7',
             'python-slugify==1.2.4',
-            'Unidecode==0.4.20',
-            'WebTest==2.0.27'
+            'Unidecode==0.4.21',
+            'WebTest==2.0.28'
         ],
         classifiers=(
             'Development Status :: 1 - Planning',
