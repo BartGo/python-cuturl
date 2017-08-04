@@ -74,13 +74,8 @@ I am struggling a bit with releasing to PyPi, it will work soon.
     :target: https://codeship.com/projects/90320
     :alt: Codeship Status
 
-.. image:: https://drone.io/github.com/BartGo/bottle-cuturl/status.png
-    :target: https://drone.io/github.com/BartGo/bottle-cuturl/latest
-    :alt: Drone.IO Status
-
 .. image:: https://circleci.com/gh/BartGo/bottle-cuturl/tree/master.svg?style=svg
     :target: https://circleci.com/gh/BartGo/bottle-cuturl/tree/master
-
 
 .. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
      :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
@@ -90,14 +85,9 @@ I am struggling a bit with releasing to PyPi, it will work soon.
      :target: https://gemnasium.com/BartGo/bottle-cuturl
      :alt: Gemnasium Status
 
-
 .. image:: https://codecov.io/gh/BartGo/bottle-cuturl/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/BartGo/bottle-cuturl
   
-.. image:: http://www.quantifiedcode.com/api/v1/project/74d7fde00d2d444b879a31e065589de7/badge.svg
-     :target: http://www.quantifiedcode.com/app/project/74d7fde00d2d444b879a31e065589de7
-     :alt: Code Issues
-
 .. image:: http://img.shields.io/pypi/v/Bottle-Cuturl.svg
      :target: https://pypi.python.org/pypi/Bottle-Cuturl
      :alt: PyPI
