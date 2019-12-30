@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 __appname__ = "Python-Cuturl"
 __description__ = "A simple URL Shortener"
-__version__ = "0.0.22" 
+__version__ = "0.0.23" 
 __repository__ = "http://github.com/bartgo/python-cuturl"
 __tarball__ = "https://github.com/bartgo/python-cuturl/tarball/v" + __version__
 

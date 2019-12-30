@@ -4,7 +4,7 @@
 Python-cuturl
 =============
 
-v0.0.22
+v0.0.23
 
 A simple favourites / URL shortening app in Python. Work in progress. A project to test tools and environments.
 
@@ -24,9 +24,9 @@ Running in development mode (prepare virtual environment and run the app inside)
 
     # no uncommited changes at this point
     devucl.sh
-    bumpversion --allow-dirty patch
+    ./dnv/Scripts/bumpversion --allow-dirty patch
     git add .
-    git commit -m "Bump version: x.x.x → y.y.y"
+    git commit -m "Bump version to y.y.yy"
     git tag vy.y.y
     git push
     git push --tags

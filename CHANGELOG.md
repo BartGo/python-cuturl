@@ -1,3 +1,4 @@
+* 2019-12-30 18:08:00 +0100 - Adapting to Python 3
 * 2017-02-08 18:12:11 +0100 - Venv-related
 * 2016-10-14 17:08:22 +0200 - An attempt to integrate with Codacy
 * 2016-06-23 21:49:31 +0200 - Reorganised devinit script
