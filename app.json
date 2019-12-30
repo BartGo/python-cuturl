@@ -1,5 +1,6 @@
 {
   "name": "python-cuturl",
+  "stack": "heroku-18",
   "scripts": {},
   "env": {
     "TEMP_CONF_VAR": "1",
@@ -11,9 +12,6 @@
     "heroku-postgresql"
   ],
   "buildpacks": [
-
-
-    
     {
       "url": "urn:buildpack:heroku/python"
     }
