@@ -21,7 +21,7 @@ SESSION_OPTS = {
 }
 
 #PROJECT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)))
-PROJECT_PATH = os.path.join('home','bgolda','bottle-cuturl.git', APP_DIR)
+PROJECT_PATH = os.path.join('home','bgolda','python-cuturl.git', APP_DIR)
 if PROJECT_PATH not in sys.path:
     sys.path.append(PROJECT_PATH)
 

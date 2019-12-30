@@ -1,39 +1,14 @@
 
 
 =============
-Bottle-cuturl
+Python-cuturl
 =============
 
 v0.0.22
 
-A simple favourites / URL shortening app in Python. Work in progress.
-The idea is to have a simple, working web application linked with a set 
-of tools - which could be used in larger projects.
-
-Uses:
-
-- `Bottle`_ (microframework), Skeleton
-
-- PostgreSQL with `SQLAlchemy`_ (ORM), fallback to SQLite
-
-- `cookiecutter-bottle`_ template, `bumpversion`, `vendor`, `crashreporter`
-
-- playing with testing, using `unittest`, `nosetests`, `tox`, `behave`, `WebTest`
-
-Works with Travis CI, successfull builds are deployed to Heroku:
+A simple favourites / URL shortening app in Python. Work in progress. A project to test tools and environments.
 
 http://fathomless-everglades-8154.herokuapp.com/
-
-You can do the same:
-
-.. image:: https://www.herokucdn.com/deploy/button.svg
-    :target: https://heroku.com/deploy?template=https://github.com/bartgo/bottle-cuturl/production
-
-Deployment to Heroku is done against the version defined in runtime.txt, as specified in
-
-https://github.com/heroku/heroku-buildpack-python
-
-At some moment automatic deployments will work with Openshift as well.
 
 Quickstart
 ----------
@@ -44,8 +19,6 @@ Running in development mode (prepare virtual environment and run the app inside)
 
     devinit.sh
     devrun.sh
-
-I am struggling a bit with releasing to PyPi, it will work soon.
 
 .. code-block:: bash
 
@@ -64,32 +37,28 @@ I am struggling a bit with releasing to PyPi, it will work soon.
     # python setup.py sdist upload -r pypi
     # python setup.py sdist bdist_wheel upload
 
-.. image:: https://travis-ci.org/BartGo/bottle-cuturl.svg?branch=master
-    :target: https://travis-ci.org/BartGo/bottle-cuturl
+.. image:: https://travis-ci.org/BartGo/python-cuturl.svg?branch=master
+    :target: https://travis-ci.org/BartGo/python-cuturl
 
 .. image:: https://semaphoreci.com/api/v1/projects/82f94cd9-6144-4e99-966e-649ca567a603/531764/badge.svg
-    :target: https://semaphoreci.com/bartgo/bottle-cuturl
+    :target: https://semaphoreci.com/bartgo/python-cuturl
 
 .. image:: https://codeship.com/projects/b9cd91a0-0880-0133-b16d-52c6dae51101/status?branch=master
     :target: https://codeship.com/projects/90320
     :alt: Codeship Status
 
-.. image:: https://circleci.com/gh/BartGo/bottle-cuturl/tree/master.svg?style=svg
-    :target: https://circleci.com/gh/BartGo/bottle-cuturl/tree/master
+.. image:: https://circleci.com/gh/BartGo/python-cuturl/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/BartGo/python-cuturl/tree/master
 
-.. image:: https://requires.io/github/BartGo/bottle-cuturl/requirements.svg?branch=master
-     :target: https://requires.io/github/BartGo/bottle-cuturl/requirements/?branch=master
+.. image:: https://requires.io/github/BartGo/python-cuturl/requirements.svg?branch=master
+     :target: https://requires.io/github/BartGo/python-cuturl/requirements/?branch=master
      :alt: Requirements Status
 
-.. image:: https://img.shields.io/gemnasium/BartGo/bottle-cuturl.svg
-     :target: https://gemnasium.com/BartGo/bottle-cuturl
-     :alt: Gemnasium Status
-
-.. image:: https://codecov.io/gh/BartGo/bottle-cuturl/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/BartGo/bottle-cuturl
+.. image:: https://codecov.io/gh/BartGo/python-cuturl/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/BartGo/python-cuturl
   
-.. image:: http://img.shields.io/pypi/v/Bottle-Cuturl.svg
-     :target: https://pypi.python.org/pypi/Bottle-Cuturl
+.. image:: http://img.shields.io/pypi/v/python-cuturl.svg
+     :target: https://pypi.python.org/pypi/python-cuturl
      :alt: PyPI
 
 .. _cookiecutter-bottle: https://github.com/avelino/cookiecutter-bottle
