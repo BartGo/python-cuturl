@@ -7,13 +7,11 @@
     "PORT": "9090"
   },
   "addons": [
-    "mailgun",
-    "papertrail",
     "heroku-postgresql"
   ],
   "buildpacks": [
     {
-      "url": "urn:buildpack:heroku/python"
+      "url": "heroku/python"
     }
   ]
 }
