@@ -33,14 +33,10 @@ with open('README.rst') as readme:
             'cherrypy==18.5.0',
             'click==7.0',
             "configparser==4.0.2",
-            #"crashreporter", # somehow does not like setuptools==21.0.0
-            #"fake-factory==0.7.4",
             "Faker==3.0.0",
             "funcsigs==1.0.2",
-            # "importlib",  # may need to be added explicitely for OpenShift; is it OK for Python 3??
-            "ipaddress==1.0.23", # may need to be added explicitely for Drone.io, probably due to fake-factory
             "logbook==1.5.3",
-            #"psycopg2", # if you want to use peewee with postgresql; note that it cannot be directly used with pypy
+            "psycopg2==2.8.4",
             'requests==2.22.0',
             'SQLAlchemy==1.3.12',
             'alembic==1.3.2',

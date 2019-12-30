@@ -22,6 +22,10 @@ echo "printf '\nRunning feature tests\n\n'"      >> devtests.sh
 echo "./dnv/$PYVE/behave"                        >> devtests.sh
 echo "./dnv/$PYVE/pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
 
+DATABASE_URL="postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl"
+#DATABASE_URL="sqlite:///data//sqlite.db"
+echo "Using DATABASE_URL: $DATABASE_URL"
+
 chmod +x ./devrun.sh
 chmod +x ./devtests.sh
 chmod +x ./devlint.sh
