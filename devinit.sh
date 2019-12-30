@@ -14,30 +14,29 @@ else
 fi
 
 ./dnv/$PYVE/pip install --upgrade --requirement requirements-dev.txt
-./env/$PYVE/pip install --upgrade --requirement requirements.txt
+./env/$PYVE/pip install --upgrade --requirement requirements.txt                                      
 
-echo "./env/$PYVE/python -B manage.py runserver" >  devrun.sh
+
 echo "./env/$PYVE/python -B manage.py unittests" >  devtests.sh
 echo "printf '\nRunning feature tests\n\n'"      >> devtests.sh
 echo "./dnv/$PYVE/behave"                        >> devtests.sh
 echo "./dnv/$PYVE/pylint --output-format=parseable app/ alembic/ features/ tests/ *.py" > devlint.sh
-
-DATABASE_URL="postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl"
-#DATABASE_URL="sqlite:///data//sqlite.db"
-echo "Using DATABASE_URL: $DATABASE_URL"
-
+echo "export DATABASE_URL=""sqlite:///data//sqlite.db""" >  devrun.sh
+#export DATABASE_URL=""postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl""
 chmod +x ./devrun.sh
 chmod +x ./devtests.sh
 chmod +x ./devlint.sh
 chmod +x ./devucl.sh
 chmod +x ./manage.py
 
+./devrun.sh
 ./devtests.sh
+
+echo "./env/$PYVE/python -B manage.py runserver" >> devrun.sh
 
 echo ""
 echo "To start: ./devrun.sh"
 echo "To test:  ./devtests.sh"
 echo "To lint:  ./devlint.sh"
 echo ""
-
 sleep 3
