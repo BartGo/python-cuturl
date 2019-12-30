@@ -3,17 +3,15 @@
 set -e -u -o pipefail
 IFS=$'\n\t'
 
-pip install --user --upgrade --requirement requirements-global.txt
-
-virtualenv --clear --quiet ./env # --python=python2.7
-virtualenv --clear --quiet ./dnv # --python=python2.7
+python -m pip install --user --upgrade --requirement requirements-global.txt
+python -m virtualenv --clear --quiet ./env 
+python -m virtualenv --clear --quiet ./dnv 
 
 if [ "$OSTYPE" == "msys" ] ; then
   PYVE="Scripts"
 else
   PYVE="bin"
 fi
-#echo $PYVE
 
 ./dnv/$PYVE/pip install --upgrade --requirement requirements-dev.txt
 ./env/$PYVE/pip install --upgrade --requirement requirements.txt

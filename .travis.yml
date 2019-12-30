@@ -2,22 +2,11 @@ language: python
 sudo: false
 matrix:
   include:
-#  - python: '2.6'
-#    env: TEST_SUITE=suite_2_6
-  - python: '2.7'
-    env: TEST_SUITE=suite_2_7
-#  - python: '3.2'
-#    env: TEST_SUITE=suite_3_2
-#  - python: '3.3'
-#    env: TEST_SUITE=suite_3_3
-#  - python: '3.4'
-#    env: TEST_SUITE=suite_3_4
-  - python: '3.5'
-    env: TEST_SUITE=suite_3_5
-#  - python: pypy
-#    env: TEST_SUITE=suite_pypy
+  - python: '3.7'
+    env: TEST_SUITE=suite_3_7
   allow_failures:
 #  - python: '2.6'
+#  - python: '2.7'
 #  - python: '3.2'
 #  - python: '3.3'
 #  - python: '3.4'
@@ -27,17 +16,16 @@ matrix:
 install:
 - python --version
 - pip --version
-#- pip install --upgrade pip nose tox setuptools pew
 - pip install -r requirements-global.txt
 - pip install -r requirements-dev.txt
 script:
 - nosetests --with-coverage tests
 - behave
 after_success:
-- bash <(curl -s https://codecov.io/bash)
-- coverage xml
-- export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
-- python-codacy-coverage -r coverage.xml
+#- bash <(curl -s https://codecov.io/bash)
+#- coverage xml
+#- export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
+#- python-codacy-coverage -r coverage.xml
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
 #deploy:
@@ -49,14 +37,10 @@ before_deploy:
 #  app: cuturl
 #  domain: bartoszgo
 #  on:
-#    repo: BartGo/bottle-cuturl
+#    repo: BartGo/python-cuturl
 #- provider: heroku
 #  skip_cleanup: true
 #  api_key:
 #    secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
 #  app: fathomless-everglades-8154
-notifications:
-  slack:
-    secure: f3xEytXoPGc+7bkgvtG0wUUwQ/WHZhom0xbNyDdRBCQc8ec/PhLg14VTc7eCWwCMkT2j4mDwiLnofsetAsNwMaBzKvja261vqOEgTE4oxL6KNXN2vP/FoKaFDKcJFksEIwiwlk9Q8nMcUNZ/KV0ywNGtqJXvHI/gdKMa+SJTQII=
-    on_success: change
-    on_failure: change
+

@@ -1,9 +1,6 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
-#import vendor
-#vendor.add('lib')
 import click
 from faker import Factory
 from bottle import static_file, Bottle, run, TEMPLATE_PATH

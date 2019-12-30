@@ -1,5 +1,5 @@
 {
-  "name": "bottle-cuturl",
+  "name": "python-cuturl",
   "scripts": {},
   "env": {
     "TEMP_CONF_VAR": "1",

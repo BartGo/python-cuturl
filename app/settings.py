@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-APP_NAME = 'bottle-cuturl'
+APP_NAME = 'python-cuturl'
 
 # disabled but also removed crashreporter==1.11 from setup.py, somehow does not like setuptools==21.0.0
 CRASH_REPORT = 0
@@ -17,7 +17,7 @@ STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
 # *** PostgreSQL
 SQL_SQLITE_ONLY = 1
 SQL_PG_USE_LOCAL = 0
-SQL_PG_DBENGINE_LOCAL = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/bottle-cuturl"
+SQL_PG_DBENGINE_LOCAL = "postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl"
 
 if (not SQL_SQLITE_ONLY):
   try:
