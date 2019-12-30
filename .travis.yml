@@ -4,14 +4,10 @@ matrix:
   include:
   - python: '3.7'
     env: TEST_SUITE=suite_3_7
-  allow_failures:
-#  - python: '2.6'
-#  - python: '2.7'
-#  - python: '3.2'
-#  - python: '3.3'
-#  - python: '3.4'
-#  - python: '3.5'
-#  - python: pypy
+  - python: 'pypy'
+    env: TEST_SUITE=suite_pypy
+allow_failures:
+  - python: pypy
   fast_finish: true
 install:
 - python --version
@@ -22,25 +18,12 @@ script:
 - nosetests --with-coverage tests
 - behave
 after_success:
-#- bash <(curl -s https://codecov.io/bash)
-#- coverage xml
-#- export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
-#- python-codacy-coverage -r coverage.xml
 before_deploy:
 - export PATH="$PATH:$HOME/.local/bin"
-#deploy:
-#- provider: openshift
-#  skip_cleanup: true
-#  user: bartoszgo@gmail.com
-#  password:
-#    secure: Am/FDRc7zKOVmuZ09SSsKCAVZXcFawx3yvre5XrzVlUWG0NaBwklmngUCUYKxIOLpObo3dVEkb5LwtKThDbddmN3Z16XcF3QbOu/NIWQXE9SvduDqMcf27C8VbMfwteYxxCpQVCfLE1py5n9i9rpH8rk50wMOoQP5s02VbjgB1I=
-#  app: cuturl
-#  domain: bartoszgo
-#  on:
-#    repo: BartGo/python-cuturl
-#- provider: heroku
-#  skip_cleanup: true
-#  api_key:
-#    secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
-#  app: fathomless-everglades-8154
+deploy:
+- provider: heroku
+  skip_cleanup: true
+  api_key:
+    secure: X90284NMpUqYqEqwdBDTeV3FbHnxwWVK+Bej4gOwtdvTxWqH0j3KZ2OfrQk5RVz/EVQiG6jsO2bkUyOIJA98q8PDMc24ijaAyU+0kom4iNebrD9tiHW0OuMbygte1S4I4t+PeY1yKk+vNklFA7mu7cIsEzNruRE2h/60Wb0EFS4=
+  app: fathomless-everglades-8154
 
