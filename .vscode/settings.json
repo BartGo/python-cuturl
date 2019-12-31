@@ -1,10 +1,10 @@
 {
-    "python.pythonPath": "/python-cuturl/env/bin/python",
+    "python.pythonPath": "env\\Scripts\\python.exe",
     "python.pythonPathWindows": "x:/python-cuturl/env/scripts/python.exe",
-    "python.unitTest.nosetestsEnabled": false,
-    "python.unitTest.promptToConfigure": false,
-    "python.unitTest.pyTestEnabled": false,
-    "python.unitTest.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.promptToConfigure": false,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": false,
     "python.linting.pylintEnabled": false
 }
 

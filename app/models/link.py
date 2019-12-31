@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from sqlalchemy import Column, Integer, Sequence, String, DateTime
+from sqlalchemy import Column, Integer, Sequence, String, DateTime, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
-from ..models import engine
-
+from .. import settings
 
 base = declarative_base()
-
+engine = create_engine(settings.SQA_DBENGINE, echo=settings.SQA_ECHO)
 
 class Link(base):
     __tablename__ = 'link'

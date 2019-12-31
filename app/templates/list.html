@@ -1,4 +1,4 @@
-% rebase('base.html', title='Links')
+{% extends 'layout.html' %}
 
 <strong>Links</strong>
 <table>
@@ -11,13 +11,13 @@
 <th>Create Time</th>
 </tr>
 </thead>
-% for link in links:
+{% for link in links %}
 	<tr>
             <td><a href="{{link.url}}">{{link.url}}</a></td>
             <td><a href="/list/{{link.slug}}">{{link.slug}}</a></td>
             <td>{{ link.description }}</td>
             <td>{{ link.create_time }}</td>
         </tr>
-% end
+{% endfor %}
 </table>
 
