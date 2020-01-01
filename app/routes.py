@@ -6,7 +6,7 @@ from slugify import slugify
 
 from contextlib import contextmanager
 
-from flask import Flask, render_template, make_response, request, jsonify
+from flask import Flask, render_template, make_response, request, jsonify, redirect
 from flask_sqlalchemy import SQLAlchemy 
 from sqlalchemy import Column, Integer, Sequence, String, DateTime, create_engine
 from sqlalchemy.orm import sessionmaker
@@ -95,40 +95,46 @@ def index():
 def static(filepath):
     return static_file(filepath, root=settings.STATIC_PATH)
 
-
 def lista():
+    jlinks = { }
     with session_scope() as session:
         links = session.query(Link)
-    jlinks = { }
-    for link in links:
-        jlinks[link.slug] = { 'url' : link.url, 'description' : link.description, 'create_time' : str(link.create_time) }
+        for link in links:
+            jlinks[link.slug] = { 'url' : link.url, 'description' : link.description, 'create_time' : str(link.create_time) }
+   
+    print(jlinks)
+    #BUG: here, jlinks should be passed!!!!
+    return render_template("lista.html", jlinks=links)
+
+
+def link(slug):
+    #BUG: not using css!
+    with session_scope() as session:
+        links = session.query(Link)
+        this_link = session.query(Link).filter_by(slug=slug).first()
+        return render_template("single.html", link=this_link)
+
+
+@app.route('/add',methods = ['POST'])
+def add():
+
+    url = request.form.get('url-input')
+    comment = request.form.get('comment-input')
     
-    return render_template("lista.html", title = "My site")
+    if (url and comment):
+        with session_scope() as session:
+            session.add(Link(url=url, 
+                description=comment,
+                slug=slugify(url),
+                create_time=datetime.datetime.now()))
+    
+    return redirect("/lista", code=302)
 
-
-def link(slug, db):
-    this_link = db.query(Link).filter_by(slug=slug).first()
-    if this_link:
-        return this_link
-    return HTTPError(404, 'Link not found.')
-
-
-def add(db):
-    if request.POST.get('url-input','').strip():
-       url = request.POST.get('url-input', '').strip()
-    else:
-       redirect("/lista")
-    if request.POST.get('comment-input','').strip():
-       description = request.POST.get('comment-input', '').strip()
-    else:
-       description = ""
-    db.add(Link(url=url, description=description, slug=slugify(url), create_time=datetime.datetime.now()))
-    redirect("/lista")
 
 # Route bindings
 
 app.add_url_rule('/', 'index', index)
-app.add_url_rule('/assets/<path:filepath>', static)
 app.add_url_rule('/lista', 'lista', lista)
-app.add_url_rule('/<string:slug>', 'link', link)
-app.add_url_rule('/add', 'add', add)
+app.add_url_rule('/assets/<path:filepath>', static)
+app.add_url_rule('/lista/<string:slug>', 'link', link)
+
