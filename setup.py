@@ -29,7 +29,6 @@ with open('README.rst') as readme:
         install_requires=[
             'cherrypy==18.5.0',
             'click==7.0',
-            "configparser==4.0.2",
             "faker==3.0.0",
             "flask==1.1.1",
             "flask_sqlalchemy==2.4.1",

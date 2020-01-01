@@ -24,7 +24,7 @@ echo "./dnv/$PYVE/pylint --output-format=parseable app/ alembic/ features/ tests
 #export DATABASE_URL="sqlite:///data//sqlite.db"
 export DATABASE_URL="postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl"
 echo "export DATABASE_URL=$DATABASE_URL" >  devrun.sh
-echo "./env/$PYVE/python -B manage.py runserver" >> devrun.sh
+echo "./env/$PYVE/python -B manage.py runserver --debug True" >> devrun.sh
 
 chmod +x ./devrun.sh
 chmod +x ./devtests.sh

@@ -1,6 +1,7 @@
+<!-- layout.html -->
 <html>
 	<head>
-	        % __version__ = '0.0.23'
+	  {% set __version__ = '0.0.23' %}
 		<title>{{ title or '' }} {{ __version__ or '' }}</title>
 											
 		<!-- Basic Page Needs
@@ -19,20 +20,20 @@
 
 		<!-- CSS
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		<link rel="stylesheet" type="text/css" href="{{ get_url('assets', filepath='skeletoncss/css/normalize.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ get_url('assets', filepath='skeletoncss/css/skeleton.css') }}">
+		<link rel="stylesheet" type="text/css" href="assets/skeletoncss/css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="assets/skeletoncss/css/skeleton.css">
 		<!-- link rel="stylesheet" href="css/custom.css" -->
 
 		<!-- Scripts
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		<script src="{{ get_url('assets', filepath='jquery/js/jquery-1.11.3.min.js') }}"></script>
+		<script src="/assets/jquery/js/jquery-1.11.3.min.js"></script>
 
 	</head>
 	<body>
 
 <div class="section hero">
 
-<form action="/list/add" method="POST">
+<form action="/lista/add" method="POST">
   <div class="container">
   <section class="header">
   <h1 >Cuturl</h1>
@@ -58,7 +59,7 @@
   <div class="container">
           <div class="row">
               <div class="one-third column"><a href="/" class="button">Home</a></div>
-              <div class="one-third column"><a href="/list/" class="button">List</a></div>
+              <div class="one-third column"><a href="/lista" class="button">List</a></div>
           </div>  
   </div>
   <div class="container">
