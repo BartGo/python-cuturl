@@ -127,13 +127,13 @@ def add():
                 slug=slugify(url),
                 create_time=datetime.datetime.now()))
     
-    return redirect("/lista", code=302)
+    return redirect("/list", code=302)
 
 
 # Route bindings
 
 app.add_url_rule('/', 'index', index)
-app.add_url_rule('/lista', 'lista', lista)
+app.add_url_rule('/list', 'list', list)
 app.add_url_rule('/assets/<path:filepath>', static)
-app.add_url_rule('/lista/<string:slug>', 'link', link)
+app.add_url_rule('/list/<string:slug>', 'link', link)
 
