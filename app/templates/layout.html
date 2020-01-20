@@ -20,13 +20,13 @@
 
 		<!-- CSS
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		<link rel="stylesheet" type="text/css" href="assets/skeletoncss/css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="assets/skeletoncss/css/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeletoncss/css/normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeletoncss/css/skeleton.css') }}">
 		<!-- link rel="stylesheet" href="css/custom.css" -->
 
 		<!-- Scripts
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		<script src="/assets/jquery/js/jquery-1.11.3.min.js"></script>
+		<script src="{{ url_for('static', filename='jquery/js/jquery-1.11.3.min.js') }}"></script>
 
 	</head>
 	<body>

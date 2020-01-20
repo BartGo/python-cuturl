@@ -95,16 +95,15 @@ def index():
 def static(filepath):
     return static_file(filepath, root=settings.STATIC_PATH)
 
-def lista():
-    jlinks = { }
+def list():
+    json_links = { }
     with session_scope() as session:
         links = session.query(Link)
         for link in links:
-            jlinks[link.slug] = { 'url' : link.url, 'description' : link.description, 'create_time' : str(link.create_time) }
+            json_links[link.slug] = { 'url' : link.url, 'description' : link.description, 'create_time' : str(link.create_time) }
    
-    print(jlinks)
-    #BUG: here, jlinks should be passed!!!!
-    return render_template("lista.html", jlinks=links)
+    print(json_links)
+    return render_template("list.html", json_links=links)
 
 
 def link(slug):
