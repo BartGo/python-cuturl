@@ -1,20 +1,14 @@
-#
-# Python Dockerfile
-#
-# https://github.com/dockerfile/python
-#
+FROM python:3.8-alpine
+ENV OSTYPE alpine
 
-# Pull base image.
-FROM dockerfile/ubuntu
+COPY . /deploy
+WORKDIR /deploy
 
-# Install Python.
-RUN \
-  apt-get update && \
-  apt-get install -y python python-dev python-pip python-virtualenv && \
-  rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache --virtual .build-deps gcc python3-dev musl-dev alpine-sdk
+RUN apk del .build-deps
 
-# Define working directory.
-WORKDIR /data
+RUN chmod +x /deploy/devinit.sh
+RUN cd /deploy
+RUN source devinit.sh
 
-# Define default command.
-CMD ["bash"]
+CMD ["python", "manage.py", "runserver"]

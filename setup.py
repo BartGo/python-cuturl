@@ -34,7 +34,7 @@ with open('README.rst') as readme:
             "flask_sqlalchemy==2.4.1",
             "funcsigs==1.0.2",
             "logbook==1.5.3",
-            "psycopg2==2.8.4",
+            #"psycopg2==2.8.4",
             'requests==2.22.0',
             'sqlalchemy==1.3.12',
             'alembic==1.3.2',
