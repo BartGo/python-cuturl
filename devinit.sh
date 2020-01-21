@@ -3,8 +3,7 @@
 set -e -u -o pipefail
 IFS=$'\n\t'
 
-export DATABASE_URL="postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl" # "sqlite:///data//sqlite.db"
-
+export DATABASE_URL="sqlite:///data//sqlite.db" #"postgresql+psycopg2://cuturl:cuturl@localhost:5432/python-cuturl"
 python -m pip install --user --upgrade --requirement requirements-global.txt
 python -m virtualenv --clear --quiet ./env 
 
