@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
 import datetime
-import decimal
-import json
 
 from slugify import slugify
 from contextlib import contextmanager
@@ -80,13 +78,6 @@ Base.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
 
-# https://codeandlife.com/2014/12/07/sqlalchemy-results-to-json-the-easy-way/
-def alchemyencoder(obj):
-    if isinstance(obj, datetime.date):
-        return obj.isoformat()
-    elif isinstance(obj, decimal.Decimal):
-        return float(obj)
-
 @contextmanager
 def session_scope():
     """Provide a transactional scope around a series of operations."""
@@ -114,13 +105,8 @@ def list():
     with session_scope() as session:
         links = session.query(Link).all()
         print(links)
-        #print(json.dumps([dict(r) for r in links], default=alchemyencoder))
-        #return render_template("list.html", jlinks=json.dumps([dict(r) for r in links], default=alchemyencoder))
-        print(json.dumps(links, default=alchemyencoder))
-        print(jsonify(links))
-        return render_template("list.html", jlinks=json.dumps([dict(r) for r in links], default=alchemyencoder))
-
-    
+        return render_template("list.html", jlinks=links)
+        
 def link(slug):
     with session_scope() as session:
         links = session.query(Link)
