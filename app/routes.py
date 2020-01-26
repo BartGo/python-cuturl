@@ -3,11 +3,11 @@ import os
 import datetime
 
 from slugify import slugify
-
 from contextlib import contextmanager
 
 from flask import Flask, render_template, make_response, request, jsonify, redirect
 from flask_sqlalchemy import SQLAlchemy 
+
 from sqlalchemy import Column, Integer, Sequence, String, DateTime, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -19,6 +19,11 @@ APP_NAME = 'python-cuturl'
 PROJECT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)))
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 STATIC_PATH = os.path.join(PROJECT_PATH, 'assets')
+
+#print('PP '+PROJECT_PATH)
+#print('TP '+TEMPLATE_PATH)
+#print('SP '+PROJECT_PATH)
+
 
 # Create the app
 
@@ -96,18 +101,13 @@ def static(filepath):
     return static_file(filepath, root=settings.STATIC_PATH)
 
 def list():
-    json_links = { }
+    links = None
     with session_scope() as session:
-        links = session.query(Link)
-        for link in links:
-            json_links[link.slug] = { 'url' : link.url, 'description' : link.description, 'create_time' : str(link.create_time) }
-   
-    print(json_links)
-    return render_template("list.html", json_links=links)
-
-
+        links = session.query(Link).all()
+        print(links)
+        return render_template("list.html", jlinks=links)
+        
 def link(slug):
-    #BUG: not using css!
     with session_scope() as session:
         links = session.query(Link)
         this_link = session.query(Link).filter_by(slug=slug).first()

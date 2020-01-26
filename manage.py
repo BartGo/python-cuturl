@@ -20,7 +20,6 @@ def unittest_body():
     test_runner.run(tests)
 
 
-"""
 def webtest_body():
 
     click.echo("\nRunning web tests...")
@@ -55,21 +54,21 @@ def webtest_body():
 
     summary = "\nRun " + str(nr_tests) + "/" + str(all_tests)
     click.echo(summary)
-"""
+
 
 @cmds.command()
 def unittests():
     unittest_body()
 
 
-#@cmds.command()
-#def webtests():
-#    webtest_body()
+@cmds.command()
+def webtests():
+    webtest_body()
 
 
 @cmds.command()
 def tests():
-    #webtest_body()
+    webtest_body()
     unittest_body()
 
 
