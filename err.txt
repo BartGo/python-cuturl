@@ -1,0 +1,16 @@
+SQLALCHEMY_DATABASE_URI is sqlite:///data/sqlite.db
+2020-01-26 18:09:23,168 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2020-01-26 18:09:23,168 INFO sqlalchemy.engine.base.Engine ()
+2020-01-26 18:09:23,168 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2020-01-26 18:09:23,168 INFO sqlalchemy.engine.base.Engine ()
+2020-01-26 18:09:23,169 INFO sqlalchemy.engine.base.Engine PRAGMA main.table_info("link")
+2020-01-26 18:09:23,169 INFO sqlalchemy.engine.base.Engine ()
+Usage: manage.py [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  runserver
+  tests
+  unittests
