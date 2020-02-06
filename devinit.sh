@@ -44,6 +44,6 @@ chmod +x ./manage.py
 echo ""
 echo "To start: ./devrun.sh"
 echo "To test:  ./devtests.sh"
-echo "To lint:  ./devlint.sh"
+#echo "To lint:  ./devlint.sh"
 echo ""
 sleep 3
