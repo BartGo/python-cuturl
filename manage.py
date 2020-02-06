@@ -72,7 +72,7 @@ def webtests():
 
 @cmds.command()
 def tests():
-    webtest_body()
+    #webtest_body()
     unittest_body()
 
 
