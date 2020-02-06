@@ -3,6 +3,10 @@
 import os
 import click
 
+#https://github.com/pallets/click/issues/448
+from click import core
+core._verify_python3_env = lambda: None
+
 from flask import Flask
 from app.routes import app
 
