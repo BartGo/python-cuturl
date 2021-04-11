@@ -33,9 +33,14 @@ app = Flask(__name__,
 
 # SQL Alchemy setup 
 
+dburi = os.environ["DATABASE_URL"]
+dburi = dburi.replace("postgres://", "postgresql://", 1)
+# to ensure compatibility between recent SQL Alchemy and Heroku: 
+# https://stackoverflow.com/questions/62688256/sqlalchemy-exc-nosuchmoduleerror-cant-load-plugin-sqlalchemy-dialectspostgre
+
 app.config.update(
     SQA_ECHO = True,
-    SQLALCHEMY_DATABASE_URI = os.environ["DATABASE_URL"],
+    SQLALCHEMY_DATABASE_URI = dburi,
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 )
 
