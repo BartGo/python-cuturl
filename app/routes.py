@@ -99,7 +99,7 @@ def session_scope():
 # Route methods
 
 def index():
-    return(render_template("index.html", title = "My site"))
+    return(render_template("index.html", title = "My best site"))
 
 
 def static(filepath):
