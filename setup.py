@@ -38,7 +38,7 @@ with open('README.rst') as readme:
             'requests==2.26.0',
             'sqlalchemy==1.4.23',
             'alembic==1.7.3',
-            'mako==1.1.5',
+            'mako==1.2.2',
             'python-slugify==5.0.2',
             'unidecode==1.3.2'
         ],
