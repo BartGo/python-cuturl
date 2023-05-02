@@ -30,7 +30,7 @@ with open('README.rst') as readme:
             'cherrypy==18.6.1',
             'click==8.0.1',
             "faker==8.13.2",
-            "flask==2.0.1",
+            "flask==2.2.5",
             "flask_sqlalchemy==2.5.1",
             "funcsigs==1.0.2",
             "logbook==1.5.3",
