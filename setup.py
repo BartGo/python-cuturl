@@ -35,7 +35,7 @@ with open('README.rst') as readme:
             "funcsigs==1.0.2",
             "logbook==1.5.3",
             #"psycopg2==x.x.x",
-            'requests==2.26.0',
+            'requests==2.31.0',
             'sqlalchemy==1.4.23',
             'alembic==1.7.3',
             'mako==1.1.5',
